@@ -259,7 +259,7 @@ table.mx td:first-child,table.mx th:first-child{text-align:left;font-weight:650}
 .mini-step span{min-width:58px;text-align:center;font-family:var(--mono);font-weight:600;font-size:16px}
 .est{font-size:9.5px;font-weight:750;letter-spacing:.06em;color:var(--warn);background:color-mix(in srgb,var(--warn) 14%,transparent);padding:2px 6px;border-radius:6px;margin-left:6px;vertical-align:2px}
 .sugg{font-size:12px;color:var(--app);margin-top:3px;font-weight:600}
-input[type=text],input[type=number],textarea,select{width:100%;border:1.5px solid var(--line2);background:var(--raise);border-radius:14px;padding:11px 13px;font-size:16px;color:var(--text)}
+input[type=text],input[type=number],input[type=search],input[type=date],textarea,select{width:100%;border:1.5px solid var(--line2);background:var(--raise);border-radius:14px;padding:11px 13px;font-size:16px;color:var(--text)}
 textarea{min-height:84px;resize:vertical}
 .toggle{position:relative;width:52px;height:32px;border-radius:99px;background:var(--line2);flex:0 0 auto;transition:background .2s}
 .toggle::after{content:"";position:absolute;top:3px;left:3px;width:26px;height:26px;border-radius:50%;background:#fff;transition:transform .2s;box-shadow:0 2px 6px rgba(0,0,0,.25)}
@@ -363,6 +363,75 @@ html{-webkit-text-size-adjust:100%}
   *{animation:none!important;transition:none!important}
   .hero .traces path.tr{stroke-dashoffset:0} .hero .traces circle{opacity:1}
 }
+/* v6: perfil, campos y partida */
+.avatar{width:36px;height:36px;border-radius:50%;background:var(--text);color:var(--bg);font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:-.02em;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px var(--bg),0 0 0 4.5px var(--line2);transition:transform .12s}
+.avatar.on{background:var(--lime);color:#0D1A13}
+.avatar:active{transform:scale(.94)}
+.av{width:34px;height:34px;flex:0 0 auto;border-radius:50%;background:var(--c);color:#0D1A13;font-family:var(--display);font-weight:800;font-size:12.5px;display:inline-flex;align-items:center;justify-content:center;letter-spacing:-.02em}
+.av.big{width:58px;height:58px;font-size:20px}
+.prof{display:flex;align-items:center;gap:14px;background:var(--hero);color:#F4F2EA;border-radius:26px;padding:18px;margin-bottom:6px;border:1px solid var(--herobd)}
+.prof h2{font-family:var(--display);font-size:26px;font-weight:800;letter-spacing:-.04em;margin:0;line-height:1.05}
+.prof .small{opacity:.75;margin-top:4px}
+.set-h{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:22px 4px 8px}
+.seg button.off{opacity:.38}
+.cname{font-family:var(--display);font-size:23px;font-weight:800;letter-spacing:-.035em;margin:4px 0 2px;line-height:1.1}
+.lab-sm{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:16px 2px 8px}
+.tee-chips{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 6px;margin:0 -2px;scrollbar-width:none}
+.tee-chips::-webkit-scrollbar{display:none}
+.tee{flex:0 0 auto;display:flex;align-items:center;gap:9px;padding:9px 12px 9px 10px;border-radius:16px;border:1.5px solid var(--line2);background:var(--chip);text-align:left;transition:border-color .12s,background .12s}
+.tee i{width:14px;height:14px;border-radius:50%;flex:0 0 auto;box-shadow:inset 0 0 0 1px rgba(0,0,0,.25)}
+.tee b{display:block;font-size:13.5px;line-height:1.15;white-space:nowrap}
+.tee small{display:block;font-family:var(--mono);font-size:11px;color:var(--mute);white-space:nowrap}
+.tee.on{border-color:var(--text);background:var(--raise);box-shadow:0 6px 16px -10px rgba(0,0,0,.4)}
+.ratebox{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:12px;background:var(--press);border-radius:16px;padding:10px 6px}
+.ratebox div{text-align:center} .ratebox b{display:block;font-size:19px;font-weight:600;line-height:1.1} .ratebox span{font-size:10.5px;color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
+.note{font-size:12.5px;border-radius:14px;padding:10px 12px;margin-top:10px;line-height:1.4}
+.note.warn{background:color-mix(in srgb,var(--warn) 10%,var(--surface));border:1px solid color-mix(in srgb,var(--warn) 28%,transparent)}
+details.fix{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+details.fix summary{cursor:pointer;font-size:13px;font-weight:650;color:var(--mute);list-style:none}
+details.fix summary::before{content:"▸ ";} details.fix[open] summary::before{content:"▾ ";}
+.pickc{display:flex;align-items:center;gap:12px;width:100%;padding:12px;border-radius:18px;border:1.5px dashed var(--line2);margin-top:10px;text-align:left}
+.pickc b{display:block;font-size:15px} .pickc small{display:block;font-size:12px;color:var(--mute)}
+.sw.cw{font-size:15px}
+.cp-h{margin:16px 2px 2px}
+.plist{margin-top:6px}
+.prow{display:flex;align-items:center;gap:12px;width:100%;padding:10px 0;border-bottom:1px solid var(--line);text-align:left}
+.prow .pn{flex:1;min-width:0} .prow .pn b{display:block;font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap} .prow .pn small{display:block;font-size:12px;color:var(--mute)}
+.prow .ph{text-align:right} .prow .ph b{display:block;font-size:22px;font-weight:600;line-height:1} .prow .ph small{font-size:10.5px;color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
+.addp{width:100%;height:46px;border-radius:16px;border:1.5px dashed var(--line2);margin-top:10px;font-weight:650;color:var(--text2)}
+.lb-row{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--line)}
+.lb-row:last-of-type{border-bottom:0}
+.lb-row.me .lb-n b{color:var(--text)}
+.lb-pos{width:20px;font-weight:700;color:var(--mute);font-size:14px}
+.lb-n{flex:1;min-width:0} .lb-n b{display:block;font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap} .lb-n span{display:block;font-size:11.5px;color:var(--mute)}
+.lb-v{text-align:right} .lb-v b{display:block;font-size:24px;font-weight:600;line-height:1} .lb-v span{font-size:10.5px;color:var(--mute)}
+.lb-mini{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 4px}
+.lb-mini span{font-size:12px;background:var(--press);border-radius:99px;padding:4px 10px} .lb-mini span.me{background:color-mix(in srgb,var(--lime) 45%,var(--surface));color:#0D1A13}
+.lb-mini em{font-style:normal;font-weight:600;margin-left:3px}
+.crow{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--line)}
+.crow .cn{flex:1;min-width:0} .crow .cn b{display:block;font-size:14.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap} .crow .cn small{display:block;font-size:11.5px;color:var(--mute);white-space:nowrap}
+.cstep{display:flex;align-items:center;gap:5px}
+.cstep button{width:38px;height:42px;border-radius:12px;background:var(--press);font-size:19px;font-weight:700}
+.cstep .cv{width:50px;background:var(--raise);border:1.5px solid var(--line2);font-size:20px;font-weight:600;position:relative}
+.cstep .cv.empty{color:var(--mute)} .cstep .cv.pu{color:var(--bad)}
+.cstep .pux{width:auto;padding:0 8px;font-size:11.5px;font-weight:650;color:var(--mute)}
+.cv .dots,.gsc .dots{position:absolute;top:1px;right:3px;font-style:normal;font-size:9px;letter-spacing:-1px;color:var(--app);line-height:1}
+.gsc td{position:relative} .gsc sub{font-size:9px;color:var(--mute);margin-left:1px}
+.gsc td.bi{background:#0FA874;color:#fff} .gsc td.bi sub{color:#fff}
+.gsc td.bo{background:color-mix(in srgb,#F5A00B 30%,transparent)} .gsc td.db{background:color-mix(in srgb,#EF4438 38%,transparent)} .gsc td.pu{color:var(--bad)}
+.gsc tr.par td{color:var(--mute)}
+.target .dist{font-family:var(--mono);font-size:17px;font-weight:600;letter-spacing:-.02em;margin-left:10px;color:var(--lime);vertical-align:middle}
+.cegrid{display:grid;grid-template-columns:44px 1fr 76px;gap:6px 10px;align-items:center;margin-top:10px}
+.cegrid .h{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.cegrid .hn{font-weight:600;color:var(--mute)}
+.cegrid input{height:40px;text-align:center;font-family:var(--mono);padding:0 4px}
+.cegrid input.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 8%,var(--surface))}
+.pseg{display:flex;gap:4px;background:var(--press);border-radius:12px;padding:3px}
+.pseg button{flex:1;height:34px;border-radius:9px;font-family:var(--mono);font-weight:600;color:var(--mute)}
+.pseg button.on{background:var(--raise);color:var(--text);box-shadow:0 2px 6px -2px rgba(0,0,0,.2)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:6px} .pair input{text-align:center;font-family:var(--mono)}
+.cdot{width:11px;height:11px;border-radius:50%;display:inline-block;box-shadow:inset 0 0 0 1px rgba(0,0,0,.25)}
+button.list-item.card{display:flex;width:100%}
 </style>
 </head>
 <body>
@@ -372,7 +441,7 @@ html{-webkit-text-size-adjust:100%}
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="#0D1A13"/><path d="M6 25 C 10 8, 20 4, 26 12" fill="none" stroke="#C8F53A" stroke-width="2.6" stroke-linecap="round"/><circle cx="26" cy="12" r="3.2" fill="#fff"/></svg>
       CARRY
     </div>
-    <div id="sync" class="sync" role="status"><i></i><span>Local</span></div>
+    <div class="row" style="gap:8px"><div id="sync" class="sync" role="status"><i></i><span>Local</span></div><button id="avatar" class="avatar" data-a="go-ajustes" aria-label="Perfil y ajustes">TÚ</button></div>
   </header>
   <main id="view" aria-live="polite"></main>
 </div>
@@ -531,7 +600,7 @@ const makeClub = (id, scale = 1) => { const c = CAT[id]; return { id, name: c.na
 const makeBag = (set, scale = 1) => BAG_SETS[set].ids.map(id => makeClub(id, scale));
 const DEFAULT_BAG = makeBag("estandar");
 const DEFAULT_PROFILE = () => ({
-  name: "", hcp: 36, goal: 28, hcpSource: "auto", vAdj: 4, courses: [], hand: "R", stock: "recta", theme: "auto", tolerance: "normal", discomfort: 2, shortGame: true, minutes: 150, focus: "auto",
+  name: "", hcp: 36, goal: 28, hcpSource: "auto", vAdj: 4, courses: [], myCourses: [], sex: "M", units: "m", gameFmt: "stroke", allow: 95, hand: "R", stock: "recta", theme: "auto", tolerance: "normal", discomfort: 2, shortGame: true, minutes: 150, focus: "auto",
   bag: JSON.parse(JSON.stringify(DEFAULT_BAG)), onboarded: false, xp: 0, fields: { total: false, lat: false, traj: false, speed: false }, plan: null, updated: 0
 });
 
@@ -665,7 +734,7 @@ const DRILLS = [
   { id: "curve", area: "app", phases: ["calib", "random"], lv: [1, 2], min: 10, disc: 2, mode: "shot", tt: "Warm Up",
     name: L => L <= 1 ? "Curva bajo control" : "Tu golpe estándar",
     why: L => L <= 1 ? "No se trata de pegarla recta, sino de que la curva no te saque del campo. Cuenta como buena cualquier bola con poca curva." : "Tu golpe estándar es tu forma natural, repetida. Buena: recta o tu forma suave. Mala: la contraria o una curva fuerte.",
-    how: L => L <= 1 ? ["Hierro 7 todo el bloque.", "Marca cuánto curva cada bola.", "Buena: recta o curva suave, hacia cualquier lado."] : [`Tu forma natural: ${stockLabel()} (se cambia en Bolsa).`, "Hierro 7 todo el bloque.", "Buena: recta o tu forma suave."],
+    how: L => L <= 1 ? ["Hierro 7 todo el bloque.", "Marca cuánto curva cada bola.", "Buena: recta o curva suave, hacia cualquier lado."] : [`Tu forma natural: ${stockLabel()} (se cambia en Ajustes).`, "Hierro 7 todo el bloque.", "Buena: recta o tu forma suave."],
     tips: L => L <= 1 ? ["Si curva mucho y siempre hacia el mismo lado, revisa el grip antes que el swing: un grip neutro deja ver 2 o 3 nudillos de la mano de arriba.", "Tempo suave: la curva crece con la velocidad."] : ["No pelees contra tu forma: apunta de modo que la curva te traiga al objetivo.", "Si un día sale la contraria, revisa la alineación de los hombros."],
     gen: L => { const id = firstOn("7i", "8i", "6i"); return Array.from({ length: 12 }, (_, i) => ({ label: `Bola ${i + 1}`, club: id, kind: "curve", rule: L <= 1 ? "ctl" : "stock" })); } },
 
@@ -909,6 +978,7 @@ function normProfile(p) {
   const out = Object.assign(DEFAULT_PROFILE(), p || {});
   out.fields = Object.assign(DEFAULT_PROFILE().fields, (p && p.fields) || {});
   if (!Array.isArray(out.bag) || !out.bag.length) out.bag = DEFAULT_PROFILE().bag;
+  if (!Array.isArray(out.myCourses)) out.myCourses = [];
   // bolsa antigua: quitar palos desactivados y pasar los ids viejos de wedges al catálogo
   out.bag = out.bag.filter(c => c.on !== false).map(c => { const id = LEGACY_CLUB[c.id] || c.id; const k = CAT[id]; return Object.assign({}, c, { id, name: k ? k.name : c.name, type: k ? k.type : c.type, on: true }); })
     .filter((c, i, a) => a.findIndex(x => x.id === c.id) === i);
@@ -1033,6 +1103,379 @@ function coachTip(s, bi) {
   return null;
 }
 
+const APP_VER = "6.0";
+const COURSES = [{"id":"cng","name":"Centro Nacional de Golf","short":"CNG","town":"Madrid","reg":"Madrid","holes":18,"par":[5,4,3,4,5,4,4,4,3,5,4,4,4,3,4,5,3,4],"si":[4,10,18,6,2,12,14,8,16,3,9,5,13,17,11,1,15,7],"src":"https://www.golfpass.com/travel-advisor/courses/35957-centro-nacional-de-golf-de-la-rfeg-championship-course","note":"GolfPass nombra las barras por número (65, 59, 56, 52, 49). El color es orientativo.","tees":[{"n":"Barras 65 (blancas)","c":"#F4F4F0","len":6417,"m":[73.6,131],"d":[521,387,170,413,462,350,337,399,166,471,389,394,316,218,373,475,186,392]},{"n":"Barras 59 (amarillas)","c":"#F2C200","len":5931,"m":[70.6,127],"d":[477,351,159,363,448,319,327,359,154,451,356,362,302,170,362,455,156,359]},{"n":"Barras 56","c":"#2F6FE0","len":5590,"m":[68.6,122],"w":[75.0,130],"d":[426,348,152,349,427,316,309,348,135,417,340,343,285,148,345,405,147,351]},{"n":"Barras 52 (azules)","c":"#2F6FE0","len":5187,"m":[66.5,114],"w":[72.5,123],"d":[395,323,141,323,396,293,287,323,125,387,316,318,265,137,320,376,136,326]},{"n":"Barras 49 (rojas)","c":"#E0352B","len":4894,"m":[65.7,112],"w":[70.7,117],"d":[388,285,123,294,389,273,275,305,119,378,308,293,255,126,304,376,109,294]}]},{"id":"mor1","name":"Real Club La Moraleja · Campo 1","short":"Moraleja 1","town":"Alcobendas","reg":"Madrid","holes":18,"par":[4,3,4,3,4,5,4,4,5,4,4,5,4,4,3,4,3,5],"si":[7,3,13,11,17,15,5,1,9,2,14,6,4,18,16,12,10,8],"src":"https://www.golfpass.com/travel-advisor/courses/23323-la-moraleja-golf-club-1st-course","tees":[{"n":"Blancas","c":"#F4F4F0","len":5867,"m":[71.0,140],"d":[340,181,280,188,340,449,411,368,472,352,348,503,307,284,159,284,158,443]},{"n":"Amarillas","c":"#F2C200","len":5689,"m":[71.4,134],"d":[338,170,276,174,337,444,402,359,458,329,310,499,289,281,157,279,143,442]},{"n":"Azules","c":"#2F6FE0","len":5270,"w":[72.9,137],"d":[283,150,237,162,301,433,375,340,417,304,316,491,261,271,124,279,135,392]},{"n":"Rojas","c":"#E0352B","len":4969,"w":[71.4,134],"d":[269,141,234,155,298,405,363,322,393,266,289,445,250,261,117,260,114,386]}]},{"id":"mor2","name":"Real Club La Moraleja · Campo 2","short":"Moraleja 2","town":"Alcobendas","reg":"Madrid","holes":18,"par":[4,4,4,3,4,5,3,5,4,4,5,4,3,4,4,5,3,4],"si":[4,12,14,5,6,3,10,9,16,17,11,8,18,13,2,7,15,1],"src":"https://www.golfpass.com/travel-advisor/courses/23324-la-moraleja-golf-club-2nd-course","siW":[5,9,15,13,3,1,7,11,17,18,10,12,16,8,6,4,14,2],"tees":[{"n":"Blancas","c":"#F4F4F0","len":6390,"m":[72.0,139],"d":[379,364,280,155,384,536,186,495,381,321,525,401,144,381,407,483,175,394]},{"n":"Amarillas","c":"#F2C200","len":5909,"m":[71.1,136],"d":[346,350,274,118,345,497,172,476,351,303,506,370,136,342,383,441,161,339]},{"n":"Azules","c":"#2F6FE0","len":5450,"w":[74.3,131],"d":[290,340,238,115,291,470,148,452,324,292,474,328,108,329,349,428,142,332]},{"n":"Rojas","c":"#E0352B","len":5149,"w":[72.3,129],"d":[289,314,234,109,288,466,121,408,308,285,469,302,103,299,317,403,136,299]}]},{"id":"mor3","name":"Real Club La Moraleja · Campo 3","short":"Moraleja 3","town":"Algete","reg":"Madrid","holes":18,"par":[4,5,4,3,5,4,3,4,4,4,3,4,5,4,5,3,4,4],"si":[11,6,1,17,18,12,13,14,7,16,5,4,9,2,8,15,10,3],"src":"https://www.golfpass.com/travel-advisor/courses/35198-la-moraleja-golf-club-3rd-course","siW":[7,6,2,12,8,18,17,10,3,13,16,4,5,1,11,15,14,9],"note":"GolfPass da 70,6 de valor para blancas y amarillas: compruébalo en la tarjeta.","tees":[{"n":"Negras","c":"#1B1B1B","len":6830,"m":[75.6,133],"d":[384,527,441,186,508,422,175,322,408,370,178,450,558,449,488,215,343,406]},{"n":"Blancas","c":"#F4F4F0","len":6440,"m":[70.6,129],"d":[370,512,394,164,450,418,168,296,402,330,158,427,545,415,481,201,315,394]},{"n":"Amarillas","c":"#F2C200","len":5932,"m":[70.6,129],"d":[326,470,386,147,436,353,143,279,363,315,123,393,503,401,474,188,277,355]},{"n":"Azules","c":"#2F6FE0","len":5241,"w":[72.6,132],"d":[309,421,344,127,400,287,121,249,313,261,107,384,448,373,398,145,250,304]},{"n":"Rojas","c":"#E0352B","len":4635,"w":[68.4,126],"d":[269,391,304,106,366,252,101,230,288,232,69,328,418,321,363,129,206,262]}]},{"id":"mor4","name":"Real Club La Moraleja · Campo 4","short":"Moraleja 4","town":"Algete","reg":"Madrid","holes":18,"par":[4,4,5,4,5,4,3,4,3,5,5,4,4,3,4,3,4,4],"si":[7,13,10,15,5,4,12,1,17,11,14,3,6,9,16,18,8,2],"src":"https://www.golfpass.com/travel-advisor/courses/35199-la-moraleja-golf-club-4th-course","siW":[6,12,5,14,1,2,13,3,17,8,10,9,7,15,16,18,4,11],"tees":[{"n":"Negras","c":"#1B1B1B","len":6487,"m":[74.1,136],"d":[394,289,467,347,566,356,111,436,196,523,526,407,428,228,301,166,360,386]},{"n":"Blancas","c":"#F4F4F0","len":6141,"m":[72.1,130],"d":[379,282,448,322,524,356,111,413,175,497,474,401,423,194,295,124,350,373]},{"n":"Amarillas","c":"#F2C200","len":5603,"m":[69.3,130],"d":[343,248,432,280,491,325,100,386,148,470,450,367,374,158,256,106,325,344]},{"n":"Azules","c":"#2F6FE0","len":4982,"w":[71.1,130],"d":[319,229,400,253,439,281,78,322,131,430,403,331,326,111,230,89,305,305]},{"n":"Rojas","c":"#E0352B","len":4507,"w":[68.4,121],"d":[275,204,366,222,420,266,62,305,119,401,386,258,307,106,208,74,290,238]}]},{"id":"morpp","name":"Real Club La Moraleja · Pitch & Putt","short":"Moraleja P&P","town":"Alcobendas","reg":"Madrid","holes":9,"par":[3,3,3,3,3,3,3,3,3],"si":[6,3,8,2,5,9,7,4,1],"src":"https://www.golfpass.com/travel-advisor/courses/36011-la-moraleja-golf-club-pitch-putt","tees":[{"n":"Verdes","c":"#1FA05A","len":761,"m":[25.7,68],"w":[26.4,73],"d":[79,85,78,116,83,58,66,83,113]}]},{"id":"gpark","name":"Golf Park Madrid (La Moraleja)","short":"Golf Park","town":"Alcobendas","reg":"Madrid","holes":9,"par":[3,3,3,3,3,3,3,3,3],"si":[5,4,6,7,1,2,8,3,9],"src":"https://www.golfpass.com/travel-advisor/courses/36027-golf-park-madrid","note":"Pitch & putt de 9 hoyos.","tees":[{"n":"Amarillas","c":"#F2C200","len":769,"m":[25.5,70],"d":[85,81,78,89,99,76,87,88,86]},{"n":"Rojas","c":"#E0352B","len":769,"w":[26.5,70],"d":[85,81,78,89,99,76,87,88,86]}]},{"id":"race","name":"Club de Golf del RACE (Jarama)","short":"RACE","town":"San Sebastián de los Reyes","reg":"Madrid","holes":18,"par":[5,4,3,4,5,4,4,4,3,4,5,4,3,5,4,4,3,4],"si":[12,14,6,8,4,2,16,18,10,9,17,3,11,15,7,1,13,5],"src":"https://www.golfpass.com/travel-advisor/courses/23383-jarama-r-a-c-e-club","note":"GolfPass no marca el sexo de azules y rojas; por sus valores parecen de señoras.","tees":[{"n":"Blancas","c":"#F4F4F0","len":6497,"m":[72.9,116],"d":[507,399,196,386,502,381,357,333,159,374,484,384,221,470,415,368,183,377]},{"n":"Amarillas","c":"#F2C200","len":6070,"m":[71.0,115],"d":[455,373,181,365,485,347,329,305,146,350,473,368,202,432,384,339,167,368]},{"n":"Azules","c":"#2F6FE0","len":5235,"w":[72.2,121],"d":[419,284,163,289,422,319,275,269,137,283,409,313,160,385,350,289,151,316]},{"n":"Rojas","c":"#E0352B","len":5109,"w":[71.4,119],"d":[413,277,159,286,418,312,267,268,128,274,404,311,152,381,345,283,146,285]}]},{"id":"oli18","name":"Olivar de la Hinojosa · 18 hoyos","short":"Olivar 18","town":"Madrid","reg":"Madrid","holes":18,"par":[4,5,4,4,3,4,5,3,4,4,3,5,3,4,4,4,5,4],"si":[5,9,13,15,17,3,7,11,1,4,14,6,18,2,16,8,12,10],"src":"https://www.golfpass.com/travel-advisor/courses/23352-olivar-de-la-hinojosa-golf-club-18-hole-course","tees":[{"n":"Negras","c":"#1B1B1B","len":6084,"m":[71.8,134],"w":[78.8,143],"d":[387,467,306,306,161,378,483,177,354,410,191,476,163,394,291,382,483,275]},{"n":"Amarillas","c":"#F2C200","len":5963,"m":[71.2,133],"w":[78.2,141],"d":[382,459,301,302,146,373,477,172,349,403,182,471,150,387,286,376,476,270]},{"n":"Azules","c":"#2F6FE0","len":5327,"m":[67.8,125],"w":[72.1,121],"d":[347,392,270,281,141,347,424,132,322,358,156,417,136,338,251,340,418,257]},{"n":"Rojas","c":"#E0352B","len":5122,"m":[66.7,123],"w":[70.8,118],"d":[337,375,262,271,124,337,414,128,314,337,144,394,129,321,246,332,407,250]}]},{"id":"oli9","name":"Olivar de la Hinojosa · 9 hoyos","short":"Olivar 9","town":"Madrid","reg":"Madrid","holes":9,"par":[3,3,4,3,3,3,3,3,4],"si":[4,1,2,3,5,6,7,8,9],"src":"https://www.golfpass.com/travel-advisor/courses/23353-olivar-de-la-hinojosa-golf-club-9-hole-course","tees":[{"n":"Amarillas","c":"#F2C200","len":1378,"m":[28.5,89],"d":[105,145,245,117,115,147,138,118,248]},{"n":"Rojas","c":"#E0352B","len":1225,"w":[27.7,81],"d":[92,126,230,91,100,129,123,103,230]},{"n":"Verdes (par 27)","c":"#1FA05A","len":939,"m":[25.6,62],"w":[26.5,72],"p":[3,3,3,3,3,3,3,3,3]}]},{"id":"retam","name":"Club de Golf Retamares","short":"Retamares","town":"Valdeolmos","reg":"Madrid","holes":18,"par":[4,3,5,4,4,4,5,4,3,5,4,3,5,4,4,4,3,4],"si":[1,17,3,7,9,11,15,13,5,10,6,8,12,4,16,2,14,18],"src":"https://www.golfpass.com/courses/23243-retamares-casino-golf-club/","note":"Las fuentes no coinciden (otra versión de GolfPass da 71,0/110 en blancas). Compruébalo en la tarjeta.","tees":[{"n":"Blancas","c":"#F4F4F0","len":6281,"m":[72.2,130],"d":[386,141,489,382,282,322,512,321,209,496,327,157,487,419,379,393,150,431]},{"n":"Amarillas","c":"#F2C200","len":6044,"m":[71.0,126],"d":[378,132,482,369,276,313,506,310,200,486,306,144,466,369,361,382,145,414]},{"n":"Azules","c":"#2F6FE0","len":5418,"w":[73.5,131],"d":[357,121,418,304,264,295,470,270,163,451,282,119,432,329,323,333,135,351]},{"n":"Rojas","c":"#E0352B","len":5109,"w":[71.4,128],"d":[323,110,414,295,255,287,455,265,153,429,258,106,394,317,318,304,112,319]}]},{"id":"herr","name":"Real Club de Golf La Herrería","short":"La Herrería","town":"San Lorenzo de El Escorial","reg":"Madrid","holes":18,"par":[4,4,3,4,4,4,3,5,4,3,5,4,3,4,5,4,4,4],"si":[3,1,17,7,5,11,13,9,15,8,2,10,14,6,16,18,12,4],"src":"https://www.golfpass.com/travel-advisor/courses/23473-la-herreria-golf-club","note":"Otras webs dan otros colores a estas barras: elige por longitud y comprueba la tarjeta.","tees":[{"n":"Blancas","c":"#F4F4F0","len":6122,"m":[72.0,142],"w":[78.7,145],"d":[413,427,184,347,359,306,142,512,353,172,497,381,178,323,476,329,362,362]},{"n":"Amarillas","c":"#F2C200","len":5957,"m":[71.2,142],"w":[77.7,143],"d":[402,415,179,337,349,298,138,498,344,167,484,370,173,314,464,320,352,352]},{"n":"Azules","c":"#2F6FE0","len":5222,"m":[67.2,127],"w":[72.7,135]},{"n":"Rojas","c":"#E0352B","len":4940,"m":[66.1,120],"w":[71.1,130]},{"n":"Naranjas","c":"#F57C1F","len":3411,"m":[58.6,96],"w":[61.9,100],"d":[224,220,95,201,208,175,42,312,195,78,281,190,99,182,293,193,214,211]}]},{"id":"pdh_ar","name":"Real Club Puerta de Hierro · Arriba","short":"Puerta de Hierro (Arriba)","town":"Madrid","reg":"Madrid","holes":18,"par":[3,5,4,4,5,3,4,4,4,4,3,4,4,4,5,4,3,5],"si":[9,3,5,7,13,15,11,17,1,6,10,2,8,4,18,12,16,14],"src":"https://www.golfpass.com/travel-advisor/courses/23552-real-club-puerta-de-hierro-upper-course","tees":[{"n":"Blancas","c":"#F4F4F0","len":6402,"m":[73.8,138],"d":[177,522,388,377,486,164,353,276,399,387,200,422,283,432,460,360,161,554]},{"n":"Amarillas","c":"#F2C200","len":5956,"m":[71.4,135],"d":[172,481,373,338,461,137,306,261,370,367,184,405,260,409,444,309,161,517]},{"n":"Doradas","c":"#C9A227","len":5578,"m":[69.2,127],"w":[74.8,134],"d":[161,450,349,317,432,128,286,245,347,344,172,380,244,383,416,289,151,484]},{"n":"Azules","c":"#2F6FE0","len":5341,"m":[68.1,121],"w":[72.9,128],"d":[163,412,327,342,435,136,302,242,336,317,139,331,226,368,412,309,131,412]},{"n":"Rojas","c":"#E0352B","len":5008,"m":[66.4,116],"w":[71.6,127],"d":[153,387,306,321,408,127,283,227,315,297,130,310,212,345,387,290,123,387]},{"n":"Rosas","c":"#F07AB0","len":4565,"m":[64.1,113],"w":[69.0,121],"d":[140,352,279,293,372,116,258,207,287,271,119,283,193,315,352,264,112,352]}]},{"id":"pdh_ab","name":"Real Club Puerta de Hierro · Abajo","short":"Puerta de Hierro (Abajo)","town":"Madrid","reg":"Madrid","holes":18,"par":[3,4,4,4,5,3,4,5,4,4,5,4,3,5,4,4,3,4],"si":[11,5,7,13,1,15,9,17,3,2,16,6,12,8,18,14,10,4],"src":"https://www.golfpass.com/travel-advisor/courses/23551-real-club-puerta-de-hierro-lower-course","siW":[11,5,7,13,3,17,9,15,1,2,14,4,12,10,18,16,8,6],"tees":[{"n":"Blancas","c":"#F4F4F0","len":6504,"m":[74.5,136],"d":[205,383,333,357,524,161,398,500,424,428,495,406,176,487,321,322,211,373]},{"n":"Amarillas","c":"#F2C200","len":6003,"m":[71.5,136],"d":[173,365,307,341,477,133,350,473,378,401,458,373,166,450,310,298,189,360]},{"n":"Doradas","c":"#C9A227","len":5623,"m":[69.8,130],"w":[75.3,139],"d":[173,325,304,325,425,119,338,445,361,374,457,341,148,441,277,289,170,311]},{"n":"Azules","c":"#2F6FE0","len":5528,"m":[69.3,126],"w":[74.8,138],"d":[170,320,299,319,418,117,332,437,355,367,449,335,145,434,273,285,167,305]},{"n":"Rojas","c":"#E0352B","len":5104,"m":[67.3,122],"w":[72.2,131],"d":[157,308,282,310,380,108,287,425,311,341,395,297,129,397,270,256,162,289]},{"n":"Rosas","c":"#F07AB0","len":4865,"m":[65.9,121],"w":[70.9,129],"d":[150,293,269,296,362,103,273,405,297,325,377,283,123,378,258,244,155,276]}]},{"id":"rozas","name":"Real Club de Golf Las Rozas","short":"Las Rozas","town":"Las Matas","reg":"Madrid","holes":18,"par":[4,5,3,4,3,4,3,4,4,5,3,4,5,4,4,3,4,4],"si":[15,5,9,1,3,17,13,11,7,12,16,2,14,10,8,18,4,6],"src":"https://www.golfpass.com/travel-advisor/courses/23525-real-club-de-golf-las-rozas-de-madrid","note":"GolfPass no da valoración de señoras para este campo.","tees":[{"n":"Blancas","c":"#F4F4F0","len":5619,"m":[70.4,129],"d":[368,428,198,412,211,262,195,382,354,436,170,403,450,295,312,141,320,282]},{"n":"Amarillas","c":"#F2C200","len":5408,"m":[69.2,127],"d":[336,422,191,362,199,262,182,365,354,420,163,394,442,287,305,133,314,277]},{"n":"Azules","c":"#2F6FE0","len":5010,"m":[66.9,123],"d":[310,397,171,344,164,248,167,346,339,396,155,360,375,263,295,121,301,258]},{"n":"Rojas","c":"#E0352B","len":4770,"m":[65.5,126],"d":[279,378,160,338,158,238,164,328,332,368,126,351,366,245,291,115,290,243]}]},{"id":"vdm_n","name":"Club de Campo Villa de Madrid · Negro","short":"Club de Campo Negro","town":"Madrid","reg":"Madrid","holes":18,"par":[4,4,3,5,4,4,5,4,3,4,3,4,4,5,4,4,3,4],"si":[7,5,15,3,11,1,13,9,17,8,10,2,6,4,14,16,18,12],"src":"https://www.golfpass.com/travel-advisor/courses/23251-villa-de-madrid-country-club-black-course","note":"Por sus valores, azules y rojas parecen de señoras (GolfPass no lo indica).","tees":[{"n":"Blancas","c":"#F4F4F0","len":6412,"m":[74.6,144],"d":[430,407,190,477,374,407,497,354,163,378,193,409,430,484,345,388,154,333]},{"n":"Amarillas","c":"#F2C200","len":6053,"m":[72.9,140],"d":[418,387,181,447,366,388,486,323,152,361,181,391,398,472,321,327,140,312]},{"n":"Azules","c":"#2F6FE0","len":5440,"w":[75.4,140],"d":[378,358,166,419,291,333,433,279,130,323,169,327,361,456,285,305,129,298]},{"n":"Rojas","c":"#E0352B","len":5119,"w":[73.5,134],"d":[355,318,139,386,279,324,419,263,126,302,157,323,325,429,279,283,119,292]}]},{"id":"vdm_a","name":"Club de Campo Villa de Madrid · Amarillo","short":"Club de Campo Amarillo","town":"Madrid","reg":"Madrid","holes":18,"par":[4,3,4,5,4,3,4,4,4,3,4,4,4,5,4,3,5,4],"si":[4,12,2,14,6,16,18,8,10,13,7,15,9,5,1,17,11,3],"src":"https://www.golfpass.com/travel-advisor/courses/23252-villa-de-madrid-country-club-gold-course","note":"Por sus valores, azules y rojas parecen de señoras (GolfPass no lo indica).","tees":[{"n":"Blancas","c":"#F4F4F0","len":6015,"m":[72.5,136],"d":[440,185,414,456,352,153,300,373,326,154,380,318,310,540,392,137,443,341]},{"n":"Amarillas","c":"#F2C200","len":5670,"m":[70.7,133],"d":[389,166,400,448,332,137,286,368,313,152,354,300,296,481,359,132,433,323]},{"n":"Azules","c":"#2F6FE0","len":5091,"w":[73.0,132],"d":[340,157,360,385,294,115,259,316,301,135,335,259,265,448,312,121,394,294]},{"n":"Rojas","c":"#E0352B","len":4831,"w":[71.3,132],"d":[326,145,336,373,282,117,242,321,298,135,307,258,251,414,294,93,382,258]}]},{"id":"lomas","name":"Lomas-Bosque Golf","short":"Lomas-Bosque","town":"Villaviciosa de Odón","reg":"Madrid","holes":18,"par":[5,3,4,4,3,4,5,4,4,4,4,4,4,3,4,5,3,5],"si":[1,5,3,7,13,9,17,15,11,2,18,6,8,12,4,10,14,16],"src":"https://www.golfpass.com/travel-advisor/courses/23340-lomas-bosque-golf-club","note":"El hoyo 2 sale muy corto en la tarjeta de GolfPass: compruébalo.","tees":[{"n":"Negras (61)","c":"#1B1B1B","len":6141,"m":[73.5,143],"d":[479,82,394,370,157,344,454,286,300,393,390,394,382,164,401,526,169,456]},{"n":"Blancas (58)","c":"#F4F4F0","len":5869,"m":[72.0,143],"d":[468,76,394,350,145,306,445,281,289,372,371,364,364,157,384,514,153,436]},{"n":"Amarillas (52)","c":"#F2C200","len":5288,"m":[69.2,133],"w":[74.4,142],"d":[447,77,343,324,125,288,406,265,265,355,335,325,329,120,331,443,116,393]},{"n":"Azules (50)","c":"#2F6FE0","len":5029,"m":[68.1,129],"w":[72.5,140],"d":[395,70,338,318,112,279,397,259,261,350,303,308,314,94,327,410,109,384]},{"n":"Rojas (45)","c":"#E0352B","len":4547,"m":[65.1,128],"w":[70.2,129]}]},{"id":"encin","name":"El Encín Golf · Sur","short":"El Encín","town":"Alcalá de Henares","reg":"Madrid","holes":18,"par":[5,4,3,5,3,4,4,4,4,4,5,3,4,4,4,3,4,5],"si":[15,5,11,9,7,13,3,17,1,18,8,16,10,4,14,12,2,6],"src":"https://www.golfpass.com/travel-advisor/courses/30640-el-encin-golf-south-course","tees":[{"n":"Negras","c":"#1B1B1B","len":7004,"m":[77.8,141],"d":[480,418,187,533,219,397,439,376,434,392,496,207,382,449,419,170,433,573]},{"n":"Blancas","c":"#F4F4F0","len":6525,"m":[75.1,137],"w":[82.0,141],"d":[458,358,171,507,193,385,394,355,419,369,468,173,374,399,385,161,403,555]},{"n":"Amarillas","c":"#F2C200","len":5936,"m":[71.7,131],"w":[78.2,131],"d":[408,347,154,471,149,351,353,316,373,346,438,147,341,380,351,149,375,485]},{"n":"Verdes / azules","c":"#1FA05A","len":5270,"m":[68.3,124],"w":[74.0,130],"d":[404,317,123,421,120,305,331,294,335,310,377,122,307,332,307,108,311,446]},{"n":"Rojas","c":"#E0352B","len":4953,"m":[66.6,120],"w":[71.7,125],"d":[395,287,124,410,110,298,307,285,290,272,372,122,282,279,298,100,306,417]}]},{"id":"sant","name":"Golf Santander","short":"Golf Santander","town":"Boadilla del Monte","reg":"Madrid","holes":18,"par":[5,4,3,4,5,4,3,4,4,4,3,5,4,4,4,4,3,5],"si":[8,4,18,2,6,16,12,10,14,3,17,1,15,7,5,11,9,13],"src":"https://www.golfpass.com/travel-advisor/courses/23451-santander-golf-club","note":"Por su valor, las rojas parecen de señoras (GolfPass no lo indica).","tees":[{"n":"Negras","c":"#1B1B1B","len":6856,"m":[77.3,152],"d":[513,434,220,420,508,305,178,403,350,427,187,612,374,425,391,389,176,544]},{"n":"Blancas","c":"#F4F4F0","len":6578,"m":[75.6,142],"d":[500,424,200,408,490,300,161,383,343,420,167,597,368,394,372,372,157,522]},{"n":"Azules","c":"#2F6FE0","len":6188,"m":[73.1,141],"d":[474,399,180,392,471,289,145,361,329,391,157,552,354,369,340,354,134,495]},{"n":"Amarillas","c":"#F2C200","len":5807,"m":[71.3,140],"d":[465,365,155,366,449,281,126,353,301,358,142,512,331,337,328,342,126,470]},{"n":"Verdes","c":"#1FA05A","len":5365,"m":[69.1,133],"d":[437,330,129,347,426,268,95,320,254,325,133,487,311,330,305,325,97,446]},{"n":"Rojas","c":"#E0352B","len":4888,"w":[71.4,136],"d":[372,322,123,258,407,247,80,291,246,303,118,466,281,306,293,291,79,406]}]},{"id":"dehesa","name":"La Dehesa Golf","short":"La Dehesa","town":"Villanueva de la Cañada","reg":"Madrid","holes":18,"par":[4,5,3,4,4,5,4,4,3,4,5,4,3,4,5,4,3,4],"si":[1,11,7,15,9,5,17,3,13,14,16,4,6,8,10,18,2,12],"src":"https://www.golfpass.com/travel-advisor/courses/23315-la-dehesa-golf-club","tees":[{"n":"Blancas","c":"#F4F4F0","len":6419,"m":[73.4,143],"d":[414,489,176,344,402,517,349,417,166,332,496,420,178,359,516,271,211,362]},{"n":"Amarillas","c":"#F2C200","len":6022,"m":[71.3,140],"d":[397,468,164,332,338,498,333,400,151,321,477,344,164,345,493,258,191,348]},{"n":"Azules","c":"#2F6FE0","len":5649,"m":[69.2,129],"w":[75.0,141],"d":[371,459,149,319,320,460,318,375,135,304,449,314,130,330,475,238,177,326]},{"n":"Rojas","c":"#E0352B","len":5122,"m":[66.8,117],"w":[72.0,132],"d":[345,448,125,274,309,451,310,367,125,285,408,307,118,254,378,223,155,240]}]},{"id":"robl","name":"El Robledal Golf","short":"El Robledal","town":"Villalbilla","reg":"Madrid","holes":18,"par":[4,4,4,4,3,3,4,5,3,4,4,4,4,5,4,4,3,5],"si":[13,15,5,11,9,7,1,3,17,6,14,8,12,4,10,16,18,2],"src":"https://www.golfpass.com/travel-advisor/courses/23398-el-robledal-golf-club","note":"Longitud total deducida de la tarjeta (en yardas en la fuente).","tees":[{"n":"Amarillas","c":"#F2C200","len":5400,"m":[68.8,129],"w":[73.7,138],"d":[280,258,397,286,158,167,370,510,126,357,236,313,321,488,290,253,143,447]},{"n":"Rojas","c":"#E0352B","len":4693,"m":[65.2,119],"w":[69.9,130],"d":[229,229,369,286,136,140,320,450,113,264,197,279,283,394,259,236,108,401]}]},{"id":"aranj","name":"Golf Aranjuez","short":"Aranjuez","town":"Aranjuez","reg":"Madrid","holes":9,"par":[4,4,3,4,4,4,3,4,4],"si":[4,10,12,2,6,16,14,18,8],"src":"https://www.golfpass.com/travel-advisor/courses/23257-aranjuez-golf-club","note":"La fuente da la valoración para 18 hoyos (dos vueltas, par 68); aquí está dividida entre dos para 9.","tees":[{"n":"Amarillas","c":"#F2C200","len":2397,"m":[32.8,114],"d":[357,221,83,398,301,291,126,298,322]},{"n":"Rojas","c":"#E0352B","len":2157,"w":[33.6,115],"d":[310,214,83,347,243,280,126,259,293]}]},{"id":"negral","name":"Palacio del Negralejo · Largo","short":"Negralejo","town":"Rivas-Vaciamadrid","reg":"Madrid","holes":9,"par":[3,3,3,3,3,3,4,3,4],"si":[11,7,1,2,3,9,17,12,13],"src":"https://www.golfpass.com/travel-advisor/courses/23528-palacio-del-negralejo-largo","tees":[{"n":"Amarillas","c":"#F2C200","len":1315,"m":[27.8,76],"d":[80,85,134,165,143,104,298,71,235]},{"n":"Rojas","c":"#E0352B","len":1136,"w":[28.0,83],"d":[79,72,95,126,125,86,247,71,235]}]},{"id":"paddock","name":"Green Paddock","short":"Green Paddock","town":"Torrelodones","reg":"Madrid","holes":9,"par":[3,3,3,3,3,3,3,3,3],"si":[8,7,3,5,4,9,2,6,1],"src":"https://www.golfpass.com/travel-advisor/courses/35988-green-paddock","note":"Pitch & putt.","tees":[{"n":"Verdes","c":"#1FA05A","len":612,"m":[25.0,67],"w":[25.7,70],"d":[61,63,80,54,68,63,72,80,71]}]},{"id":"forus","name":"Forus Golf Las Rejas","short":"Las Rejas","town":"Majadahonda","reg":"Madrid","holes":9,"par":[4,4,3,5,4,4,3,5,3],"si":[7,3,13,5,11,9,15,1,17],"src":"https://www.golfpass.com/travel-advisor/courses/23492-forus-golf-las-rejas","note":"Sin valoración publicada en GolfPass: mete valor y slope de la tarjeta.","tees":[{"n":"Blancas","c":"#F4F4F0","len":2733,"d":[367,357,151,488,314,328,128,500,100]},{"n":"Amarillas","c":"#F2C200","len":2626,"d":[353,343,140,479,303,314,120,480,94]},{"n":"Rojas","c":"#E0352B","len":2229,"d":[290,312,113,403,257,290,87,390,87]}]},{"id":"castro","name":"Castropol Golf","short":"Castropol","town":"Castropol","reg":"Asturias","holes":9,"par":[3,4,4,4,4,5,5,4,3],"si":[2,3,5,4,6,7,1,8,9],"src":"https://www.golfpass.com/courses/35987-castropol-golf/scorecard-and-layout","note":"Sin valoración publicada en GolfPass: mete valor y slope de la tarjeta.","tees":[{"n":"Amarillas","c":"#F2C200","len":2884,"d":[163,254,290,314,355,430,542,321,215]},{"n":"Rojas","c":"#E0352B","len":2372,"d":[132,244,233,251,295,377,413,263,164]}]}];
+
+// ---------- campos (base de datos) ----------
+// COURSES viene de build/data/courses.py (GolfPass, 18-11-2026). Barras: m = [valor, slope] caballeros, w = damas,
+// p = pares propios de la barra (si cambian), d = metros por hoyo (aprox.).
+const YARD = 1.0936;
+const fmtD = m => m == null ? "—" : P().units === "yd" ? `${Math.round(m * YARD)} yd` : `${Math.round(m)} m`;
+const allCourses = () => (P().myCourses || []).concat(COURSES);
+const courseOf = id => id ? allCourses().find(c => c.id === id) || null : null;
+const teePars = (c, ti) => { const t = c.tees[ti]; return (t && t.p) || c.par; };
+const siFor = (c, g) => g === "W" && c.siW ? c.siW : c.si;
+const sexOf = () => P().sex === "W" ? "W" : "M";
+const SEXN = { M: "caballeros", W: "damas" };
+function rateOf(c, ti, g) {
+  const t = c.tees[ti] || c.tees[0]; const par = teePars(c, ti).reduce((a, b) => a + b, 0);
+  const own = g === "W" ? t.w : t.m, other = g === "W" ? t.m : t.w;
+  if (own) return { cr: own[0], slope: own[1], par, src: "ok" };
+  if (other) return { cr: other[0], slope: other[1], par, src: "other" };
+  return { cr: par, slope: 113, par, src: "none" };
+}
+function defaultTee(c, g = sexOf()) {
+  const want = g === "W" ? /roj/i : /amar|59/i; const rated = t => g === "W" ? t.w : t.m;
+  let i = c.tees.findIndex(t => want.test(t.n) && rated(t)); if (i < 0) i = c.tees.findIndex(rated); return i < 0 ? 0 : i;
+}
+// hoyos que se juegan: 18 de 18, ida o vuelta de un 18, o dos vueltas a un 9
+function courseHoles(c, ti, g, holes, nine) {
+  const pars = teePars(c, ti), si = siFor(c, g), d = (c.tees[ti] || {}).d || [];
+  let idx; const R = (a, b) => Array.from({ length: b - a }, (_, k) => a + k);
+  if (c.holes === holes) idx = R(0, holes); else if (c.holes === 18) idx = nine === "in" ? R(9, 18) : R(0, 9); else idx = R(0, 9).concat(R(0, 9));
+  const dbl = c.holes === 9 && holes === 18;
+  return idx.map((k, j) => ({ p: pars[k], si: dbl ? si[k] * 2 - (j < 9 ? 1 : 0) : si[k], d: d[k] ?? null }));
+}
+function rateFor(r, g, ti) {
+  const c = courseOf(r.cid); if (!c) return { cr: +r.cr, slope: +r.slope, par: +r.par, src: "manual" };
+  const b = rateOf(c, ti ?? r.ti ?? 0, g); const par = courseHoles(c, ti ?? r.ti ?? 0, g, r.holes, r.nine).reduce((a, x) => a + x.p, 0);
+  return { cr: r1(b.cr * r.holes / c.holes), slope: b.slope, par, src: b.src };
+}
+function applyCourse(r, cid, ti, keepHoles) {
+  const c = courseOf(cid); if (!c) return;
+  ti = clamp(ti ?? defaultTee(c), 0, c.tees.length - 1);
+  if (!keepHoles || ![9, 18].includes(r.holes) || (c.holes === 9 && r.holes !== 9 && r.holes !== 18)) r.holes = c.holes;
+  if (c.holes === 18 && r.holes === 9 && !r.nine) r.nine = "out";
+  Object.assign(r, { cid, ti, course: c.name, tees: c.tees[ti].n, h: [] });
+  const rt = rateFor(r, sexOf(), ti); Object.assign(r, { par: rt.par, cr: rt.cr, slope: rt.slope, rsrc: rt.src });
+  (r.pl || []).forEach(p => { if (p.ti == null || p.ti >= c.tees.length) p.ti = defaultTee(c, p.g); p.s = []; });
+}
+const courseLine = c => `${esc(c.town)} · ${c.holes} hoyos · par ${c.par.reduce((a, b) => a + b, 0)}`;
+
+// ---------- partida (varios jugadores) ----------
+const FMT = { stroke: "Medal", stableford: "Stableford", match: "Match play" };
+const initials = n => { const w = String(n || "").trim().split(/\s+/).filter(Boolean); return w.length ? (w[0][0] + (w[1] ? w[1][0] : "")).toUpperCase() : "TÚ"; };
+function strokesAlloc(si, ph) {
+  const n = si.length; const out = new Array(n).fill(0); if (!ph) return out;
+  const order = si.map((v, i) => [v || 100 + i, i]).sort((a, b) => a[0] - b[0]).map(x => x[1]);
+  const g = Math.abs(ph), base = Math.floor(g / n), extra = g % n, sign = ph > 0 ? 1 : -1;
+  (ph > 0 ? order : order.slice().reverse()).forEach((idx, k) => { out[idx] = sign * (base + (k < extra ? 1 : 0)); });
+  return out;
+}
+function playersOf(r) {
+  const me = { id: "me", me: true, name: P().name || "Tú", hi: r.myHi ?? officialHcp(), g: sexOf(), ti: r.ti };
+  return [me].concat((r.pl || []).map(p => Object.assign({}, p)));
+}
+function holesOf(r, p) {
+  const c = courseOf(r.cid);
+  if (p.me || !c) return r.h.map(x => ({ p: x.p, si: x.si, d: x.d }));
+  return courseHoles(c, p.ti ?? r.ti ?? 0, p.g, r.holes, r.nine);
+}
+function gameCalc(r) {
+  const fmt = r.fmt || "stroke", net = fmt === "match" ? true : r.net !== false, allow = fmt === "match" ? 100 : (r.allow ?? 95);
+  const n = r.h.length;
+  const ps = playersOf(r).map(p => {
+    const rt = p.me ? { cr: +r.cr, slope: +r.slope, par: +r.par, src: r.rsrc || "manual" } : rateFor(r, p.g, p.ti);
+    const H = holesOf(r, p); const hi = parseFloat(p.hi); const hiOk = isNaN(hi) ? 54 : hi;
+    const ch = (n === 9 ? hiOk / 2 : hiOk) * rt.slope / 113 + (rt.cr - rt.par);
+    const ph = Math.round(ch * allow / 100);
+    const sc = p.me ? r.h.map(x => x.pu ? 0 : x.s ?? null) : H.map((_, i) => (p.s || [])[i] ?? null);
+    return Object.assign(p, { rt, H, ch, ph, sc });
+  });
+  // en match play el de menos hándicap juega con 0 y el otro recibe la diferencia
+  const low = fmt === "match" && ps.length === 2 ? Math.min(ps[0].ph, ps[1].ph) : 0;
+  ps.forEach(p => {
+    const give = net ? p.ph - low : 0; p.recv = strokesAlloc(p.H.map(x => x.si), give);
+    p.pts = p.sc.map((s, i) => s == null ? null : s === 0 ? 0 : Math.max(0, 2 + p.H[i].p + p.recv[i] - s));
+    p.thru = p.sc.filter(s => s != null).length; p.done = p.thru === n;
+    p.ptsTot = p.pts.reduce((a, x) => a + (x || 0), 0);
+    const played = p.sc.map((s, i) => [s, i]).filter(([s]) => s > 0);
+    p.pu = p.sc.some(s => s === 0);
+    p.gross = played.reduce((a, [s]) => a + s, 0);
+    p.toPar = played.reduce((a, [s, i]) => a + s - p.H[i].p, 0);
+    p.toParNet = played.reduce((a, [s, i]) => a + s - p.H[i].p - p.recv[i], 0);
+    p.netTot = p.done && !p.pu ? p.gross - (net ? p.ph : 0) : null;
+  });
+  let match = null;
+  if (fmt === "match" && ps.length === 2) {
+    const [a, b] = ps; let up = 0, played = 0, endAt = null; const res = [];
+    for (let i = 0; i < n; i++) {
+      const sa = a.sc[i], sb = b.sc[i]; if (sa == null || sb == null) { res.push(null); continue; }
+      played++; const na = sa === 0 ? 99 : sa - a.recv[i], nb = sb === 0 ? 99 : sb - b.recv[i];
+      const w = na < nb ? 1 : na > nb ? -1 : 0; res.push(w); up += w;
+      if (endAt == null && Math.abs(up) > n - (i + 1)) endAt = i + 1;
+    }
+    const left = n - played;
+    let txt; if (!played) txt = "Sin empezar"; else if (endAt != null) { const k = res.slice(0, endAt).reduce((x, y) => x + (y || 0), 0); const l = n - endAt; txt = `${k > 0 ? a.name : b.name} gana ${Math.abs(k)}${l ? "&" + l : " arriba"}`; }
+    else if (!left) txt = up === 0 ? "Empate" : `${up > 0 ? a.name : b.name} gana ${Math.abs(up)} arriba`;
+    else txt = up === 0 ? "All square" : `${up > 0 ? a.name : b.name} ${Math.abs(up)} arriba`;
+    match = { res, up, played, left, endAt, txt };
+  }
+  const key = p => fmt === "stableford" ? -p.ptsTot : net ? p.toParNet : p.toPar;
+  const order = ps.slice().sort((x, y) => key(x) - key(y) || y.thru - x.thru);
+  order.forEach((p, i) => { p.pos = i && key(p) === key(order[i - 1]) ? order[i - 1].pos : i + 1; });
+  return { fmt, net, allow, ps, order, match, n };
+}
+const relTxt = v => v === 0 ? "E" : (v > 0 ? "+" : "") + v;
+function mainScore(g, p) {
+  if (g.fmt === "stableford") return { big: `${p.ptsTot}`, unit: "pts" };
+  if (g.fmt === "match") return { big: `${p.gross || "—"}`, unit: "golpes" };
+  return { big: p.thru ? relTxt(g.net ? p.toParNet : p.toPar) : "—", unit: g.net ? "neto" : "bruto" };
+}
+function leaderboard(r, g, opts = {}) {
+  g = g || gameCalc(r); const title = `${FMT[g.fmt]}${g.fmt === "match" ? "" : g.net ? " neto" : " bruto"}${g.fmt !== "match" && g.net && g.allow !== 100 ? ` · ${g.allow} %` : ""}`;
+  return `<div class="card lb"><div class="row between"><div class="eyebrow">${title}</div>${g.match ? `<span class="tag" style="--c:var(--app)"><i></i>${esc(g.match.txt)}</span>` : `<span class="small muted">${opts.live ? "en directo" : "clasificación"}</span>`}</div>
+  ${g.order.map(p => { const m = mainScore(g, p); return `<div class="lb-row${p.me ? " me" : ""}"><span class="lb-pos num">${p.pos}</span><span class="av" style="--c:${p.me ? "var(--lime)" : PCOL[(r.pl || []).findIndex(x => x.id === p.id) % PCOL.length]}">${esc(initials(p.name))}</span>
+    <div class="lb-n"><b>${esc(p.name)}</b><span>HCP ${fmtH(p.hi)} · juega ${p.ph}${p.H && courseOf(r.cid) ? ` · ${esc((courseOf(r.cid).tees[p.ti ?? r.ti ?? 0] || {}).n || "")}` : ""}${p.thru && p.thru < g.n ? ` · ${p.thru} hoyos` : ""}</span></div>
+    <div class="lb-v num"><b>${m.big}</b><span>${m.unit}${g.fmt === "stroke" && p.done && !p.pu ? ` · ${p.gross}${g.net ? "/" + p.netTot : ""}` : ""}${g.fmt === "stableford" && p.thru ? ` · ${p.gross}${p.pu ? "*" : ""} golpes` : ""}</span></div></div>`; }).join("")}
+  ${g.order.some(p => p.rt.src === "other" || p.rt.src === "none") ? `<p class="tiny muted" style="margin:8px 2px 0">${g.order.filter(p => p.rt.src !== "ok" && p.rt.src !== "manual").map(p => `${esc(p.name)}: ${p.rt.src === "other" ? "su barra no tiene valoración de " + SEXN[p.g] + "; se usa la del otro sexo" : "sin valoración; se usa valor = par y slope 113"}`).join(" · ")}.</p>` : ""}
+  ${g.fmt === "stableford" && g.ps.some(p => p.pu) ? `<p class="tiny muted" style="margin:6px 2px 0">* Con hoyos recogidos (0 puntos).</p>` : ""}</div>`;
+}
+const PCOL = ["#3D7BFF", "#FF7A45", "#C13BE0", "#10B381"];
+function gameScorecard(r, g) {
+  g = g || gameCalc(r); const n = g.n; const parts = n > 9 ? [[0, 9], [9, 18]] : [[0, n]];
+  return parts.map(([a, b], k) => `<table class="mx sc gsc" style="margin-bottom:8px"><thead><tr><th>Hoyo</th>${Array.from({ length: b - a }, (_, i) => `<th>${a + i + 1}</th>`).join("")}<th>${parts.length > 1 ? (k ? "Vta" : "Ida") : "Tot"}</th></tr></thead><tbody>
+  <tr class="par"><td>Par</td>${r.h.slice(a, b).map(x => `<td class="num">${x.p}</td>`).join("")}<td class="num">${r.h.slice(a, b).reduce((s, x) => s + x.p, 0)}</td></tr>
+  ${g.ps.map(p => `<tr><td>${esc(initials(p.name))}</td>${p.sc.slice(a, b).map((s, j) => { const i = a + j; const d = s > 0 ? s - p.H[i].p - (g.net ? p.recv[i] : 0) : null; const cls = s === 0 ? "pu" : d == null ? "" : d <= -1 ? "bi" : d === 0 ? "pa" : d === 1 ? "bo" : "db"; return `<td class="num ${cls}">${s == null ? "" : s === 0 ? "–" : s}${g.net && p.recv[i] > 0 ? `<i class="dots">${"•".repeat(Math.min(p.recv[i], 3))}</i>` : ""}${g.fmt === "stableford" && p.pts[i] != null ? `<sub>${p.pts[i]}</sub>` : ""}</td>`; }).join("")}<td class="num"><b>${g.fmt === "stableford" ? p.pts.slice(a, b).reduce((s, x) => s + (x || 0), 0) : p.sc.slice(a, b).reduce((s, x) => s + (x > 0 ? x : 0), 0) || ""}</b></td></tr>`).join("")}
+  ${g.match ? `<tr><td>Match</td>${g.match.res.slice(a, b).map(w => `<td class="num">${w == null ? "" : w > 0 ? "▲" : w < 0 ? "▼" : "="}</td>`).join("")}<td></td></tr>` : ""}</tbody></table>`).join("") +
+  `<p class="tiny muted" style="margin:2px 2px 0">${g.net ? "Puntos (•) = golpes de ventaja en el hoyo. " : ""}${g.fmt === "stableford" ? "El número pequeño son los puntos Stableford. " : ""}${g.match ? "▲ hoyo para " + esc(g.ps[0].name) + ", ▼ para " + esc(g.ps[1].name) + "." : ""}</p>`;
+}
+
+// ---------- selector de campo ----------
+function recentCourseIds() { const seen = []; for (const r of roundsSorted().reverse()) if (r.cid && !seen.includes(r.cid) && courseOf(r.cid)) seen.push(r.cid); return seen.slice(0, 4); }
+const norm = s => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+function courseListHTML(q) {
+  const qq = norm(q).trim(); const match = c => !qq || norm(c.name + " " + c.short + " " + c.town + " " + c.reg).includes(qq);
+  const item = c => `<button class="list-item" data-a="cpick" data-id="${c.id}"><div class="sw cw" style="--g:${c.id.startsWith("u") ? "var(--g-putt)" : "var(--g-wedge)"}">${c.holes}</div><div style="min-width:0"><div class="t">${esc(c.name)}</div><div class="s">${courseLine(c)} · ${c.tees.length} barra${c.tees.length === 1 ? "" : "s"}</div></div><span class="chev">›</span></button>`;
+  const mine = (P().myCourses || []).filter(match); const rec = qq ? [] : recentCourseIds().map(courseOf).filter(c => c && !c.id.startsWith("u"));
+  const regs = {}; for (const c of COURSES.filter(match)) (regs[c.reg] = regs[c.reg] || []).push(c);
+  let h = "";
+  if (mine.length) h += `<div class="eyebrow cp-h">Tus campos</div>` + mine.map(item).join("");
+  if (rec.length) h += `<div class="eyebrow cp-h">Recientes</div>` + rec.map(item).join("");
+  for (const [k, v] of Object.entries(regs)) h += `<div class="eyebrow cp-h">${esc(k)}</div>` + v.sort((a, b) => a.name.localeCompare(b.name, "es")).map(item).join("");
+  if (!h) h = `<div class="empty" style="margin-top:10px">No está «${esc(q)}» en la lista. Créalo con la tarjeta delante: tarda dos minutos.</div>`;
+  return h;
+}
+function coursePicker() {
+  const virt = S.ui.rd && S.ui.rd.r.type === "virtual";
+  sheet(`<div class="eyebrow">Elegir campo</div><input id="cpQ" type="search" placeholder="Busca: Moraleja, Herrería, RACE…" data-cs="1" autocomplete="off" style="margin:10px 0 4px">
+  <div class="row" style="gap:8px;margin:8px 0 2px;flex-wrap:wrap">${virt ? `<button class="chip" data-a="cpick-virt">${ico("putt", 16)}Campo virtual</button>` : ""}<button class="chip" data-a="cpick-manual">Meter a mano</button><button class="chip" data-a="ce-new" data-v="rondas">+ Crear campo</button></div>
+  <div id="cpList">${courseListHTML("")}</div>
+  <p class="tiny muted" style="margin:14px 2px 0">Datos de las tarjetas publicadas en GolfPass (noviembre de 2026). Los clubes cambian barras y valoraciones: si algo no cuadra con la tarjeta, corrígelo en la ronda o crea tu copia del campo.</p>`);
+}
+
+// ---------- configuración de la ronda ----------
+function teeChips(c, sel, act, g, extra = "") {
+  return `<div class="tee-chips">${c.tees.map((t, i) => { const rt = rateOf(c, i, g); return `<button class="tee ${i === sel ? "on" : ""}" data-a="${act}" data-v="${i}"${extra}><i style="background:${t.c}"></i><span><b>${esc(t.n)}</b><small>${fmtD(t.len)} · ${rt.src === "none" ? "sin valoración" : `${fmtH(rt.cr)}/${rt.slope}${rt.src === "other" ? "*" : ""}`}</small></span></button>`; }).join("")}</div>`;
+}
+function courseCard(r) {
+  const c = courseOf(r.cid);
+  if (!c) return `<div class="card"><div class="row between"><div class="eyebrow">Campo</div><button class="link small" data-a="cpick-open">${r.type === "virtual" ? "Elegir de la lista" : "Elegir campo"}</button></div>
+    ${r.type !== "virtual" ? `<button class="pickc" data-a="cpick-open"><span class="sw cw" style="--g:var(--g-wedge)">${ico("map", 20)}</span><span><b>Busca tu campo</b><small>${COURSES.length} recorridos con barras, valoración e índices · o mete los datos a mano</small></span><span class="chev">›</span></button>` : ""}
+    <div class="grid2" style="margin-top:12px"><div class="field"><label for="rdC"><span>Nombre</span></label><input id="rdC" type="text" value="${esc(r.course)}" data-rf="course"></div><div class="field"><label for="rdT"><span>Barras</span></label><input id="rdT" type="text" value="${esc(r.tees)}" data-rf="tees"></div></div>
+    <div class="field"><div class="lab"><span>Hoyos</span></div><div class="seg">${[18, 9].map(n => `<button class="${r.holes === n ? "on" : ""}" data-a="rd-set" data-k="holes" data-v="${n}">${n} hoyos</button>`).join("")}</div></div>
+    ${ratingInputs(r)}
+    <p class="small muted" style="margin:-4px 2px 0">${r.type === "virtual" ? "Si no conoces el valor del campo virtual, deja valor = par y slope 113 (dificultad estándar)." : r.holes === 9 ? "Para 9 hoyos usa el valor y el slope de 9 hoyos de la tarjeta (el valor ronda la mitad del de 18)." : "El valor de campo y el slope están en la tarjeta o en la app de la federación."}</p></div>`;
+  const ti = r.ti || 0; const t = c.tees[ti]; const sx = sexOf();
+  return `<div class="card"><div class="row between" style="align-items:flex-start"><div style="min-width:0"><div class="eyebrow">Campo</div><h3 class="cname">${esc(c.name)}</h3><div class="small muted">${courseLine(c)}</div></div><button class="btn sm ghost" data-a="cpick-open">Cambiar</button></div>
+    <div class="lab-sm">Barras · valor/slope de ${SEXN[sx]}</div>${teeChips(c, ti, "rd-tee", sx)}
+    ${c.holes === 18 ? `<div class="seg" style="margin-top:12px">${[["18", "Los 18"], ["out", "Ida (1–9)"], ["in", "Vuelta"]].map(([k, n]) => `<button class="${(r.holes === 18 ? "18" : r.nine || "out") === k ? "on" : ""}" data-a="rd-nine" data-v="${k}">${n}</button>`).join("")}</div>` : `<div class="seg" style="margin-top:12px">${[[9, "9 hoyos"], [18, "18 (dos vueltas)"]].map(([k, n]) => `<button class="${r.holes === k ? "on" : ""}" data-a="rd-nine" data-v="${k}">${n}</button>`).join("")}</div>`}
+    <div class="ratebox"><div><b class="num">${fmtH(r.cr)}</b><span>valor</span></div><div><b class="num">${r.slope}</b><span>slope</span></div><div><b class="num">${r.par}</b><span>par</span></div><div><b class="num">${fmtD(t.len * r.holes / c.holes)}</b><span>${r.holes === c.holes ? "longitud" : "aprox."}</span></div></div>
+    ${r.rsrc === "other" ? `<div class="note warn">Estas barras no tienen valoración de ${SEXN[sx]} en la fuente: se usa la de ${SEXN[sx === "W" ? "M" : "W"]}. Corrígela con la tarjeta.</div>` : r.rsrc === "none" ? `<div class="note warn">Este campo no tiene valoración publicada en mis fuentes: mete valor y slope de la tarjeta. Si no, se usa valor = par y slope 113 y la ronda no será fiable para tu hándicap.</div>` : ""}
+    ${c.note ? `<p class="tiny muted" style="margin:10px 2px 0">${esc(c.note)}</p>` : ""}
+    <details class="fix"${r.rsrc === "none" ? " open" : ""}><summary>Corregir valor y slope</summary>${ratingInputs(r)}<button class="link small" data-a="ce-copy" data-id="${c.id}">${c.id.startsWith("u") ? "Editar este campo" : "Crear mi copia corregida del campo"} →</button></details></div>`;
+}
+const ratingInputs = r => `<div class="grid3" style="margin-top:10px"><div class="field"><label for="rdP"><span>Par</span></label><input id="rdP" type="number" inputmode="numeric" value="${r.par}" data-rf="par"></div><div class="field"><label for="rdCR"><span>Valor</span></label><input id="rdCR" type="number" inputmode="decimal" step="0.1" value="${r.cr}" data-rf="cr"></div><div class="field"><label for="rdS"><span>Slope</span></label><input id="rdS" type="number" inputmode="numeric" value="${r.slope}" data-rf="slope"></div></div>`;
+function gameCard(r) {
+  const g = gameCalc(r); const fmt = r.fmt || "stroke"; const others = r.pl || [];
+  const prow = (p, i) => { const c = courseOf(r.cid); return `<button class="prow" data-a="${p.me ? "pl-me" : "pl-edit"}" data-i="${i}"><span class="av" style="--c:${p.me ? "var(--lime)" : PCOL[i % PCOL.length]}">${esc(initials(p.name))}</span><span class="pn"><b>${esc(p.name)}${p.me ? " (tú)" : ""}</b><small>HCP ${fmtH(p.hi)} · ${p.g === "W" ? "damas" : "caballeros"}${c ? " · " + esc((c.tees[p.ti ?? r.ti ?? 0] || {}).n || "") : ""}</small></span><span class="ph"><b class="num">${p.ph}</b><small>juega</small></span></button>`; };
+  return `<div class="card"><div class="row between"><div class="eyebrow">Partida</div><span class="small muted">${others.length ? others.length + 1 + " jugadores" : "solo tú"}</span></div>
+    <div class="plist">${g.ps.map((p, k) => prow(p, k ? k - 1 : 0)).join("")}</div>
+    ${others.length < 3 ? `<button class="addp" data-a="pl-add">+ Añadir jugador</button>` : ""}
+    <div class="field" style="margin-top:14px"><div class="lab"><span>Modalidad</span></div><div class="seg">${[["stroke", "Medal"], ["stableford", "Stableford"], ["match", "Match play"]].map(([k, n]) => `<button class="${fmt === k ? "on" : ""}${k === "match" && others.length !== 1 ? " off" : ""}" data-a="rd-fmt" data-v="${k}">${n}</button>`).join("")}</div></div>
+    ${fmt === "match" ? `<p class="small muted" style="margin:-4px 2px 0">Match play individual: 100 % del hándicap de campo. El de menos hándicap juega con 0 y el otro recibe la diferencia en los hoyos de índice más bajo.</p>` :
+      `<div class="grid2"><div class="field" style="margin:0"><div class="lab"><span>Resultado</span></div><div class="seg">${[[true, "Neto"], [false, "Bruto"]].map(([k, n]) => `<button class="${(r.net !== false) === k ? "on" : ""}" data-a="rd-netv" data-v="${k ? 1 : 0}">${n}</button>`).join("")}</div></div>
+      <div class="field" style="margin:0"><div class="lab"><span>% del hándicap</span></div><div class="seg">${[100, 95, 85].map(k => `<button class="${(r.allow ?? 95) === k ? "on" : ""}${r.net === false ? " off" : ""}" data-a="rd-allow" data-v="${k}">${k}</button>`).join("")}</div></div></div>
+      <p class="small muted" style="margin:10px 2px 0">${r.net === false ? "Sin ventajas: cuenta el resultado bruto." : `Hándicap de juego = (índice × slope / 113 + valor − par) × ${r.allow ?? 95} %. El 95 % es lo que recomienda el sistema mundial para juego individual; entre amigos mucha gente usa el 100 %.`}</p>`}
+  </div>`;
+}
+function scrollTees() { document.querySelectorAll(".tee-chips").forEach(el => { const on = el.querySelector(".tee.on"); if (on) el.scrollLeft = Math.max(0, on.offsetLeft - el.offsetLeft - 16); }); }
+function playerSheet() {
+  const e = S.ui.pe; const p = e.p; const r = S.ui.rd.r; const c = courseOf(r.cid);
+  sheet(`<div class="eyebrow">${e.i == null ? "Nuevo jugador" : "Jugador"}</div>
+  <div class="field" style="margin-top:12px"><label for="pfN"><span>Nombre</span></label><input id="pfN" type="text" value="${esc(p.name)}" placeholder="Nombre" data-pf="name" autocomplete="off"></div>
+  <div class="field"><div class="lab"><span>Hándicap (índice)</span></div><div class="hcpbox"><button data-a="pf-hcp" data-v="-1" aria-label="Bajar">−</button><input id="pfH" type="number" inputmode="decimal" step="0.1" value="${p.hi}" data-pf="hi" aria-label="Hándicap"><button data-a="pf-hcp" data-v="1" aria-label="Subir">+</button></div></div>
+  <div class="field"><div class="lab"><span>Valoración de</span></div><div class="seg">${[["M", "Caballeros"], ["W", "Damas"]].map(([k, n]) => `<button class="${p.g === k ? "on" : ""}" data-a="pf-g" data-v="${k}">${n}</button>`).join("")}</div></div>
+  ${c ? `<div class="field"><div class="lab"><span>Barras</span></div>${teeChips(c, p.ti ?? r.ti ?? 0, "pf-tee", p.g)}</div>` : `<p class="small muted">Sin campo de la lista: usa el mismo valor y slope que tú.</p>`}
+  <div class="row" style="margin-top:6px">${e.i != null ? `<button class="btn ghost" style="flex:1;color:var(--bad)" data-a="pf-del">Quitar</button>` : `<button class="btn ghost" style="flex:1" data-a="close-sheet">Cancelar</button>`}<button class="btn" style="flex:2" data-a="pf-save">Guardar</button></div>`); scrollTees();
+}
+function meSheet() {
+  const r = S.ui.rd.r;
+  sheet(`<div class="eyebrow">Tu hándicap en esta partida</div><p class="small muted" style="margin:6px 0 12px">Por defecto, tu hándicap oficial (${fmtH(officialHcp())}). Para el HCP CARRY de la ronda no cambia nada: se calcula siempre con tu índice.</p>
+  <div class="hcpbox"><button data-a="me-hcp" data-v="-1" aria-label="Bajar">−</button><input type="number" inputmode="decimal" step="0.1" value="${r.myHi ?? officialHcp()}" data-pf="myhi" aria-label="Hándicap"><button data-a="me-hcp" data-v="1" aria-label="Subir">+</button></div>
+  ${usingCarry() ? `<button class="chip" style="margin-top:12px" data-a="me-carry">Usar HCP CARRY (${fmt1(hcpData().carry.index)})</button>` : ""}
+  <button class="btn block" style="margin-top:14px" data-a="me-ok">Listo</button>`);
+}
+
+// ---------- hoyo: compañeros ----------
+function companionsCard(r, i) {
+  if (!(r.pl || []).length && (r.fmt || "stroke") === "stroke") return "";
+  const g = gameCalc(r); const others = g.ps.slice(1);
+  const dots = k => k > 0 ? `<i class="dots">${"•".repeat(Math.min(k, 3))}</i>` : k < 0 ? `<i class="dots">−${-k}</i>` : "";
+  const top = `<div class="lb-mini">${g.order.map(p => { const m = mainScore(g, p); return `<span class="${p.me ? "me" : ""}"><b>${p.pos}.</b> ${esc(p.name.split(" ")[0])} <em class="num">${m.big}${g.fmt === "stableford" ? "" : ""}</em></span>`; }).join("")}</div>`;
+  return `<div class="card comp"><div class="row between"><div class="eyebrow">${FMT[g.fmt]}${g.fmt === "match" ? "" : g.net ? " neto" : " bruto"}</div>${g.match ? `<span class="tag" style="--c:var(--app)"><i></i>${esc(g.match.txt)}</span>` : ""}</div>
+    ${others.length && g.fmt !== "match" ? top : ""}
+    ${others.map((p, k) => { const s = p.sc[i]; const par = p.H[i].p; const pts = p.pts[i]; return `<div class="crow"><span class="av" style="--c:${PCOL[k % PCOL.length]}">${esc(initials(p.name))}</span><div class="cn"><b>${esc(p.name)}</b><small>par ${par}${g.net && p.recv[i] ? ` · ${p.recv[i] > 0 ? "+" : ""}${p.recv[i]}` : ""}${g.fmt === "stableford" && pts != null ? ` · <b>${pts} pt${pts === 1 ? "" : "s"}</b>` : ""}</small></div>
+      <div class="cstep"><button data-a="pl-step" data-p="${k}" data-v="-1" aria-label="Menos">−</button><button class="cv num${s == null ? " empty" : ""}${s === 0 ? " pu" : ""}" data-a="pl-step" data-p="${k}" data-v="0" aria-label="Poner par">${s == null ? "—" : s === 0 ? "X" : s}${dots(g.net ? p.recv[i] : 0)}</button><button data-a="pl-step" data-p="${k}" data-v="1" aria-label="Más">+</button><button class="pux" data-a="pl-pu" data-p="${k}" aria-label="Recogida">${s === 0 ? "↺" : "Rec."}</button></div></div>`; }).join("")}
+    ${!others.length ? `<p class="small muted" style="margin:6px 0 0">Llevas ${g.ps[0].ptsTot} puntos${g.ps[0].thru ? ` en ${g.ps[0].thru} hoyos` : ""}.</p>` : ""}</div>`;
+}
+
+// ---------- ajustes ----------
+function vAjustes() {
+  if (S.ui.ce) return vCourseEdit();
+  const pr = P(); const L = LV(); const mine = pr.myCourses || [];
+  const seg = (k, opts, act = "set") => `<div class="seg">${opts.map(([v, n]) => `<button class="${String(pr[k]) === String(v) ? "on" : ""}" data-a="${act}" data-k="${k}" data-v="${v}">${n}</button>`).join("")}</div>`;
+  return `<div class="row between" style="margin:2px 2px 12px"><button class="link" data-a="back">← Volver</button><span class="small muted">v ${APP_VER}</span></div>
+  <section class="prof"><span class="av big" style="--c:var(--lime)">${esc(initials(pr.name))}</span><div style="min-width:0"><h2>${esc(pr.name || "Tu perfil")}</h2><div class="small">${hcpUsedLabel()} · nivel ${GAME[L].name} · objetivo ${fmtH(pr.goal)}</div></div></section>
+  <div class="set-h">Perfil</div>
+  <div class="card">
+    <div class="field"><label for="nm"><span>Nombre</span></label><input id="nm" type="text" value="${esc(pr.name)}" data-f="name" autocomplete="off"></div>
+    <div class="field"><div class="lab"><span>Hándicap oficial</span><span class="tag" style="--c:var(--ok)">Nivel ${GAME[lvOf(pr.hcp)].name}</span></div>
+      <div class="hcpbox"><button data-a="hcp" data-v="-1" aria-label="Bajar hándicap">−</button><input id="hc" type="number" inputmode="decimal" step="0.1" min="-5" max="54" value="${pr.hcp}" data-f="hcp" aria-label="Hándicap"><button data-a="hcp" data-v="1" aria-label="Subir hándicap">+</button></div></div>
+    <div class="field"><label for="gl"><span>Objetivo de hándicap</span></label><input id="gl" type="number" inputmode="decimal" step="0.1" value="${pr.goal}" data-f="goal"></div>
+    <div class="grid2"><div class="field" style="margin:0"><div class="lab"><span>Valoración de</span></div>${seg("sex", [["M", "Caballeros"], ["W", "Damas"]])}</div>
+    <div class="field" style="margin:0"><div class="lab"><span>Juegas como</span></div>${seg("hand", [["R", "Diestro"], ["L", "Zurdo"]])}</div></div>
+    <p class="tiny muted" style="margin:10px 2px 0">«Valoración de» elige el valor de campo, el slope y los índices de los hoyos de tus barras.</p>
+  </div>
+  <div class="set-h">Entrenamiento</div>
+  <div class="card">
+    <div class="field"><div class="lab"><span>Qué hándicap usan los ejercicios</span></div>${seg("hcpSource", [["auto", "Automático"], ["official", "Oficial"], ["carry", "CARRY"]])}</div>
+    <div class="field"><div class="lab"><span>Exigencia</span></div>${seg("tolerance", [["amable", "Suave"], ["normal", "Normal"], ["exigente", "Dura"]])}</div>
+    <div class="field" style="margin:0"><div class="lab"><span>Tu forma natural</span>${L <= 1 ? '<span style="text-transform:none;letter-spacing:0">se usa desde HCP &lt; 30</span>' : ""}</div>${seg("stock", [["recta", "Recta"], ["draw", "Draw"], ["fade", "Fade"]])}</div>
+  </div>
+  ${levelCard(L, false)}
+  <div class="set-h">Partidas</div>
+  <div class="card">
+    <div class="field"><div class="lab"><span>Modalidad por defecto</span></div>${seg("gameFmt", [["stroke", "Medal"], ["stableford", "Stableford"]])}</div>
+    <div class="field" style="margin:0"><div class="lab"><span>% del hándicap por defecto</span></div>${seg("allow", [[100, "100 %"], [95, "95 %"], [85, "85 %"]])}</div>
+  </div>
+  <div class="card"><div class="row between"><div class="eyebrow">Tus campos</div><button class="link small" data-a="ce-new" data-v="ajustes">+ Crear campo</button></div>
+    ${mine.length ? mine.map(c => `<button class="list-item" data-a="ce-edit" data-id="${c.id}"><div class="sw cw" style="--g:var(--g-putt)">${c.holes}</div><div style="min-width:0"><div class="t">${esc(c.name)}</div><div class="s">${courseLine(c)} · ${c.tees.length} barra${c.tees.length === 1 ? "" : "s"}</div></div><span class="chev">›</span></button>`).join("") : `<p class="small muted" style="margin:8px 0 0">La app trae ${COURSES.length} recorridos. Si el tuyo no está, o sus datos no cuadran con la tarjeta, créalo aquí: se guarda en tu móvil y en las copias.</p>`}</div>
+  <div class="set-h">Apariencia</div>
+  <div class="card"><div class="field"><div class="lab"><span>Tema</span></div><div class="seg">${[["auto", "Del móvil"], ["light", "Claro"], ["dark", "Oscuro"]].map(([k, n]) => `<button class="${(pr.theme || "auto") === k ? "on" : ""}" data-a="theme" data-v="${k}">${n}</button>`).join("")}</div><p class="tiny muted" style="margin:8px 2px 0">Por defecto sigue el modo claro u oscuro del móvil.</p></div>
+    <div class="field" style="margin:0"><div class="lab"><span>Distancias del campo</span></div>${seg("units", [["m", "Metros"], ["yd", "Yardas"]])}</div></div>
+  <div class="set-h">Tus datos</div>
+  <div class="card"><p class="small muted" style="margin:0 0 12px">${DB ? "Se guardan en tu cuenta de Claude y los ves desde cualquier dispositivo." : IN_PWA ? "Se guardan en este móvil. Haz una copia de vez en cuando (por ejemplo, al final de cada mes) y guárdala en iCloud o en tu correo." : "Ahora mismo se guardan solo en este navegador."}</p>
+  <div class="grid2"><button class="btn ghost" data-a="export">${IN_ARTIFACT ? "Copiar copia" : "Guardar copia"}</button><button class="btn ghost" data-a="import">Importar copia</button></div>
+  <p class="tiny muted" style="margin:10px 2px 12px">${pr.lastBackup ? `Última copia: ${fmtDate(pr.lastBackup)}. ` : "Aún no has hecho ninguna copia. "}${IN_PWA ? `En el iPhone se abre el menú de compartir: elige «Guardar en Archivos». ${STORAGE_OK === true ? "Almacenamiento protegido por el sistema: sí." : ""}` : ""} La copia incluye perfil, bolsa, campos, sesiones y rondas.</p>
+  <button class="btn ghost block" data-a="reset">Borrar todo y empezar de cero</button></div>
+  <div class="set-h">Acerca de</div>
+  <div class="card"><p class="small" style="margin:0">Cada sesión sigue el orden calentar → calibrar → variar → explorar → presión → juego corto → primera bola. El reparto cambia con la semana del ciclo (Medir, Construir, Variar, Competir). El hándicap decide qué ejercicios entran, cómo de anchas son las ventanas y qué claves ves; tus rondas deciden el foco.</p>
+  <p class="small muted" style="margin:10px 0 0">El HCP CARRY sigue el método del Sistema de Hándicap Mundial, pero no es oficial. Campos: tarjetas publicadas en GolfPass, revisadas en noviembre de 2026; los colores y las valoraciones pueden cambiar. Esta app no se conecta a Toptracer ni a la federación.</p></div>`;
+}
+
+// ---------- editor de campos ----------
+function blankCourse(holes = 18) {
+  const par = Array.from({ length: holes }, (_, i) => (i % 9 === 2 || i % 9 === 6 ? 3 : i % 9 === 4 || i % 9 === 8 ? 5 : 4));
+  return { id: "u" + nid(), name: "", short: "", town: "", reg: "Tus campos", holes, par, si: Array(holes).fill(null), src: "", tees: [{ n: "Amarillas", c: "#F2C200", len: null, m: null, w: null }] };
+}
+const TEE_COLORS = [["Blancas", "#F4F4F0"], ["Amarillas", "#F2C200"], ["Azules", "#2F6FE0"], ["Rojas", "#E0352B"], ["Negras", "#1B1B1B"], ["Verdes", "#1FA05A"], ["Naranjas", "#F57C1F"]];
+function vCourseEdit() {
+  const e = S.ui.ce, c = e.c; const n = c.holes;
+  const siDup = new Set(c.si.filter((v, i) => v != null && c.si.indexOf(v) !== i));
+  const num = (k, v, ph, extra = "") => `<input type="number" inputmode="decimal" step="0.1" value="${v ?? ""}" placeholder="${ph}" ${extra}>`;
+  return `<div class="row between" style="margin:2px 2px 12px"><button class="link" data-a="ce-cancel">← Cancelar</button><button class="btn sm" data-a="ce-save">Guardar</button></div>
+  <h2 class="sec-title">${e.isNew ? "Nuevo campo" : "Editar campo"}</h2>
+  ${e.from ? `<p class="sec-sub">Copia de «${esc(e.from)}». Corrige lo que no cuadre con la tarjeta.</p>` : `<p class="sec-sub">Con la tarjeta delante: par e índice de cada hoyo, y valor y slope de cada barra.</p>`}
+  <div class="card"><div class="field"><label for="ceN"><span>Nombre</span></label><input id="ceN" type="text" value="${esc(c.name)}" data-ce="name" placeholder="Ej.: Club de Golf Llanes"></div>
+    <div class="field"><label for="ceT"><span>Población</span></label><input id="ceT" type="text" value="${esc(c.town)}" data-ce="town"></div>
+    <div class="field" style="margin:0"><div class="lab"><span>Hoyos</span></div><div class="seg">${[18, 9].map(k => `<button class="${n === k ? "on" : ""}" data-a="ce-holes" data-v="${k}">${k} hoyos</button>`).join("")}</div></div></div>
+  <div class="card"><div class="row between"><div class="eyebrow">Hoyos</div><span class="small muted num">par ${c.par.reduce((a, b) => a + b, 0)}</span></div>
+    <div class="cegrid"><span class="h">Hoyo</span><span class="h">Par</span><span class="h">Índice</span>
+    ${c.par.map((p, i) => `<span class="num hn">${i + 1}</span><div class="pseg">${[3, 4, 5].map(k => `<button class="${p === k ? "on" : ""}" data-a="ce-par" data-i="${i}" data-v="${k}">${k}</button>`).join("")}</div><input class="${siDup.has(c.si[i]) ? "bad" : ""}" type="number" inputmode="numeric" min="1" max="${n}" value="${c.si[i] ?? ""}" placeholder="—" data-ce="si" data-i="${i}" aria-label="Índice del hoyo ${i + 1}">`).join("")}</div>
+    <p class="tiny muted" style="margin:10px 2px 0">El índice (HCP en la tarjeta) va de 1 a ${n}, sin repetir: decide en qué hoyos se reciben los golpes.</p></div>
+  ${c.tees.map((t, k) => `<div class="card"><div class="row between"><div class="eyebrow">Barras ${k + 1}</div>${c.tees.length > 1 ? `<button class="link small" style="color:var(--bad)" data-a="ce-tdel" data-t="${k}">Quitar</button>` : ""}</div>
+    <div class="row" style="gap:6px;flex-wrap:wrap;margin:10px 0 12px">${TEE_COLORS.map(([nm, col]) => `<button class="chip${t.n === nm ? " on" : ""}" data-a="ce-tcol" data-t="${k}" data-v="${nm}"><i class="cdot" style="background:${col}"></i>${nm}</button>`).join("")}</div>
+    <div class="grid2"><div class="field"><label><span>Nombre</span></label><input type="text" value="${esc(t.n)}" data-ce="tn" data-t="${k}"></div><div class="field"><label><span>Longitud (m)</span></label>${num("tl", t.len, "—", `data-ce="tl" data-t="${k}"`)}</div></div>
+    <div class="grid2"><div class="field" style="margin:0"><label><span>Caballeros: valor / slope</span></label><div class="pair">${num("", t.m ? t.m[0] : null, "71,2", `data-ce="mcr" data-t="${k}"`)}${num("", t.m ? t.m[1] : null, "130", `data-ce="msl" data-t="${k}" step="1"`)}</div></div>
+    <div class="field" style="margin:0"><label><span>Damas: valor / slope</span></label><div class="pair">${num("", t.w ? t.w[0] : null, "—", `data-ce="wcr" data-t="${k}"`)}${num("", t.w ? t.w[1] : null, "—", `data-ce="wsl" data-t="${k}" step="1"`)}</div></div></div></div>`).join("")}
+  ${c.tees.length < 7 ? `<button class="addp" data-a="ce-tadd">+ Añadir barras</button>` : ""}
+  ${!e.isNew ? `<button class="btn ghost block" style="color:var(--bad);margin-top:14px" data-a="ce-del">Borrar este campo</button>` : ""}
+  <button class="btn lime block big" style="margin-top:14px" data-a="ce-save">Guardar campo</button>`;
+}
+function ceValidate(c) {
+  if (!String(c.name).trim()) return "Ponle nombre al campo";
+  const n = c.holes; const si = c.si;
+  if (si.some(v => v == null)) return "Falta el índice de algún hoyo";
+  if (new Set(si).size !== n || si.some(v => v < 1 || v > n)) return `Los índices deben ir de 1 a ${n} sin repetir`;
+  for (const t of c.tees) { if (!String(t.n).trim()) return "Ponle nombre a todas las barras";
+    for (const k of ["m", "w"]) if (t[k] && (!(t[k][0] >= 20 && t[k][0] <= 85) || !(t[k][1] >= 55 && t[k][1] <= 155))) return `Revisa valor (20–85) y slope (55–155) de ${t.n}`; }
+  return null;
+}
+const CE_ACT = {
+  "ce-new": a => { S.ui.ce = { c: blankCourse(), isNew: true, back: a.dataset.v }; closeSheet(); if (route() !== "ajustes") location.hash = "#ajustes"; else { render(); scrollTo(0, 0); } },
+  "ce-edit": a => { const c = courseOf(a.dataset.id); if (!c) return; S.ui.ce = { c: JSON.parse(JSON.stringify(c)), isNew: false, back: "ajustes" }; render(); scrollTo(0, 0); },
+  "ce-copy": a => { const src = courseOf(a.dataset.id); if (!src) return; const mine = src.id.startsWith("u");
+    const c = JSON.parse(JSON.stringify(src)); if (!mine) { c.id = "u" + nid(); c.reg = "Tus campos"; c.copyOf = src.id; c.tees.forEach(t => { delete t.p; }); }
+    S.ui.ce = { c, isNew: !mine, back: "rondas", from: mine ? null : src.name }; location.hash = "#ajustes"; },
+  "ce-cancel": () => { const b = S.ui.ce && S.ui.ce.back; S.ui.ce = null; if (b === "rondas") location.hash = "#rondas"; else { render(); scrollTo(0, 0); } },
+  "ce-holes": a => { const c = S.ui.ce.c; const k = +a.dataset.v; if (k === c.holes) return; const b = blankCourse(k); c.holes = k; c.par = c.par.slice(0, k).concat(b.par.slice(c.par.length)); c.si = Array(k).fill(null); c.tees.forEach(t => { delete t.d; }); render(); },
+  "ce-par": a => { S.ui.ce.c.par[+a.dataset.i] = +a.dataset.v; render(); },
+  "ce-tcol": a => { const t = S.ui.ce.c.tees[+a.dataset.t]; const col = TEE_COLORS.find(x => x[0] === a.dataset.v); t.n = col[0]; t.c = col[1]; render(); },
+  "ce-tadd": () => { const c = S.ui.ce.c; const used = c.tees.map(t => t.n); const col = TEE_COLORS.find(x => !used.includes(x[0])) || TEE_COLORS[0]; c.tees.push({ n: col[0], c: col[1], len: null, m: null, w: null }); render(); },
+  "ce-tdel": a => { S.ui.ce.c.tees.splice(+a.dataset.t, 1); render(); },
+  "ce-save": () => { const e = S.ui.ce, c = e.c; const err = ceValidate(c); if (err) { toast(err); return; }
+    c.name = c.name.trim(); c.short = c.short || c.name; c.town = (c.town || "").trim(); c.tees.forEach(t => { if (t.d && t.d.length !== c.holes) delete t.d; });
+    const list = P().myCourses || (P().myCourses = []); const i = list.findIndex(x => x.id === c.id); if (i >= 0) list[i] = c; else list.unshift(c);
+    saveProfile(); S.ui.ce = null; toast("Campo guardado");
+    if (e.back === "rondas" && S.ui.rd) { const r = S.ui.rd.r; applyCourse(r, c.id, Math.min(r.ti || 0, c.tees.length - 1), true); location.hash = "#rondas"; } else { render(); scrollTo(0, 0); } },
+  "ce-del": () => confirmSheet("¿Borrar este campo?", "Las rondas ya jugadas en él se quedan como están.", "Borrar", "ce-del-yes"),
+  "ce-del-yes": () => { closeSheet(); const id = S.ui.ce.c.id; P().myCourses = (P().myCourses || []).filter(x => x.id !== id); saveProfile(); S.ui.ce = null; toast("Campo borrado"); render(); }
+};
+function ceInput(el) {
+  const e = S.ui.ce; if (!e) return false; const c = e.c; const k = el.dataset.ce; const v = el.value;
+  const f = x => { const n = parseFloat(String(x).replace(",", ".")); return isNaN(n) ? null : n; };
+  if (k === "name" || k === "town") c[k] = v.slice(0, 60);
+  else if (k === "si") { const n = parseInt(v, 10); c.si[+el.dataset.i] = isNaN(n) ? null : n;
+    const dup = new Set(c.si.filter((x, i) => x != null && c.si.indexOf(x) !== i)); document.querySelectorAll('[data-ce="si"]').forEach(inp => inp.classList.toggle("bad", dup.has(c.si[+inp.dataset.i]) || (c.si[+inp.dataset.i] != null && (c.si[+inp.dataset.i] < 1 || c.si[+inp.dataset.i] > c.holes)))); }
+  else { const t = c.tees[+el.dataset.t]; if (!t) return true;
+    if (k === "tn") t.n = v.slice(0, 30); else if (k === "tl") t.len = f(v);
+    else { const s = k[0], which = k.slice(1); const cur = t[s] ? t[s].slice() : [null, null]; cur[which === "cr" ? 0 : 1] = f(v); t[s] = cur[0] == null && cur[1] == null ? null : cur; } }
+  return true;
+}
+
+// ---------- acciones de partida ----------
+const GAME_ACT = {
+  "back": () => { if (history.length > 1) history.back(); else location.hash = "#hoy"; },
+  "go-ajustes": () => { S.ui.ce = null; location.hash = "#ajustes"; },
+  "cpick-open": () => coursePicker(),
+  "cpick": a => { const r = S.ui.rd.r; applyCourse(r, a.dataset.id, null, false); closeSheet(); render(); },
+  "cpick-virt": () => { const r = S.ui.rd.r; Object.assign(r, { cid: null, ti: null, rsrc: null, course: PRESETS[1].name, tees: PRESETS[1].tees, holes: 18, par: 72, cr: 72, slope: 113, h: [] }); closeSheet(); render(); },
+  "cpick-manual": () => { const r = S.ui.rd.r; Object.assign(r, { cid: null, ti: null, rsrc: null, h: [] }); closeSheet(); render(); setTimeout(() => { const el = $("#rdC"); el && el.focus(); }, 60); },
+  "rd-tee": a => { const r = S.ui.rd.r; applyCourse(r, r.cid, +a.dataset.v, true); render(); },
+  "rd-nine": a => { const r = S.ui.rd.r; const c = courseOf(r.cid); const v = a.dataset.v; if (c.holes === 18) { if (v === "18") r.holes = 18; else { r.holes = 9; r.nine = v; } } else r.holes = +v; applyCourse(r, r.cid, r.ti, true); render(); },
+  "rd-fmt": a => { const r = S.ui.rd.r; if (a.dataset.v === "match" && (r.pl || []).length !== 1) { toast("Match play es para dos jugadores: añade uno"); return; } r.fmt = a.dataset.v; if (r.fmt !== "stroke") r.mode = "holes"; render(); },
+  "rd-netv": a => { S.ui.rd.r.net = a.dataset.v === "1"; render(); },
+  "rd-allow": a => { S.ui.rd.r.allow = +a.dataset.v; render(); },
+  "pl-add": () => { const r = S.ui.rd.r; const c = courseOf(r.cid); S.ui.pe = { i: null, p: { id: "p" + nid(), name: "", hi: 24, g: "M", ti: c ? defaultTee(c, "M") : null, s: [] } }; playerSheet(); setTimeout(() => { const el = $("#pfN"); el && el.focus(); }, 80); },
+  "pl-edit": a => { const r = S.ui.rd.r; const i = +a.dataset.i; S.ui.pe = { i, p: JSON.parse(JSON.stringify(r.pl[i])) }; playerSheet(); },
+  "pl-me": () => meSheet(),
+  "pf-hcp": a => { const p = S.ui.pe.p; p.hi = clamp(r1((parseFloat(p.hi) || 0) + +a.dataset.v), -10, 54); const el = $("#pfH"); if (el) el.value = p.hi; },
+  "pf-g": a => { const e = S.ui.pe; e.p.g = a.dataset.v; const c = courseOf(S.ui.rd.r.cid); if (c) e.p.ti = defaultTee(c, e.p.g); playerSheet(); },
+  "pf-tee": a => { S.ui.pe.p.ti = +a.dataset.v; playerSheet(); },
+  "pf-save": () => { const e = S.ui.pe; const r = S.ui.rd.r; const p = e.p; p.name = String(p.name || "").trim() || `Jugador ${(r.pl || []).length + (e.i == null ? 2 : 1)}`; p.hi = clamp(parseFloat(String(p.hi).replace(",", ".")) || 0, -10, 54);
+    r.pl = r.pl || []; if (e.i == null) r.pl.push(p); else r.pl[e.i] = p; if (r.fmt === "match" && r.pl.length !== 1) r.fmt = "stroke"; if (r.pl.length) r.mode = "holes"; S.ui.pe = null; closeSheet(); render(); },
+  "pf-del": () => { const r = S.ui.rd.r; r.pl.splice(S.ui.pe.i, 1); if (r.fmt === "match") r.fmt = "stroke"; S.ui.pe = null; closeSheet(); render(); },
+  "me-hcp": a => { const r = S.ui.rd.r; r.myHi = clamp(r1((r.myHi ?? officialHcp()) + +a.dataset.v), -10, 54); const el = $('[data-pf="myhi"]'); if (el) el.value = r.myHi; },
+  "me-carry": () => { const r = S.ui.rd.r; r.myHi = hcpData().carry.index; closeSheet(); render(); },
+  "me-ok": () => { closeSheet(); render(); },
+  "pl-step": a => { const st = S.ui.rd, r = st.r, i = st.i; const k = +a.dataset.p; const p = r.pl[k]; if (!p) return; p.s = p.s || [];
+    const g = gameCalc(r); const par = g.ps[k + 1].H[i].p; const cur = p.s[i]; const d = +a.dataset.v;
+    p.s[i] = d === 0 ? (cur == null || cur === 0 ? par : cur) : cur == null || cur === 0 ? par + (d > 0 ? 1 : -1) : clamp(cur + d, 1, 15); vib(8); render(); },
+  "pl-pu": a => { const st = S.ui.rd, r = st.r, i = st.i; const p = r.pl[+a.dataset.p]; p.s = p.s || []; p.s[i] = p.s[i] === 0 ? null : 0; vib(8); render(); },
+  "rd-pu": () => { const st = S.ui.rd, r = st.r, h = r.h[st.i]; if (h.pu) { h.pu = false; } else { const recv = strokesByHole(r.h, rdCH(r))[st.i]; h.s = h.p + 2 + recv; h.pu = true; } vib(8); render(); }
+};
+
 // ---------- rondas y HCP CARRY (método del Sistema de Hándicap Mundial, WHS) ----------
 // Diferencial = (113 / slope) × (resultado ajustado − valor de campo). Índice = media de los 8 mejores de los 20 últimos
 // (con menos de 20, tabla oficial). Máximo por hoyo: doble bogey neto. 9 hoyos: diferencial de 9 + diferencial esperado.
@@ -1110,15 +1553,22 @@ const courseKey = (n, t) => (String(n || "") + "|" + String(t || "")).toLowerCas
 const savedCourse = r => (P().courses || []).find(c => courseKey(c.name, c.tees) === courseKey(r.course, r.tees));
 function newRound(type) {
   const last = roundsSorted().filter(r => r.type === type).slice(-1)[0];
-  const c = last ? { name: last.course, tees: last.tees, holes: last.holes, par: last.par, cr: last.cr, slope: last.slope } : (type === "virtual" ? PRESETS[1] : PRESETS[0]);
-  return { id: "r" + nid(), type, date: Date.now(), created: Date.now(), course: c.name, tees: c.tees, holes: c.holes || 18, par: c.par, cr: c.cr, slope: c.slope, mode: "holes", h: [], gross: null, putts: null, pen: null, note: "" };
+  const c = last ? { name: last.course, tees: last.tees, holes: last.holes, par: last.par, cr: last.cr, slope: last.slope } : PRESETS[1];
+  const r = { id: "r" + nid(), type, date: Date.now(), created: Date.now(), course: c.name, tees: c.tees, holes: c.holes || 18, par: c.par, cr: c.cr, slope: c.slope, mode: "holes", h: [], gross: null, putts: null, pen: null, note: "",
+    cid: null, ti: null, fmt: P().gameFmt || "stroke", net: true, allow: P().allow ?? 95, pl: [], myHi: null };
+  const cid = last ? last.cid : type === "real" ? "cng" : null;
+  if (cid && courseOf(cid)) { if (last) { r.holes = last.holes; r.nine = last.nine; } applyCourse(r, cid, last && last.cid === cid ? last.ti : null, !!last); }
+  return r;
 }
 function ensureHoles(r) {
-  const n = r.holes === 9 ? 9 : 18; const sc = savedCourse(r); if (!Array.isArray(r.h)) r.h = [];
+  const n = r.holes === 9 ? 9 : 18; if (!Array.isArray(r.h)) r.h = [];
+  const c = courseOf(r.cid); if (c) { const H = courseHoles(c, r.ti || 0, sexOf(), n, r.nine); for (let i = 0; i < n; i++) { if (!r.h[i]) r.h[i] = { p: H[i].p, si: H[i].si, s: null, pt: null, fw: null, pen: 0 }; r.h[i].d = H[i].d; } r.h.length = n; return; }
+  const sc = savedCourse(r);
   for (let i = 0; i < n; i++) if (!r.h[i]) r.h[i] = { p: sc && sc.pars && sc.pars[i] ? sc.pars[i] : (i % 9 === 2 || i % 9 === 6 ? 3 : i % 9 === 4 || i % 9 === 8 ? 5 : 4), si: sc && sc.si && sc.si[i] ? sc.si[i] : null, s: null, pt: null, fw: null, pen: 0 };
   r.h.length = n;
 }
 function upsertCourse(r) {
+  if (r.cid) return;
   const cs = P().courses || (P().courses = []); let c = savedCourse(r);
   if (!c) { c = { id: "c" + nid(), name: r.course, tees: r.tees }; cs.push(c); }
   Object.assign(c, { holes: r.holes, par: +r.par, cr: +r.cr, slope: +r.slope, virtual: r.type === "virtual" });
@@ -1179,11 +1629,17 @@ function vRondas() {
       <li>${ico("check", 18)}<span>Con 20 rondas se aplican los topes de subida (blando +3, duro +5 sobre tu mínimo del año) y la reducción por resultado excepcional.</span></li>
       <li>${ico("check", 18)}<span>No hay corrección por condiciones del día (PCC). Es tu hándicap de juego, no el oficial de la federación.</span></li></ul></div>`;
 }
+function gameTag(r) {
+  if (!(r.pl || []).length && (r.fmt || "stroke") === "stroke") return ""; if (r.mode !== "holes" || !r.h || !r.h.length) return "";
+  const g = gameCalc(r); const me = g.ps[0];
+  const main = g.fmt === "stableford" ? `${me.ptsTot} pts` : g.fmt === "match" ? (g.match ? g.match.txt : "") : g.net && me.netTot != null ? `neto ${me.netTot}` : "";
+  return `${main}${g.ps.length > 1 && g.fmt !== "match" ? ` (${me.pos}º de ${g.ps.length})` : ""} · `;
+}
 function roundRow(r) {
   const res = roundCalc(r, hcpData().carry.index ?? officialHcp()); const it = hcpData().carry.rec.find(x => x.id === r.id);
   const toPar = res.gross != null ? res.gross - r.par : null; const virt = r.type === "virtual";
   return `<button class="list-item" data-a="rd-open" data-id="${r.id}"><div class="sw" style="${virt ? "--g:var(--g-putt)" : "--g:var(--g-wedge)"}">${res.gross ?? "—"}</div>
-  <div style="min-width:0"><div class="t">${fmtDate(r.date)} · ${esc(r.course)}${r.holes === 9 ? " (9)" : ""}</div><div class="s">${virt ? "Virtual" : "Real"} · ${toPar == null ? "" : (toPar > 0 ? "+" : "") + toPar + " · "}diferencial ${it ? fmt1(it.diff) : "—"}${virt && it ? ` (bruto ${fmt1(it.raw)})` : ""}</div></div><span class="chev">›</span></button>`;
+  <div style="min-width:0"><div class="t">${fmtDate(r.date)} · ${esc(r.course)}${r.holes === 9 ? " (9)" : ""}</div><div class="s">${virt ? "Virtual" : "Real"} · ${gameTag(r)}${toPar == null ? "" : (toPar > 0 ? "+" : "") + toPar + " · "}diferencial ${it ? fmt1(it.diff) : "—"}${virt && it ? ` (bruto ${fmt1(it.raw)})` : ""}</div></div><span class="chev">›</span></button>`;
 }
 // de dónde salen los golpes en tus rondas reales → foco del plan
 function roundFocus() {
@@ -1228,23 +1684,18 @@ function roundStats() {
 function vRoundForm() { const st = S.ui.rd, r = st.r; return st.step === "setup" ? roundSetup(r) : st.step === "holes" ? roundHole(r, st.i) : st.step === "total" ? roundTotal(r) : roundReview(r); }
 const dateVal = ts => { const d = new Date(ts); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
 function roundSetup(r) {
-  const virt = r.type === "virtual"; const courses = (P().courses || []);
-  const opts = courses.map(c => [`c:${c.id}`, `${c.name} · ${c.tees}`]).concat(PRESETS.filter(p => !courses.some(c => courseKey(c.name, c.tees) === courseKey(p.name, p.tees))).map(p => [`p:${p.key}`, `${p.name} · ${p.tees}`]));
-  const preset = PRESETS.find(p => courseKey(p.name, p.tees) === courseKey(r.course, r.tees));
-  return `<div class="row between" style="margin:6px 2px 12px"><h2 class="sec-title" style="margin:0">${virt ? "Ronda virtual" : "Ronda real"}</h2><button class="link small" data-a="rd-cancel">Cancelar</button></div>
+  const virt = r.type === "virtual"; const game = (r.pl || []).length || (r.fmt || "stroke") !== "stroke";
+  return `<div class="row between" style="margin:6px 2px 12px"><h2 class="sec-title" style="margin:0">${virt ? "Ronda virtual" : "Nueva ronda"}</h2><button class="link small" data-a="rd-cancel">Cancelar</button></div>
   <div class="card">
     <div class="field"><div class="lab"><span>Tipo</span></div><div class="seg">${[["real", "Real (campo)"], ["virtual", "Virtual (Toptracer)"]].map(([k, n]) => `<button class="${r.type === k ? "on" : ""}" data-a="rd-set" data-k="type" data-v="${k}">${n}</button>`).join("")}</div></div>
-    <div class="field"><label for="rdDate"><span>Fecha</span></label><input id="rdDate" type="date" value="${dateVal(r.date)}" data-rf="date"></div>
-    <div class="field"><label for="rdPick"><span>Campo</span></label><select id="rdPick" data-rf="pick"><option value="">Elegir de la lista…</option>${opts.map(([v, n]) => `<option value="${v}">${esc(n)}</option>`).join("")}</select></div>
-    <div class="grid2"><div class="field"><label for="rdC"><span>Nombre</span></label><input id="rdC" type="text" value="${esc(r.course)}" data-rf="course"></div><div class="field"><label for="rdT"><span>Barras</span></label><input id="rdT" type="text" value="${esc(r.tees)}" data-rf="tees"></div></div>
-    <div class="field"><div class="lab"><span>Hoyos</span></div><div class="seg">${[18, 9].map(n => `<button class="${r.holes === n ? "on" : ""}" data-a="rd-set" data-k="holes" data-v="${n}">${n} hoyos</button>`).join("")}</div></div>
-    <div class="grid3"><div class="field"><label for="rdP"><span>Par</span></label><input id="rdP" type="number" inputmode="numeric" value="${r.par}" data-rf="par"></div><div class="field"><label for="rdCR"><span>Valor</span></label><input id="rdCR" type="number" inputmode="decimal" step="0.1" value="${r.cr}" data-rf="cr"></div><div class="field"><label for="rdS"><span>Slope</span></label><input id="rdS" type="number" inputmode="numeric" value="${r.slope}" data-rf="slope"></div></div>
-    <p class="small muted" style="margin:-4px 2px 14px">${preset ? esc(preset.note) + " " : ""}${r.holes === 9 ? "Para 9 hoyos usa el valor y el slope de 9 hoyos de la tarjeta (el valor ronda la mitad del de 18)." : "El valor de campo y el slope están en la tarjeta o en la web de la federación."}</p>
-    <div class="field" style="margin:0"><div class="lab"><span>Cómo la apuntas</span></div><div class="seg">${[["holes", "Hoyo a hoyo"], ["total", "Solo el total"]].map(([k, n]) => `<button class="${r.mode === k ? "on" : ""}" data-a="rd-set" data-k="mode" data-v="${k}">${n}</button>`).join("")}</div>
-    <p class="small muted" style="margin:8px 2px 0">${r.mode === "holes" ? "Recomendado: permite el ajuste por hoyo del sistema de hándicap y saca tus estadísticas." : "Más rápido, pero sin ajuste por hoyo ni estadísticas."}</p></div>
+    <div class="field" style="margin:0"><label for="rdDate"><span>Fecha</span></label><input id="rdDate" type="date" value="${dateVal(r.date)}" data-rf="date"></div>
   </div>
+  ${courseCard(r)}
+  ${gameCard(r)}
+  ${game ? "" : `<div class="card"><div class="field" style="margin:0"><div class="lab"><span>Cómo la apuntas</span></div><div class="seg">${[["holes", "Hoyo a hoyo"], ["total", "Solo el total"]].map(([k, n]) => `<button class="${r.mode === k ? "on" : ""}" data-a="rd-set" data-k="mode" data-v="${k}">${n}</button>`).join("")}</div>
+    <p class="small muted" style="margin:8px 2px 0">${r.mode === "holes" ? "Recomendado: permite el ajuste por hoyo del sistema de hándicap y saca tus estadísticas." : "Más rápido, pero sin ajuste por hoyo ni estadísticas."}</p></div></div>`}
   ${virt ? `<div class="banner" style="background:color-mix(in srgb,var(--putt) 12%,var(--surface));border-color:color-mix(in srgb,var(--putt) 30%,transparent)">${ico("putt", 22)}<div><b>Ronda en Toptracer.</b> Apunta los golpes que da la pantalla en cada hoyo. Desde 32 m no se puttea (se tira a una diana) y no hay lies malos: la app le suma el ajuste virtual para compararla con una ronda real.</div></div>` : ""}
-  <button class="btn lime block big" data-a="rd-go">${r.mode === "holes" ? "Empezar en el hoyo 1 →" : "Apuntar el total →"}</button>`;
+  <button class="btn lime block big" data-a="rd-go">${r.mode === "holes" || game ? "Empezar en el hoyo 1 →" : "Apuntar el total →"}</button>`;
 }
 function rdCH(r) { return courseHcp(hcpData().carry.index ?? officialHcp(), r); }
 function holeDots(r, cur) {
@@ -1254,22 +1705,25 @@ function roundHole(r, i) {
   const h = r.h[i], n = r.h.length, virt = r.type === "virtual";
   const recv = strokesByHole(r.h, rdCH(r))[i]; const max = h.p + 2 + recv;
   const done = r.h.filter(x => x.s); const tot = done.reduce((a, x) => a + x.s, 0), parDone = done.reduce((a, x) => a + x.p, 0);
-  const rel = h.s ? h.s - h.p : null;
+  const rel = h.s ? h.s - h.p : null; const fmt = r.fmt || "stroke"; const game = (r.pl || []).length || fmt !== "stroke";
+  const g = game ? gameCalc(r) : null; const me = g && g.ps[0]; const myPts = me && me.pts[i];
   const pill = (k, v, lbl, on) => `<button class="chip ${on ? "on" : ""}" data-a="rd-h" data-k="${k}" data-v="${v}">${lbl}</button>`;
   return `<div class="row between" style="margin:2px 2px 10px"><div class="eyebrow" style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${virt ? "Virtual" : "Real"} · ${esc(r.course)}</div><span class="row" style="gap:14px;flex:0 0 auto"><button class="link small" style="color:var(--mute)" data-a="rd-cancel">Descartar</button><button class="link small" data-a="rd-pause">Pausar</button></span></div>
   ${holeDots(r, i)}
-  <div class="target"><div class="row between" style="align-items:flex-start"><div><div class="lbl">Hoyo ${i + 1} de ${n}</div><div class="big">Par ${h.p}${h.si ? ` · índice ${h.si}` : ""}</div><div class="sub">recibes ${recv} golpe${recv === 1 ? "" : "s"} · máximo para hándicap: ${max}</div></div>
-  <div class="streak"><b>${done.length ? (tot - parDone > 0 ? "+" : "") + (tot - parDone) : "E"}</b>${done.length ? tot + " golpes" : "sin empezar"}</div></div></div>
+  <div class="target"><div class="row between" style="align-items:flex-start"><div><div class="lbl">Hoyo ${i + 1} de ${n}</div><div class="big">Par ${h.p}${h.d ? `<span class="dist">${fmtD(h.d)}</span>` : ""}</div><div class="sub">${h.si ? `índice ${h.si} · ` : ""}${g && g.net && fmt !== "stroke" ? `en la partida recibes ${me.recv[i]}` : `recibes ${recv} golpe${recv === 1 ? "" : "s"}`} · máximo para hándicap: ${max}</div></div>
+  <div class="streak">${fmt === "stableford" ? `<b>${me.ptsTot}</b>puntos` : `<b>${done.length ? (tot - parDone > 0 ? "+" : "") + (tot - parDone) : "E"}</b>${done.length ? tot + " golpes" : "sin empezar"}`}</div></div></div>
   <div class="card">
     <div class="field"><div class="lab"><span>Par</span></div><div class="seg">${[3, 4, 5].map(p => `<button class="${h.p === p ? "on" : ""}" data-a="rd-h" data-k="p" data-v="${p}">Par ${p}</button>`).join("")}</div></div>
     <div class="field"><div class="lab"><span>Golpes${virt ? " (los de la pantalla)" : ""}</span><span class="counts">CUENTA</span></div>
-      <div class="hcpbox"><button data-a="rd-step" data-k="s" data-v="-1" aria-label="Un golpe menos">−</button><button class="val" style="height:76px;border-radius:16px;background:var(--raise);border:1.5px solid var(--line2);display:flex;flex-direction:column;align-items:center;justify-content:center" data-a="rd-step" data-k="s" data-v="0" aria-label="Poner el par"><span class="num" style="font-size:36px;font-weight:600;line-height:1">${h.s ?? "—"}</span><small class="muted" style="font-size:11px;margin-top:3px">${rel == null ? "toca: par" : relName(rel)}${h.s > max ? " · cuenta " + max : ""}</small></button><button data-a="rd-step" data-k="s" data-v="1" aria-label="Un golpe más">+</button></div></div>
+      <div class="hcpbox"><button data-a="rd-step" data-k="s" data-v="-1" aria-label="Un golpe menos">−</button><button class="val" style="height:76px;border-radius:16px;background:var(--raise);border:1.5px solid var(--line2);display:flex;flex-direction:column;align-items:center;justify-content:center" data-a="rd-step" data-k="s" data-v="0" aria-label="Poner el par"><span class="num" style="font-size:36px;font-weight:600;line-height:1">${h.s ?? "—"}</span><small class="muted" style="font-size:11px;margin-top:3px">${rel == null ? "toca: par" : h.pu ? "recogida · 0 pts" : relName(rel)}${h.s > max && !h.pu ? " · cuenta " + max : ""}${fmt === "stableford" && myPts != null && !h.pu ? ` · ${myPts} pts` : ""}</small></button><button data-a="rd-step" data-k="s" data-v="1" aria-label="Un golpe más">+</button></div>
+      ${fmt === "stableford" ? `<button class="chip${h.pu ? " on" : ""}" style="margin-top:10px" data-a="rd-pu">${h.pu ? "Recogida: se apunta el máximo para hándicap" : "Recoger bola (0 puntos)"}</button>` : ""}</div>
     ${virt ? "" : `<div class="field"><div class="lab"><span>Putts</span></div><div class="chips">${[0, 1, 2, 3, 4].map(v => pill("pt", v, v === 4 ? "4+" : v, h.pt === v)).join("")}</div></div>`}
     ${h.p >= 4 ? `<div class="field"><div class="lab"><span>Salida</span></div><div class="chips">${[["I", "← Izquierda"], ["C", "Calle"], ["D", "Derecha →"]].map(([k, l]) => pill("fw", k, l, h.fw === k)).join("")}</div></div>` : ""}
     <div class="grid2"><div class="field" style="margin:0"><div class="lab"><span>Penalidades</span></div><div class="mini-step"><button data-a="rd-step" data-k="pen" data-v="-1" aria-label="Menos">−</button><span>${h.pen || 0}</span><button data-a="rd-step" data-k="pen" data-v="1" aria-label="Más">+</button></div></div>
     <div class="field" style="margin:0"><div class="lab"><span>Índice del hoyo</span></div><div class="mini-step"><button data-a="rd-step" data-k="si" data-v="-1" aria-label="Menos">−</button><span>${h.si || "—"}</span><button data-a="rd-step" data-k="si" data-v="1" aria-label="Más">+</button></div></div></div>
     ${h.si ? "" : `<p class="tiny muted" style="margin:10px 2px 0">El índice (dificultad del hoyo, de 1 a 18) está en la tarjeta. Sirve para repartir tus golpes de ventaja; se guarda para la próxima vez.</p>`}
   </div>
+  ${game ? companionsCard(r, i) : ""}
   <div class="row"><button class="btn ghost" style="flex:1" data-a="rd-prev">← ${i ? "Anterior" : "Datos"}</button><button class="btn" style="flex:2" data-a="rd-next">${i === n - 1 ? "Revisar ronda" : "Siguiente hoyo →"}</button></div>`;
 }
 function roundTotal(r) {
@@ -1294,13 +1748,15 @@ function roundReview(r) {
   if (res.diff == null) return `<div class="empty">Faltan datos: revisa el valor de campo y los golpes.</div><button class="btn block" style="margin-top:12px" data-a="rd-prev">← Volver</button>`;
   const adjD = virt ? r1(res.diff + HD.adj.diff) : res.diff;
   const editing = S.rounds.some(x => x.id === r.id);
+  const missing = (r.pl || []).filter(p => (p.s || []).filter(x => x != null).length < r.h.length).map(p => p.name);
   const others = S.rounds.filter(x => x.id !== r.id); const keep = S.rounds; S.rounds = others; invalidate();
   const before = hcpData().carry.index; const after = computeHistory(false, virtualAdjWith(r), r).index; S.rounds = keep; invalidate();
   return `<div class="row between" style="margin:6px 2px 12px"><h2 class="sec-title" style="margin:0">Revisar</h2><button class="link small" data-a="rd-cancel">Cancelar</button></div>
   <div class="hero"><div class="ground"></div><div class="eyebrow">${virt ? "Virtual" : "Real"} · ${esc(r.course)} · ${fmtDate(r.date)}</div>
     <div class="row" style="align-items:flex-end;gap:14px;margin-top:10px"><div class="summary-big num">${res.gross}</div><div style="padding-bottom:8px" class="small">${res.gross - r.par > 0 ? "+" : ""}${res.gross - r.par} sobre par ${r.par}</div></div>
-    <div class="hero-stats"><div class="hstat"><b>${res.ags}</b><span>resultado ajustado</span></div><div class="hstat"><b>${fmt1(adjD)}</b><span>diferencial${virt ? " ajustado" : ""}</span></div><div class="hstat"><b>${res.ch}</b><span>hándicap de juego</span></div></div></div>
-  ${r.mode === "holes" ? `<div class="card" style="overflow-x:auto">${scorecard(r, res)}${res.capped ? `<p class="small muted" style="margin:6px 0 0">En ${res.capped} hoyo${res.capped === 1 ? "" : "s"} cuenta el máximo (doble bogey neto): número pequeño.</p>` : ""}</div>` : ""}
+    ${missing.length ? `<p class="small" style="margin:8px 0 0;opacity:.85">Faltan hoyos de ${esc(missing.join(", "))}: puedes volver atrás y completarlos.</p>` : ""}<div class="hero-stats"><div class="hstat"><b>${res.ags}</b><span>resultado ajustado</span></div><div class="hstat"><b>${fmt1(adjD)}</b><span>diferencial${virt ? " ajustado" : ""}</span></div><div class="hstat"><b>${res.ch}</b><span>hándicap de juego</span></div></div></div>
+  ${(r.pl || []).length || (r.fmt || "stroke") !== "stroke" ? leaderboard(r) + `<div class="card" style="overflow-x:auto"><div class="eyebrow" style="margin-bottom:8px">Tarjeta de la partida</div>${gameScorecard(r)}</div>` : ""}
+  ${r.mode === "holes" ? `<div class="card" style="overflow-x:auto">${(r.pl || []).length ? `<div class="eyebrow" style="margin-bottom:8px">Tu tarjeta (para tu hándicap)</div>` : ""}${scorecard(r, res)}${res.capped ? `<p class="small muted" style="margin:6px 0 0">En ${res.capped} hoyo${res.capped === 1 ? "" : "s"} cuenta el máximo (doble bogey neto): número pequeño.</p>` : ""}</div>` : ""}
   <div class="card"><ul class="tips" style="margin:0">
     ${virt ? `<li>${ico("putt", 18)}<span>Diferencial en Toptracer: ${fmt1(res.diff)}, más ajuste virtual de ${fmtH(HD.adj.diff.toFixed(1))} (${HD.adj.calibrated ? "calibrado con tus rondas" : "estimación inicial"}) = <b>${fmt1(adjD)}</b>.</span></li>` : ""}
     ${res.nine ? `<li>${ico("check", 18)}<span>9 hoyos: diferencial de los 9 jugados más ${fmtH(String(res.exp9))} esperados para otros 9 con tu índice.</span></li>` : ""}
@@ -1313,7 +1769,7 @@ function roundSheet(r) {
   const res = roundCalc(r, hcpData().carry.index ?? officialHcp()); const it = hcpData().carry.rec.find(x => x.id === r.id);
   sheet(`<div class="eyebrow">${r.type === "virtual" ? "Ronda virtual" : "Ronda real"} · ${fmtDate(r.date)}</div><h3 style="font-family:var(--display);font-size:26px;margin:6px 0 4px;letter-spacing:-.03em">${esc(r.course)} · ${res.gross ?? "—"}</h3>
   <p class="small muted" style="margin:0 0 12px">${esc(r.tees)} · par ${r.par} · valor ${fmtH(r.cr)} · slope ${r.slope} · diferencial ${it ? fmt1(it.diff) : "—"}${it && it.esr ? ` · reducción excepcional −${it.esr}` : ""}${it && it.cap ? " · tope aplicado" : ""}</p>
-  ${r.mode === "holes" && r.h.length ? `<div style="overflow-x:auto">${scorecard(r, res)}</div>` : ""}
+  ${(r.pl || []).length || ((r.fmt || "stroke") !== "stroke" && r.mode === "holes") ? leaderboard(r) + `<div style="overflow-x:auto">${gameScorecard(r)}</div>` : r.mode === "holes" && r.h.length ? `<div style="overflow-x:auto">${scorecard(r, res)}</div>` : ""}
   ${r.note ? `<div class="why" style="margin:6px 0 0">“${esc(r.note)}”</div>` : ""}
   <div class="row" style="margin-top:16px"><button class="btn ghost" style="flex:1;color:var(--bad)" data-a="rd-del" data-id="${r.id}">Borrar</button><button class="btn ghost" style="flex:1" data-a="rd-edit" data-id="${r.id}">Editar</button><button class="btn" style="flex:1" data-a="close-sheet">Cerrar</button></div>`);
 }
@@ -1322,14 +1778,17 @@ const RD_ACT = {
   "rd-cancel": () => { const r = S.ui.rd && S.ui.rd.r; if (r && r.h && r.h.some(x => x.s) && !S.rounds.some(x => x.id === r.id)) { confirmSheet("¿Descartar la ronda?", `Llevas ${r.h.filter(x => x.s).length} hoyos apuntados. Si sales, se pierden.`, "Descartar", "rd-cancel-yes"); return; } S.ui.rd = null; render(); scrollTo(0, 0); },
   "rd-pause": () => { saveRdDraft(); toast("Ronda en pausa: la retomas desde Hoy o Rondas"); location.hash = "#hoy"; },
   "rd-cancel-yes": () => { closeSheet(); S.ui.rd = null; render(); scrollTo(0, 0); },
-  "rd-set": a => { const r = S.ui.rd.r; const k = a.dataset.k; let v = a.dataset.v; if (k === "holes") { v = +v; if (v !== r.holes) { if (v === 9) { r.par = Math.round(r.par / 2); r.cr = r1(r.cr / 2); } else { r.par = r.par * 2; r.cr = r1(r.cr * 2); } r.h = []; } } if (k === "type" && v !== r.type) { const nr = newRound(v); Object.assign(r, { type: v, course: nr.course, tees: nr.tees, holes: nr.holes, par: nr.par, cr: nr.cr, slope: nr.slope, h: [] }); } r[k] = v; render(); },
+  "rd-set": a => { const r = S.ui.rd.r; const k = a.dataset.k; let v = a.dataset.v; if (k === "holes") { v = +v; if (v !== r.holes) { if (v === 9) { r.par = Math.round(r.par / 2); r.cr = r1(r.cr / 2); } else { r.par = r.par * 2; r.cr = r1(r.cr * 2); } r.h = []; } } if (k === "type" && v !== r.type) { const nr = newRound(v); Object.assign(r, { type: v, course: nr.course, tees: nr.tees, holes: nr.holes, nine: nr.nine, par: nr.par, cr: nr.cr, slope: nr.slope, cid: nr.cid, ti: nr.ti, rsrc: nr.rsrc, h: [] }); (r.pl || []).forEach(p => { p.s = []; const c = courseOf(r.cid); p.ti = c ? defaultTee(c, p.g) : null; }); } r[k] = v; render(); },
   "rd-go": () => { const r = S.ui.rd.r; r.par = parseInt(r.par, 10); r.cr = parseFloat(String(r.cr).replace(",", ".")); r.slope = parseInt(r.slope, 10);
     if (!(r.par >= 27 && r.par <= 80) || !(r.cr >= 20 && r.cr <= 85) || !(r.slope >= 55 && r.slope <= 155)) { toast("Revisa par, valor de campo (20–85) y slope (55–155)"); return; }
     if (!String(r.course || "").trim()) r.course = r.type === "virtual" ? "Campo virtual" : "Campo";
+    if ((r.pl || []).length || (r.fmt || "stroke") !== "stroke") r.mode = "holes";
+    if (r.rsrc === "none" && +r.cr === +r.par && +r.slope === 113) toast("Sin valor ni slope reales: la ronda no será fiable para tu hándicap");
     if (r.mode === "holes") { ensureHoles(r); S.ui.rd.step = "holes"; S.ui.rd.i = Math.max(0, r.h.findIndex(x => !x.s)); if (S.ui.rd.i < 0) S.ui.rd.i = 0; } else S.ui.rd.step = "total"; render(); scrollTo(0, 0); },
   "rd-goto": a => { S.ui.rd.i = +a.dataset.i; render(); },
   "rd-h": a => { const st = S.ui.rd, h = st.r.h[st.i]; const k = a.dataset.k; let v = a.dataset.v; if (k !== "fw") v = +v; h[k] = h[k] === v && k !== "p" ? null : v; vib(8); render(); },
   "rd-step": a => { const st = S.ui.rd, h = st.r.h[st.i]; const k = a.dataset.k, d = +a.dataset.v;
+    if (k === "s") h.pu = false;
     if (k === "s") h.s = d === 0 ? (h.s ?? h.p) : clamp((h.s ?? h.p) + (h.s == null ? 0 : d), 1, 15);
     else if (k === "pen") h.pen = clamp((h.pen || 0) + d, 0, 6);
     else if (k === "si") h.si = h.si == null ? (d > 0 ? 1 : 18) : (h.si + d < 1 || h.si + d > 18 ? null : h.si + d);
@@ -1395,18 +1854,20 @@ const TABS = [
   ["datos", "Datos", '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>'],
   ["bolsa", "Bolsa", '<path d="M7 3l2 18M12 3v18M17 3l-2 18M5 21h14"/>']
 ];
-function route() { const h = (location.hash || "").replace("#", ""); return TABS.some(t => t[0] === h) ? h : "hoy"; }
+function route() { const h = (location.hash || "").replace("#", ""); return TABS.some(t => t[0] === h) || h === "ajustes" ? h : "hoy"; }
 function renderTabs() {
   const r = route(), live = !!liveSession();
   $("#tabs").innerHTML = TABS.map(([id, nm, ic]) => `<a href="#${id}" class="${r === id ? "on" : ""}" aria-current="${r === id ? "page" : "false"}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ic}</svg>${nm}${id === "sesion" && live ? '<span class="live-dot" aria-label="sesión en curso"></span>' : ""}</a>`).join("");
 }
 function render() {
-  if (needsOnboarding()) { $("#tabs").innerHTML = ""; $("#tabs").style.display = "none"; $("#view").innerHTML = vOnboard(); return; }
-  $("#tabs").style.display = "";
+  const av = $("#avatar");
+  if (needsOnboarding()) { $("#tabs").innerHTML = ""; $("#tabs").style.display = "none"; if (av) av.style.display = "none"; $("#view").innerHTML = vOnboard(); return; }
+  $("#tabs").style.display = ""; if (av) { av.style.display = ""; av.textContent = initials(P().name); av.classList.toggle("on", route() === "ajustes"); }
   renderTabs();
   const r = route();
-  $("#view").innerHTML = ({ hoy: vHoy, plan: vPlan, sesion: vSesion, rondas: vRondas, datos: vDatos, bolsa: vBolsa })[r]();
+  $("#view").innerHTML = ({ hoy: vHoy, plan: vPlan, sesion: vSesion, rondas: vRondas, datos: vDatos, bolsa: vBolsa, ajustes: vAjustes })[r]();
   tickTimer(); saveRdDraft(); syncWakeLock(r);
+  scrollTees();
 }
 // ronda a medias: se guarda en el móvil por si cierras la app en el campo
 const RD_KEY = "carry.rd";
@@ -1496,7 +1957,7 @@ function quickActions(live, plan, stale) {
   const train = live ? `<a class="qa" style="--g:var(--g-app)" href="#sesion">${ico("target", 26)}<b>Seguir sesión</b><span>${liveSession().cur + 1}/${liveSession().blocks.length} bloques</span></a>`
     : plan && !stale ? `<button class="qa" style="--g:var(--g-app)" data-a="start">${ico("target", 26)}<b>Entrenar</b><span>${plan.minutes} min · ~${planBalls(plan)} bolas</span></button>`
     : `<button class="qa" style="--g:var(--g-app)" data-a="gen-go">${ico("target", 26)}<b>Entrenar</b><span>crear sesión</span></button>`;
-  return `<div class="qas">${train}<button class="qa" style="--g:var(--g-wedge)" data-a="rd-new" data-v="real">${ico("app", 26)}<b>Ronda real</b><span>apuntar en el campo</span></button><button class="qa" style="--g:var(--g-putt)" data-a="rd-new" data-v="virtual">${ico("chart", 26)}<b>Toptracer</b><span>ronda virtual</span></button></div>`;
+  return `<div class="qas">${train}<button class="qa" style="--g:var(--g-wedge)" data-a="rd-new" data-v="real">${ico("app", 26)}<b>Ronda</b><span>sola o con amigos</span></button><button class="qa" style="--g:var(--g-putt)" data-a="rd-new" data-v="virtual">${ico("chart", 26)}<b>Toptracer</b><span>ronda virtual</span></button></div>`;
 }
 function backupBanner() {
   if (IN_ARTIFACT) return ""; const has = S.sessions.length + S.rounds.length; if (has < 2) return "";
@@ -1808,7 +2269,8 @@ function vOnboard() {
   if (o.step === 0) return `<div class="ob">${steps}<section class="hero"><div class="ground"></div>${tracesSVG([])}<div class="eyebrow">Bienvenido a CARRY</div><h1>Tu coach de prácticas.</h1><p>Sesiones que cambian cada semana, registro de cada bola y tu hándicap de juego.</p></section>
     <div class="card">${[["app", "Plan para tu nivel", "Ejercicios y ventanas según tu hándicap, nunca los mismos."], ["wedge", "Cada bola cuenta", "Carry, contacto y vuelo en dos toques, con consejos al momento."], ["putt", "Tu hándicap de juego", "Con rondas reales y de Toptracer, sin esperar a torneos."]].map(([a, t, d]) => `<div class="ob-feat"><span style="${aStyle(a)}">${ico(a, 20)}</span><div><b>${t}</b><div class="small muted">${d}</div></div></div>`).join("")}</div>
     <div class="card"><div class="field"><label for="obN"><span>¿Cómo te llamas?</span></label><input id="obN" type="text" value="${esc(pr.name)}" placeholder="Tu nombre" data-f="name" autocomplete="given-name"></div>
-    <div class="field" style="margin:0"><div class="lab"><span>Juegas como</span></div><div class="seg">${[["R", "Diestro"], ["L", "Zurdo"]].map(([k, n]) => `<button class="${H() === k ? "on" : ""}" data-a="ob-set" data-k="hand" data-v="${k}">${n}</button>`).join("")}</div></div></div>
+    <div class="grid2"><div class="field" style="margin:0"><div class="lab"><span>Juegas como</span></div><div class="seg">${[["R", "Diestro"], ["L", "Zurdo"]].map(([k, n]) => `<button class="${H() === k ? "on" : ""}" data-a="ob-set" data-k="hand" data-v="${k}">${n}</button>`).join("")}</div></div>
+    <div class="field" style="margin:0"><div class="lab"><span>Barras de</span></div><div class="seg">${[["M", "Caballeros"], ["W", "Damas"]].map(([k, n]) => `<button class="${sexOf() === k ? "on" : ""}" data-a="ob-set" data-k="sex" data-v="${k}">${n}</button>`).join("")}</div></div></div></div>
     ${nav("ob-next", "Empezar →")}<div class="row" style="justify-content:center;gap:18px;margin-top:14px"><button class="link small" data-a="import">Ya tengo una copia: importar</button><button class="link small" style="color:var(--mute)" data-a="ob-skip">Saltar</button></div></div>`;
   if (o.step === 1) return `<div class="ob">${steps}<h2 class="sec-title">Tu hándicap</h2><p class="sec-sub">Decide qué ejercicios te tocan y lo exigentes que son. Después lo afinará tu HCP CARRY con tus rondas.</p>
     <div class="seg" style="margin-bottom:14px"><button class="${o.hasH ? "on" : ""}" data-a="ob-has" data-v="1">Tengo hándicap</button><button class="${!o.hasH ? "on" : ""}" data-a="ob-has" data-v="0">No tengo</button></div>
@@ -1824,7 +2286,7 @@ function vOnboard() {
   const L = lvOf(pr.hcp); const k = o.i7 / CAT["7i"].def;
   return `<div class="ob">${steps}<section class="hero"><div class="ground"></div>${tracesSVG([])}<div class="eyebrow">Todo listo</div><h1>${pr.name ? esc(pr.name) + ", a" : "A"} entrenar.</h1><p>Nivel ${GAME[L].name} · ${BAG_SETS[o.set].ids.length} palos · hierro 7 a ${o.i7} m.</p></section>
     <div class="card"><div class="eyebrow">Tu bolsa estimada</div><div class="chips" style="margin-top:10px">${BAG_SETS[o.set].ids.map(id => `<span class="chip" style="min-height:34px;font-size:13px">${clubShort(id)} <small>${Math.round(CAT[id].def * k)}</small></span>`).join("")}</div></div>
-    ${IN_PWA ? `<div class="notice" style="margin:0 0 14px"><span class="nic">${ico("lock", 16)}</span><div>Tus datos se guardan solo en este móvil. De vez en cuando, en Bolsa, <b>guarda una copia en Archivos</b>.</div></div>` : ""}
+    ${IN_PWA ? `<div class="notice" style="margin:0 0 14px"><span class="nic">${ico("lock", 16)}</span><div>Tus datos se guardan solo en este móvil. De vez en cuando, en Ajustes (toca tu inicial arriba), <b>guarda una copia en Archivos</b>.</div></div>` : ""}
     ${nav("ob-finish", "Crear mi primera sesión →")}</div>`;
 }
 const OB_ACT = {
@@ -1879,28 +2341,9 @@ function setsSheet() {
   <button class="btn ghost block" style="margin-top:12px" data-a="close-sheet">Cancelar</button>`);
 }
 function vBolsa() {
-  const pr = P(), L = LV(); const shots = allShots(S.sessions).filter(x => x.carry != null && !["Top", "Gruesa"].includes(x.contact));
-  return `<h2 class="sec-title">Bolsa y perfil</h2>
+  return `<h2 class="sec-title">Bolsa</h2><p class="sec-sub">Tus palos y sus distancias de carry: los ejercicios eligen palo y objetivo con ellos.</p>
   ${bagCard()}
-  <div class="card">
-    <div class="field"><label for="nm"><span>Nombre</span></label><input id="nm" type="text" value="${esc(pr.name)}" data-f="name" autocomplete="off"></div>
-    <div class="field"><div class="lab"><span>Hándicap oficial</span><span class="tag" style="--c:var(--ok)">Nivel ${GAME[L].name}</span></div>
-      <div class="hcpbox"><button data-a="hcp" data-v="-1" aria-label="Bajar hándicap">−</button><input id="hc" type="number" inputmode="decimal" step="0.1" min="-5" max="54" value="${pr.hcp}" data-f="hcp" aria-label="Hándicap"><button data-a="hcp" data-v="1" aria-label="Subir hándicap">+</button></div>
-      <p class="small muted" style="margin:8px 2px 0">Con este HCP: ventana de carry ±${Math.round(TOLPCT[L] * EXIG[pr.tolerance] * 100)} % (mín. ${tolFor(10)} m) · salida: ${L <= 1 ? `en juego ${playWidth()} m (calle ${fwWidth()} m)` : `calle ${fwWidth()} m`}. Los ejercicios y sus claves cambian con el nivel. ${usingCarry() ? `Ahora mandan tu <b>HCP CARRY (${fmt1(hcpData().carry.index)})</b>; se cambia en Rondas.` : ""}</p></div>
-    <div class="field"><label for="gl"><span>Objetivo de hándicap</span></label><input id="gl" type="number" inputmode="decimal" step="0.1" value="${pr.goal}" data-f="goal"></div>
-    <div class="grid2"><div class="field"><div class="lab"><span>Juegas como</span></div><div class="seg">${[["R", "Diestro"], ["L", "Zurdo"]].map(([k, n]) => `<button class="${H() === k ? "on" : ""}" data-a="set" data-k="hand" data-v="${k}">${n}</button>`).join("")}</div></div>
-    <div class="field"><div class="lab"><span>Exigencia</span></div><div class="seg">${[["amable", "Suave"], ["normal", "Normal"], ["exigente", "Dura"]].map(([k, n]) => `<button class="${pr.tolerance === k ? "on" : ""}" data-a="set" data-k="tolerance" data-v="${k}">${n}</button>`).join("")}</div></div></div>
-    <div class="field" style="margin:0"><div class="lab"><span>Tu forma natural</span>${L <= 1 ? '<span style="text-transform:none;letter-spacing:0">se usa desde HCP &lt; 30</span>' : ""}</div><div class="seg">${[["recta", "Recta"], ["draw", "Draw"], ["fade", "Fade"]].map(([k, n]) => `<button class="${pr.stock === k ? "on" : ""}" data-a="set" data-k="stock" data-v="${k}">${n}</button>`).join("")}</div></div>
-  </div>
-  ${levelCard(L, false)}
-  <div class="card"><div class="field" style="margin:0"><div class="lab"><span>Tema</span></div><div class="seg">${[["auto", "Automático"], ["light", "Claro"], ["dark", "Oscuro"]].map(([k, n]) => `<button class="${(pr.theme || "auto") === k ? "on" : ""}" data-a="theme" data-v="${k}">${n}</button>`).join("")}</div></div></div>
-  <div class="card"><div class="eyebrow" style="margin-bottom:6px">Cómo funciona el coach</div>
-  <p class="small" style="margin:0">Cada sesión sigue el orden calentar → calibrar → variar → explorar → presión → juego corto → primera bola. El reparto cambia con la semana del ciclo (Medir, Construir, Variar, Competir). El hándicap decide qué ejercicios entran, cómo de anchas son las ventanas y qué claves ves. El foco automático da más peso al área donde más fallas, y los ejercicios de las dos últimas sesiones casi no se repiten. Durante la sesión, si se repite un patrón (gruesas, slice, cortas…), el coach te da una indicación.</p>
-  <p class="small muted" style="margin:10px 0 0">Esta app no se conecta a Toptracer: los números los apuntas tú desde la pantalla de la cancha.</p></div>
-  <div class="card"><div class="eyebrow" style="margin-bottom:6px">Tus datos</div><p class="small muted" style="margin:0 0 12px">${DB ? "Se guardan en tu cuenta de Claude y los ves desde cualquier dispositivo." : IN_PWA ? "Se guardan en este móvil. Haz una copia de vez en cuando (por ejemplo, al final de cada mes) y guárdala en iCloud o en tu correo." : "Ahora mismo se guardan solo en este navegador."}</p>
-  <div class="grid2"><button class="btn ghost" data-a="export">${IN_ARTIFACT ? "Copiar copia" : "Guardar copia en Archivos"}</button><button class="btn ghost" data-a="import">Importar copia</button></div>
-  <p class="tiny muted" style="margin:10px 2px 12px">${P().lastBackup ? `Última copia: ${fmtDate(P().lastBackup)}. ` : "Aún no has hecho ninguna copia. "}${IN_PWA ? `En el iPhone se abre el menú de compartir: elige «Guardar en Archivos» (iCloud Drive). ${STORAGE_OK === true ? "Almacenamiento protegido por el sistema: sí." : ""}` : ""} La copia incluye perfil, bolsa, sesiones y rondas. Sirve también para pasar tus datos entre la versión de Claude y la app instalada.</p>
-  <button class="btn ghost block" data-a="reset">Borrar todo y empezar de cero</button></div>`;
+  <button class="list-item card" style="padding:14px 16px" data-a="go-ajustes"><span class="av" style="--c:var(--lime)">${esc(initials(P().name))}</span><div style="min-width:0"><div class="t">Perfil y ajustes</div><div class="s">Hándicap, valoración, exigencia, tema, campos y copias</div></div><span class="chev">›</span></button>`;
 }
 
 // ---------- hojas y avisos ----------
@@ -1955,7 +2398,7 @@ function setHcp(v) { const before = LV(); P().hcp = Math.round(clamp(v, -5, 54) 
 const ACT = Object.assign({}, RD_ACT_REF(), {
   "gen": () => { P().plan = generatePlan(); saveProfile(); render(); setTimeout(() => { const el = $(".wild"); el && el.scrollIntoView({ behavior: "smooth", block: "start" }); }, 50); },
   "gen-go": () => { P().plan = generatePlan(); saveProfile(); location.hash = "#plan"; },
-  "set": a => { const k = a.dataset.k; let v = a.dataset.v; if (["minutes", "discomfort"].includes(k)) v = +v; P()[k] = v; saveProfile(); render(); },
+  "set": a => { const k = a.dataset.k; let v = a.dataset.v; if (["minutes", "discomfort", "allow"].includes(k)) v = +v; P()[k] = v; saveProfile(); render(); },
   "theme": a => { P().theme = a.dataset.v; saveProfile(); applyTheme(); render(); },
   "hcp": a => { setHcp((parseFloat(P().hcp) || 0) + +a.dataset.v); render(); },
   "toggle": a => { const k = a.dataset.k; P()[k] = !P()[k]; saveProfile(); render(); },
@@ -2012,7 +2455,7 @@ const ACT = Object.assign({}, RD_ACT_REF(), {
   "reset": () => confirmSheet("¿Borrar todo?", "Perfil, bolsa y todas las sesiones. No se puede deshacer.", "Borrar todo", "reset-yes"),
   "reset-yes": async () => { closeSheet(); const ids = S.sessions.map(s => s.id); const rids = S.rounds.map(r => r.id); S.sessions = []; S.rounds = []; invalidate(); for (const id of rids) if (DB) { try { await DB.doc(roundPath(id)).delete(); } catch (e) {} } S.profile = DEFAULT_PROFILE(); saveProfile(); saveLocal(); for (const id of ids) if (DB) { try { await DB.doc(sessPath(id)).delete(); } catch (e) {} } applyTheme(); toast("Todo borrado"); render(); }
 });
-function RD_ACT_REF() { return Object.assign({}, RD_ACT, BK_ACT, OB_ACT); }
+function RD_ACT_REF() { return Object.assign({}, RD_ACT, BK_ACT, OB_ACT, GAME_ACT, CE_ACT); }
 function saveShot(skip) {
   const s = liveSession(); const b = s.blocks[s.cur]; const step = b.steps[b.cursor]; if (!step) return;
   if (skip) { b.cursor++; S.ui.draft = null; S.ui.lastResult = { b: s.cur, ok: null, text: "Bola saltada.", skip: true }; saveSession(s); render(); return; }
@@ -2055,6 +2498,9 @@ function undoShot() {
 document.addEventListener("click", e => { const a = e.target.closest("[data-a]"); if (!a) return; if (a.classList.contains("scrim") && e.target !== a) return; const f = ACT[a.dataset.a]; if (f) { e.preventDefault(); f(a, e); } });
 document.addEventListener("input", e => {
   const rf = e.target.closest("[data-rf]"); if (rf) { rdInput(rf); return; }
+  const ce = e.target.closest("[data-ce]"); if (ce) { ceInput(ce); return; }
+  const cs = e.target.closest("[data-cs]"); if (cs) { const l = $("#cpList"); if (l) l.innerHTML = courseListHTML(cs.value); return; }
+  const pf = e.target.closest("[data-pf]"); if (pf) { const k = pf.dataset.pf; if (k === "myhi") { const v = parseFloat(String(pf.value).replace(",", ".")); if (!isNaN(v) && S.ui.rd) S.ui.rd.r.myHi = clamp(v, -10, 54); } else if (S.ui.pe) S.ui.pe.p[k] = pf.value.slice(0, 30); return; }
   const el = e.target.closest("[data-f]"); if (!el) return; const k = el.dataset.f;
   if (k === "score") { const s = liveSession(); const b = s && s.blocks[s.cur]; if (!b) return; b.score = el.value === "" ? null : +el.value; saveSession(s, 1200); }
   else if (k === "note") { const s = liveSession(); if (s) { s.note = el.value.slice(0, 600); saveSession(s, 1500); } }
