@@ -2949,8 +2949,8 @@ document.addEventListener("keydown", e => { if (e.key === "Escape") closeSheet()
 <script>
 if ("serviceWorker" in navigator) addEventListener("load", () => {
   const had = !!navigator.serviceWorker.controller;
-  navigator.serviceWorker.register("sw.js").then(reg => { setInterval(() => reg.update().catch(() => {}), 60 * 60 * 1000); }).catch(() => {});
-  navigator.serviceWorker.addEventListener("controllerchange", () => { if (!had) return; const b = document.createElement("button"); b.className = "toast"; b.style.cursor = "pointer"; b.textContent = "Hay una versión nueva de CARRY · toca para actualizar"; b.onclick = () => location.reload(); document.body.appendChild(b); });
+  navigator.serviceWorker.register("sw.js").then(reg => { setInterval(() => reg.update().catch(() => {}), 60 * 60 * 1000); document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") reg.update().catch(() => {}); }); }).catch(() => {});
+  navigator.serviceWorker.addEventListener("controllerchange", () => { if (!had) return; const b = document.createElement("button"); b.className = "toast"; b.style.cursor = "pointer"; b.textContent = "Hay una versión nueva de Carry · toca para actualizar"; b.onclick = () => location.reload(); document.body.appendChild(b); });
 });
 </script>
 </body>
