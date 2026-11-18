@@ -81,7 +81,7 @@ input,select,textarea{font:inherit;color:inherit}
 .hero{position:relative;overflow:hidden;background:var(--hero);color:#F4F2EA;border-radius:30px;padding:20px 20px 18px;margin-bottom:14px;isolation:isolate;border:1px solid var(--herobd);box-shadow:0 24px 50px -30px rgba(13,26,19,.6)}
 .hero .eyebrow{color:rgba(244,242,234,.6)}
 .hero h1{font-family:var(--display);font-weight:800;font-size:40px;line-height:.95;letter-spacing:-.05em;margin:14px 0 8px;max-width:11ch;text-shadow:0 2px 18px rgba(13,26,19,.8)}
-.hero p{margin:0;color:rgba(244,242,234,.8);max-width:30ch;text-shadow:0 1px 14px #0D1A13,0 0 4px #0D1A13}
+.hero p{margin:0;color:rgba(244,242,234,.8);max-width:24ch;text-shadow:0 1px 14px #0D1A13,0 0 4px #0D1A13}
 .hero .traces{position:absolute;inset:0;z-index:-1;width:100%;height:100%;opacity:.95}
 .hero .traces path.tr{fill:none;stroke-width:2.4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.7s cubic-bezier(.2,.7,.2,1) forwards;filter:drop-shadow(0 0 5px currentColor)}
 .hero .traces circle{opacity:0;animation:pop .3s ease forwards}
@@ -289,7 +289,8 @@ textarea{min-height:84px;resize:vertical}
 .wild::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 14px,transparent 14px 28px);pointer-events:none}
 .wild .eyebrow{color:var(--lime)}
 .wild p{margin:6px 0 0;font-family:var(--display);font-size:19px;font-weight:700;letter-spacing:-.02em;line-height:1.22;position:relative}
-.banner{display:flex;gap:12px;align-items:center;background:color-mix(in srgb,var(--warn) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--warn) 30%,transparent);border-radius:18px;padding:12px 14px;margin-bottom:14px;font-size:13.5px}
+.banner > svg{flex:0 0 auto;width:34px;height:34px;padding:7px;border-radius:11px;background:var(--hero);color:var(--lime)}
+.banner{display:flex;gap:12px;align-items:center;background:color-mix(in srgb,var(--warn) 9%,var(--surface));border:1px solid color-mix(in srgb,var(--warn) 30%,transparent);border-radius:18px;padding:12px 14px;margin-bottom:14px;font-size:13.5px}
 /* modal */
 .scrim{position:fixed;inset:0;background:rgba(5,10,7,.5);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);z-index:60;display:flex;align-items:flex-end;justify-content:center;animation:fade .15s}
 .sheet{background:var(--bg);width:min(620px,100%);max-height:88vh;overflow:auto;border-radius:28px 28px 0 0;padding:10px 18px calc(22px + var(--sab));animation:up .22s cubic-bezier(.2,.8,.2,1);border:1px solid var(--line)}
@@ -317,6 +318,45 @@ textarea{min-height:84px;resize:vertical}
 .insight td:first-child,.insight th:first-child{text-align:left}
 .sc th,.sc td{padding:6px 3px;font-size:12px}
 .sc sup{font-size:9px;opacity:.7;margin-left:1px}
+.bagcard .bagcount{font-family:var(--display);font-size:22px;font-weight:750;letter-spacing:-.03em;margin-top:2px}
+.bagcard .bagcount b{font-family:var(--mono);font-weight:600}
+.yard{margin-top:14px;display:flex;flex-direction:column}
+.yrow{display:grid;grid-template-columns:46px 1fr 62px;gap:10px;align-items:center;padding:5px 0;text-align:left;width:100%}
+.ytag{height:34px;border-radius:11px;background:var(--g);color:var(--dc,#fff);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12.5px;font-weight:600}
+.ytag.big{width:58px;height:58px;border-radius:18px;font-size:17px;flex:0 0 auto}
+.ybar{position:relative;height:34px;border-radius:11px;background:var(--press);overflow:hidden;display:flex;align-items:center}
+.ybar i{position:absolute;left:0;top:0;bottom:0;background:var(--g);opacity:.22;border-radius:11px;transition:width .3s}
+.ybar em{position:relative;font-style:normal;font-size:12.5px;font-weight:600;padding:0 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--text2)}
+.yval{font-size:20px;font-weight:600;text-align:right}
+.yval small{font-size:11px;color:var(--mute);margin-left:2px}
+.ygap{font-family:var(--mono);font-size:10.5px;color:var(--mute);padding:0 0 0 56px;line-height:1.1;margin:-1px 0}
+.ygap.bad{color:var(--warn)}
+.notice{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;background:var(--surface2);border:1px solid var(--line);border-radius:14px;padding:10px 12px;margin-top:12px;font-size:13px;line-height:1.35}
+.notice .nic{width:28px;height:28px;border-radius:9px;background:var(--hero);color:var(--lime);display:flex;align-items:center;justify-content:center}
+.qas{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:-2px 0 14px}
+.qa{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:12px 12px 11px;border-radius:20px;background:var(--g);color:#fff;text-decoration:none;text-align:left;min-height:104px;position:relative;overflow:hidden;box-shadow:0 12px 24px -16px rgba(13,26,19,.6);transition:transform .12s}
+.qa:active{transform:scale(.97)}
+.qa svg{margin-bottom:auto;opacity:.95}
+.qa b{font-family:var(--display);font-size:16px;letter-spacing:-.02em;line-height:1.1;margin-top:10px}
+.qa span{font-size:11px;opacity:.85;line-height:1.2}
+.qa::after{content:"";position:absolute;right:-26px;top:-26px;width:80px;height:80px;border-radius:50%;border:14px solid rgba(255,255,255,.12)}
+button,a,.chip{touch-action:manipulation}
+.btn,.chip,.qa,.tabs a,.seg button{-webkit-user-select:none;user-select:none}
+html{-webkit-text-size-adjust:100%}
+/* bienvenida */
+.ob{min-height:calc(100vh - 120px);display:flex;flex-direction:column}
+.ob .hero{padding:26px 22px}
+.ob h1{font-size:44px;max-width:12ch}
+.ob-steps{display:flex;gap:6px;margin:0 0 16px}
+.ob-steps i{flex:1;height:5px;border-radius:5px;background:var(--press)}
+.ob-steps i.on{background:var(--lime)}
+.ob-feat{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:center;margin:10px 0}
+.ob-feat span{width:40px;height:40px;border-radius:13px;display:flex;align-items:center;justify-content:center;background:var(--g);color:#fff}
+.pick{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:13px 14px;border-radius:18px;border:1.5px solid var(--line2);background:var(--chip);margin-bottom:8px}
+.pick.on{border-color:var(--ok);box-shadow:0 0 0 3px color-mix(in srgb,var(--ok) 22%,transparent)}
+.pick .t{font-weight:650} .pick .s{font-size:12px;color:var(--mute)}
+.pick .rad{width:22px;height:22px;border-radius:50%;border:2px solid var(--line2);flex:0 0 auto;margin-left:auto}
+.pick.on .rad{border:7px solid var(--ok)}
 ::view-transition-old(root),::view-transition-new(root){animation-duration:.2s}
 @media (min-width:760px){ .wrap{padding-top:28px} .hero h1{font-size:50px} .lib{grid-template-columns:1fr 1fr 1fr} }
 @media (prefers-reduced-motion:reduce){
@@ -471,14 +511,28 @@ const WILD = [
 ];
 
 // ---------- bolsa por defecto (estimaciones) ----------
-const DEFAULT_BAG = [
-  ["D", "Driver", "wood", 190], ["3W", "Madera 3", "wood", 170], ["4H", "Híbrido 4", "hybrid", 155], ["5i", "Hierro 5", "iron", 145],
-  ["6i", "Hierro 6", "iron", 135], ["7i", "Hierro 7", "iron", 125], ["8i", "Hierro 8", "iron", 115], ["9i", "Hierro 9", "iron", 105],
-  ["PW", "PW", "wedge", 95], ["GW", "Wedge 52°", "wedge", 80], ["SW", "Wedge 56°", "wedge", 65], ["LW", "Wedge 60°", "wedge", 50]
-].map(([id, name, type, carry]) => ({ id, name, type, carry, on: id !== "LW", est: true }));
+// catálogo de palos: id, nombre, etiqueta corta, tipo y carry de referencia (amateur medio, en metros)
+const CATALOG = [
+  ["D", "Driver", "D", "wood", 200], ["3W", "Madera 3", "3W", "wood", 180], ["4W", "Madera 4", "4W", "wood", 175], ["5W", "Madera 5", "5W", "wood", 170], ["7W", "Madera 7", "7W", "wood", 160], ["9W", "Madera 9", "9W", "wood", 150],
+  ["2H", "Híbrido 2", "2H", "hybrid", 175], ["3H", "Híbrido 3", "3H", "hybrid", 168], ["4H", "Híbrido 4", "4H", "hybrid", 160], ["5H", "Híbrido 5", "5H", "hybrid", 150], ["6H", "Híbrido 6", "6H", "hybrid", 140], ["7H", "Híbrido 7", "7H", "hybrid", 130],
+  ["2i", "Hierro 2", "2i", "iron", 172], ["3i", "Hierro 3", "3i", "iron", 165], ["4i", "Hierro 4", "4i", "iron", 155], ["5i", "Hierro 5", "5i", "iron", 145], ["6i", "Hierro 6", "6i", "iron", 135], ["7i", "Hierro 7", "7i", "iron", 125], ["8i", "Hierro 8", "8i", "iron", 115], ["9i", "Hierro 9", "9i", "iron", 105],
+  ["PW", "Pitching (PW)", "PW", "wedge", 95], ["W46", "Wedge 46°", "46°", "wedge", 95], ["W48", "Wedge 48°", "48°", "wedge", 90], ["W50", "Wedge 50° (AW)", "50°", "wedge", 85], ["W52", "Wedge 52° (GW)", "52°", "wedge", 80],
+  ["W54", "Wedge 54°", "54°", "wedge", 72], ["W56", "Wedge 56° (SW)", "56°", "wedge", 65], ["W58", "Wedge 58°", "58°", "wedge", 58], ["W60", "Wedge 60° (LW)", "60°", "wedge", 50], ["W62", "Wedge 62°", "62°", "wedge", 45], ["W64", "Wedge 64°", "64°", "wedge", 40]
+].map(([id, name, short, type, def], order) => ({ id, name, short, type, def, order }));
+const CAT = Object.fromEntries(CATALOG.map(c => [c.id, c]));
+const LEGACY_CLUB = { GW: "W52", SW: "W56", LW: "W60" };
+const BAG_SETS = {
+  completa: { name: "Completa", desc: "Driver, maderas 3 y 5, híbrido, hierros 5–9 y cuatro wedges", ids: ["D", "3W", "5W", "4H", "5i", "6i", "7i", "8i", "9i", "PW", "W52", "W56", "W60"] },
+  estandar: { name: "Estándar", desc: "Driver, madera 3, híbrido, hierros 5–9, PW, 52° y 56°", ids: ["D", "3W", "4H", "5i", "6i", "7i", "8i", "9i", "PW", "W52", "W56"] },
+  facil: { name: "Fácil de pegar", desc: "Más maderas e híbridos y menos hierros largos", ids: ["D", "5W", "7W", "5H", "6H", "7i", "8i", "9i", "PW", "W52", "W56"] },
+  media: { name: "Media bolsa", desc: "Siete palos para empezar o para ir ligero", ids: ["D", "5W", "5H", "7i", "9i", "PW", "W56"] }
+};
+const makeClub = (id, scale = 1) => { const c = CAT[id]; return { id, name: c.name, type: c.type, carry: Math.round(c.def * scale), on: true, est: true }; };
+const makeBag = (set, scale = 1) => BAG_SETS[set].ids.map(id => makeClub(id, scale));
+const DEFAULT_BAG = makeBag("estandar");
 const DEFAULT_PROFILE = () => ({
   name: "", hcp: 36, goal: 28, hcpSource: "auto", vAdj: 4, courses: [], hand: "R", stock: "recta", theme: "auto", tolerance: "normal", discomfort: 2, shortGame: true, minutes: 150, focus: "auto",
-  bag: JSON.parse(JSON.stringify(DEFAULT_BAG)), xp: 0, fields: { total: false, lat: false, traj: false, speed: false }, plan: null, updated: 0
+  bag: JSON.parse(JSON.stringify(DEFAULT_BAG)), onboarded: false, xp: 0, fields: { total: false, lat: false, traj: false, speed: false }, plan: null, updated: 0
 });
 
 // ---------- estado ----------
@@ -486,12 +540,17 @@ const S = { profile: DEFAULT_PROFILE(), sessions: [], rounds: [], ui: { draft: n
 const P = () => S.profile;
 const LV = () => lvOf(hcpUsed());
 const H = () => P().hand === "L" ? "L" : "R";
-const bagOn = () => P().bag.filter(c => c.on);
+const bagOn = () => P().bag.filter(c => c.on !== false).sort((a, b) => b.carry - a.carry);
 const club = id => P().bag.find(c => c.id === id);
 const has = id => { const c = club(id); return !!(c && c.on); };
-const firstOn = (...ids) => ids.find(has) || (bagOn().find(c => c.type === "iron") || bagOn()[0] || {}).id;
-const clubName = id => (club(id) || { name: id || "—" }).name;
-const teeClub = () => firstOn("D", "3W", "4H");
+// relación entre las distancias del jugador y las de referencia (1 = amateur medio)
+function bagScale() { const r = bagOn().filter(c => CAT[c.id] && !c.est).map(c => c.carry / CAT[c.id].def); const all = bagOn().filter(c => CAT[c.id]).map(c => c.carry / CAT[c.id].def); const v = r.length >= 2 ? r : all; return v.length ? median(v) : 1; }
+// el primero de la lista que esté en la bolsa; si no hay ninguno, el palo de la bolsa con la distancia más parecida
+const firstOn = (...ids) => { const f = ids.find(has); if (f) return f; const ref = CAT[ids[0]]; const bag = bagOn(); if (!bag.length) return null;
+  const pool = ref && ref.type !== "wood" ? bag.filter(c => c.type !== "wood") : bag; const t = ref ? ref.def * bagScale() : 120; let b = null; for (const c of (pool.length ? pool : bag)) if (!b || Math.abs(c.carry - t) < Math.abs(b.carry - t)) b = c; return b.id; };
+const clubName = id => (club(id) || CAT[id] || { name: id || "—" }).name;
+const clubShort = id => (CAT[id] || { short: id }).short;
+const teeClub = () => { const b = bagOn(); return (b.find(c => c.type === "wood") || b.find(c => c.type === "hybrid") || b[0] || {}).id; };
 const liveSession = () => S.sessions.find(s => s.status === "live");
 const doneSessions = () => S.sessions.filter(s => s.status === "done").sort((a, b) => b.date - a.date);
 
@@ -516,7 +575,7 @@ const zoneOf = lat => { if (lat == null) return null; const a = Math.abs(lat); i
 // palos de approach según nivel
 function apSet(L) {
   const on = bagOn().filter(c => c.id !== "D");
-  if (L <= 1) { const lim = (club("7i") && club("7i").carry) || 130; return on.filter(c => c.type === "wedge" || c.type === "hybrid" || (c.type === "iron" && c.carry <= lim + 1)); }
+  if (L <= 1) { const lim = (club(firstOn("7i")) || { carry: 130 }).carry; return on.filter(c => c.type === "wedge" || c.type === "hybrid" || (c.type === "iron" && c.carry <= lim + 1)); }
   if (L === 2) return on.filter(c => c.type !== "wood");
   return on;
 }
@@ -538,7 +597,7 @@ const DRILLS = [
     why: "Activar el cuerpo de corto a largo. Aquí no se juzga: solo mira cómo sale.",
     how: L => L <= 1 ? ["Medios swings con el wedge de arena, de 9 a 3.", "Sube de palo cada 2 bolas hasta el híbrido.", "Termina con 2 salidas suaves. Registrar es opcional."] : ["Medios swings de wedge y sube de palo cada 2 bolas.", "Termina con 2 o 3 drivers al 80 %.", "Registrar es opcional."],
     tips: L => ["Un ensayo lento antes de cada bola: el primer swing del día siempre es el más rígido.", L <= 2 ? "Contacto primero; la distancia, al final." : "Usa el calentamiento para ver el patrón del día, no para corregirlo."],
-    gen: L => (L <= 1 ? ["SW", "SW", "PW", "PW", "9i", "7i", "7i", "4H", "3W", "D"] : ["SW", "SW", "PW", "9i", "7i", "7i", "5i", "4H", "3W", "D"]).filter(has).map((id, i) => ({ label: i < 2 ? "Medio swing" : "Swing suave", club: id, kind: "free" })) },
+    gen: L => { const cs = bagOn().slice().reverse(); if (!cs.length) return []; const at = f => cs[Math.min(cs.length - 1, Math.round(f * (cs.length - 1)))].id; return [0, 0, .12, .12, .3, .45, .45, .65, .85, 1].map((f, i) => ({ label: i < 2 ? "Medio swing" : "Swing suave", club: at(f), kind: "free" })); } },
 
   { id: "ladder", area: "app", phases: ["calib", "random", "test"], lv: [1, 4], min: 15, disc: 2, mode: "shot", tt: "My Practice",
     name: "Escalera de carry",
@@ -685,7 +744,7 @@ const DRILLS = [
     why: L => L <= 1 ? "Con dos swings por wedge (medio y completo) cubres casi todas las distancias cortas. Aquí sacas tus números reales." : "Tres longitudes de backswing por wedge. Al acabar tienes tu matriz de distancias en Datos para llevarla al campo.",
     how: L => L <= 1 ? ["PW y wedge de arena.", "Medio swing: brazos hasta las 9. Completo: swing normal al 80 %.", "Registra el carry de cada bola."] : ["Backswing hasta las 7:30, las 9:00 y las 10:30.", "Mismo ritmo en todos.", "Registra el carry de cada uno."],
     tips: L => L <= 1 ? ["Mismo ritmo en los dos swings: solo cambia la longitud.", "En el medio swing no frenes: termina con el pecho mirando al objetivo."] : ["El ritmo no cambia, solo la longitud del backswing.", "Haz captura de la matriz al acabar: en el campo te ahorra dudas."],
-    gen: L => { const ws = bagOn().filter(c => c.type === "wedge"); let use, swings; if (L <= 1) { use = [club(firstOn("PW")), club(firstOn("SW", "GW", "LW"))].filter((c, i, a) => c && a.findIndex(x => x && x.id === c.id) === i); swings = ["9:00", "Completo"]; } else { use = ws.slice(0, L === 2 ? 3 : 4); swings = ["7:30", "9:00", "10:30"]; } const reps = L <= 1 ? 3 : 2; const out = []; for (const w of use) for (const k of swings) for (let i = 0; i < reps; i++) out.push({ label: `${w.name} · ${k === "Completo" ? "completo" : "hasta las " + k}`, call: k, club: w.id, kind: "free" }); return shuffle(out); } },
+    gen: L => { const ws = bagOn().filter(c => c.type === "wedge"); let use, swings; if (L <= 1) { use = [club(firstOn("PW", "W46", "W48")), club(firstOn("W56", "W54", "W58", "W52", "W60"))].filter((c, i, a) => c && a.findIndex(x => x && x.id === c.id) === i); swings = ["9:00", "Completo"]; } else { use = ws.slice(0, L === 2 ? 3 : 4); swings = ["7:30", "9:00", "10:30"]; } const reps = L <= 1 ? 3 : 2; const out = []; for (const w of use) for (const k of swings) for (let i = 0; i < reps; i++) out.push({ label: `${w.name} · ${k === "Completo" ? "completo" : "hasta las " + k}`, call: k, club: w.id, kind: "free" }); return shuffle(out); } },
 
   { id: "wladder", area: "wedge", phases: ["random", "test"], lv: [1, 4], min: 15, disc: 2, mode: "shot", tt: "My Practice",
     name: "Escalera de wedges",
@@ -850,10 +909,18 @@ function normProfile(p) {
   const out = Object.assign(DEFAULT_PROFILE(), p || {});
   out.fields = Object.assign(DEFAULT_PROFILE().fields, (p && p.fields) || {});
   if (!Array.isArray(out.bag) || !out.bag.length) out.bag = DEFAULT_PROFILE().bag;
+  // bolsa antigua: quitar palos desactivados y pasar los ids viejos de wedges al catálogo
+  out.bag = out.bag.filter(c => c.on !== false).map(c => { const id = LEGACY_CLUB[c.id] || c.id; const k = CAT[id]; return Object.assign({}, c, { id, name: k ? k.name : c.name, type: k ? k.type : c.type, on: true }); })
+    .filter((c, i, a) => a.findIndex(x => x.id === c.id) === i);
+  if (p && p.onboarded === undefined && (p.updated || 0) > 0) out.onboarded = true;
+  if (out.plan) out.plan.blocks.forEach(b => (b.steps || []).forEach(st => { if (LEGACY_CLUB[st.club]) st.club = LEGACY_CLUB[st.club]; }));
   return out;
 }
 const OLD_CURVE = { Gancho: "L2", Draw: "L1", Recta: "S", Fade: "R1", Slice: "R2" };
-function migrateSession(s) { for (const sh of (s.shots || [])) if (OLD_CURVE[sh.curve]) sh.curve = OLD_CURVE[sh.curve]; return s; }
+function migrateSession(s) {
+  for (const sh of (s.shots || [])) { if (OLD_CURVE[sh.curve]) sh.curve = OLD_CURVE[sh.curve]; if (LEGACY_CLUB[sh.club]) sh.club = LEGACY_CLUB[sh.club]; }
+  for (const b of (s.blocks || [])) for (const st of (b.steps || [])) if (LEGACY_CLUB[st.club]) st.club = LEGACY_CLUB[st.club];
+  return s; }
 
 // ---------- tema ----------
 const mq = matchMedia("(prefers-color-scheme: dark)");
@@ -1296,7 +1363,8 @@ function importBackup(txt) {
   if (!d || d.app !== "carry") { toast("El archivo no es una copia de CARRY"); return; }
   const merge = (loc, inc) => { const m = new Map(loc.map(x => [x.id, x])); for (const x of (inc || [])) { const l = m.get(x.id); if (!l || (x.updated || 0) >= (l.updated || 0)) m.set(x.id, x); } return [...m.values()]; };
   S.sessions = merge(S.sessions, d.sessions).map(migrateSession); S.rounds = merge(S.rounds, d.rounds);
-  if (d.profile && (!S.profile.updated || (d.profile.updated || 0) >= (S.profile.updated || 0))) S.profile = normProfile(d.profile);
+  if (d.profile && (!S.profile.updated || !S.profile.onboarded || (d.profile.updated || 0) >= (S.profile.updated || 0))) S.profile = normProfile(d.profile);
+  P().onboarded = true; S.ui.ob = null;
   invalidate(); saveLocal(); saveProfile(); S.sessions.forEach(s => Saver.queue(sessPath(s.id), () => S.sessions.find(x => x.id === s.id), 600)); S.rounds.forEach(r => Saver.queue(roundPath(r.id), () => S.rounds.find(x => x.id === r.id), 600));
   applyTheme(); closeSheet(); toast(`Copia importada: ${S.sessions.length} sesiones, ${S.rounds.length} rondas`); render();
 }
@@ -1333,6 +1401,8 @@ function renderTabs() {
   $("#tabs").innerHTML = TABS.map(([id, nm, ic]) => `<a href="#${id}" class="${r === id ? "on" : ""}" aria-current="${r === id ? "page" : "false"}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ic}</svg>${nm}${id === "sesion" && live ? '<span class="live-dot" aria-label="sesión en curso"></span>' : ""}</a>`).join("");
 }
 function render() {
+  if (needsOnboarding()) { $("#tabs").innerHTML = ""; $("#tabs").style.display = "none"; $("#view").innerHTML = vOnboard(); return; }
+  $("#tabs").style.display = "";
   renderTabs();
   const r = route();
   $("#view").innerHTML = ({ hoy: vHoy, plan: vPlan, sesion: vSesion, rondas: vRondas, datos: vDatos, bolsa: vBolsa })[r]();
@@ -1356,7 +1426,7 @@ document.addEventListener("visibilitychange", () => { if (document.visibilitySta
 
 // trazados estilo Toptracer
 function tracesSVG(shots) {
-  const W = 360, H0 = 330, cx = W * .76, y0 = H0 - 6;
+  const W = 360, H0 = 330, cx = W * .8, y0 = H0 - 6;
   let items;
   if (shots && shots.length >= 4) {
     const mx = Math.max(...shots.map(s => s.carry || 0), 150);
@@ -1390,16 +1460,13 @@ function vHoy() {
     <div class="row between"><span class="eyebrow">Semana ${st + 1} de 4 · ${cyc.name}</span><a class="lvchip" href="#rondas">${G.name} · ${hcpUsedLabel()}</a></div>
     <h1>${live ? "Sesión en marcha." : pr.name ? `Hola, ${esc(pr.name)}.` : "A entrenar."}</h1>
     <p>${live ? "Retoma donde lo dejaste." : esc(cyc.tip)}</p>
-    <div class="row wrapf" style="margin-top:16px">
-      ${live ? `<a class="btn lime" href="#sesion">Continuar sesión →</a>` : plan && !stale ? `<button class="btn lime" data-a="start">Empezar · ${plan.minutes} min</button><a class="btn onhero" href="#plan">Ver plan</a>` : `<button class="btn lime" data-a="gen-go">Crear sesión de hoy</button>`}
-    </div>
     <div class="hero-stats">
       <div class="hstat"><b>${weekStreak()}</b><span>semanas seguidas</span></div>
       <div class="hstat"><b>${shotsN}</b><span>bolas registradas</span></div>
       <div class="hstat rank"><div style="position:relative;flex:0 0 auto">${ring(rk.pct)}<b style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:16px">${rk.i}</b></div><span>${esc(rk.name)}</span></div>
     </div>
   </section>
-
+  ${quickActions(live, plan, stale)}
   ${allEst && !live ? `<div class="banner">${ico("target", 22)}<div style="flex:1"><b>Pon tus distancias reales.</b> Las de la bolsa son estimaciones y de ellas salen los objetivos.</div><a class="btn sm" href="#bolsa">Bolsa</a></div>` : ""}
   ${installBanner()}
   ${S.ui.rd ? `<div class="banner" style="background:color-mix(in srgb,var(--ok) 12%,var(--surface));border-color:color-mix(in srgb,var(--ok) 30%,transparent)">${ico("app", 22)}<div style="flex:1"><b>Tienes una ronda a medias</b> en ${esc(S.ui.rd.r.course)}${S.ui.rd.r.h && S.ui.rd.r.h.some(x => x.s) ? ` (${S.ui.rd.r.h.filter(x => x.s).length} hoyos apuntados)` : ""}.</div><a class="btn sm" href="#rondas">Seguir</a></div>` : ""}
@@ -1423,7 +1490,13 @@ function hcpCard() {
   return `<div class="card"><div class="row between"><div class="eyebrow">Tu hándicap de juego</div><a class="link small" href="#rondas">Rondas →</a></div>
   <div class="row" style="align-items:flex-end;gap:12px;margin-top:8px"><div style="font-family:var(--mono);font-size:40px;font-weight:600;letter-spacing:-.05em;line-height:1">${c.index == null ? "—" : fmt1(c.index)}</div>
   <div class="small muted" style="padding-bottom:4px">${c.index == null ? `HCP CARRY: apunta ${need} ronda${need === 1 ? "" : "s"} más (reales o en Toptracer)` : `HCP CARRY · oficial ${fmtH(officialHcp())}${c.form != null ? ` · forma ${fmt1(c.form)}` : ""}`}</div></div>
-  <div class="grid2" style="margin-top:12px"><button class="btn sm lime" data-a="rd-new" data-v="real">+ Ronda real</button><button class="btn sm ghost" data-a="rd-new" data-v="virtual">+ Ronda virtual</button></div></div>`;
+</div>`;
+}
+function quickActions(live, plan, stale) {
+  const train = live ? `<a class="qa" style="--g:var(--g-app)" href="#sesion">${ico("target", 26)}<b>Seguir sesión</b><span>${liveSession().cur + 1}/${liveSession().blocks.length} bloques</span></a>`
+    : plan && !stale ? `<button class="qa" style="--g:var(--g-app)" data-a="start">${ico("target", 26)}<b>Entrenar</b><span>${plan.minutes} min · ~${planBalls(plan)} bolas</span></button>`
+    : `<button class="qa" style="--g:var(--g-app)" data-a="gen-go">${ico("target", 26)}<b>Entrenar</b><span>crear sesión</span></button>`;
+  return `<div class="qas">${train}<button class="qa" style="--g:var(--g-wedge)" data-a="rd-new" data-v="real">${ico("app", 26)}<b>Ronda real</b><span>apuntar en el campo</span></button><button class="qa" style="--g:var(--g-putt)" data-a="rd-new" data-v="virtual">${ico("chart", 26)}<b>Toptracer</b><span>ronda virtual</span></button></div>`;
 }
 function backupBanner() {
   if (IN_ARTIFACT) return ""; const has = S.sessions.length + S.rounds.length; if (has < 2) return "";
@@ -1725,9 +1798,90 @@ function scoreHistory(all) {
 }
 
 // ----- BOLSA -----
+
+// ----- bienvenida (primer uso) -----
+const needsOnboarding = () => !P().onboarded && !S.sessions.length && !S.rounds.length;
+function vOnboard() {
+  const o = S.ui.ob || (S.ui.ob = { step: 0, hasH: true, set: "estandar", i7: 125 }); const pr = P();
+  const steps = `<div class="ob-steps">${[0, 1, 2, 3].map(i => `<i class="${i <= o.step ? "on" : ""}"></i>`).join("")}</div>`;
+  const nav = (next, label = "Siguiente →") => `<div class="row" style="margin-top:auto;padding-top:14px">${o.step ? `<button class="btn ghost" style="flex:1" data-a="ob-prev">←</button>` : ""}<button class="btn lime big" style="flex:3" data-a="${next}">${label}</button></div>`;
+  if (o.step === 0) return `<div class="ob">${steps}<section class="hero"><div class="ground"></div>${tracesSVG([])}<div class="eyebrow">Bienvenido a CARRY</div><h1>Tu coach de prácticas.</h1><p>Sesiones que cambian cada semana, registro de cada bola y tu hándicap de juego.</p></section>
+    <div class="card">${[["app", "Plan para tu nivel", "Ejercicios y ventanas según tu hándicap, nunca los mismos."], ["wedge", "Cada bola cuenta", "Carry, contacto y vuelo en dos toques, con consejos al momento."], ["putt", "Tu hándicap de juego", "Con rondas reales y de Toptracer, sin esperar a torneos."]].map(([a, t, d]) => `<div class="ob-feat"><span style="${aStyle(a)}">${ico(a, 20)}</span><div><b>${t}</b><div class="small muted">${d}</div></div></div>`).join("")}</div>
+    <div class="card"><div class="field"><label for="obN"><span>¿Cómo te llamas?</span></label><input id="obN" type="text" value="${esc(pr.name)}" placeholder="Tu nombre" data-f="name" autocomplete="given-name"></div>
+    <div class="field" style="margin:0"><div class="lab"><span>Juegas como</span></div><div class="seg">${[["R", "Diestro"], ["L", "Zurdo"]].map(([k, n]) => `<button class="${H() === k ? "on" : ""}" data-a="ob-set" data-k="hand" data-v="${k}">${n}</button>`).join("")}</div></div></div>
+    ${nav("ob-next", "Empezar →")}<div class="row" style="justify-content:center;gap:18px;margin-top:14px"><button class="link small" data-a="import">Ya tengo una copia: importar</button><button class="link small" style="color:var(--mute)" data-a="ob-skip">Saltar</button></div></div>`;
+  if (o.step === 1) return `<div class="ob">${steps}<h2 class="sec-title">Tu hándicap</h2><p class="sec-sub">Decide qué ejercicios te tocan y lo exigentes que son. Después lo afinará tu HCP CARRY con tus rondas.</p>
+    <div class="seg" style="margin-bottom:14px"><button class="${o.hasH ? "on" : ""}" data-a="ob-has" data-v="1">Tengo hándicap</button><button class="${!o.hasH ? "on" : ""}" data-a="ob-has" data-v="0">No tengo</button></div>
+    ${o.hasH ? `<div class="card"><div class="field" style="margin:0"><div class="lab"><span>Hándicap actual</span><span class="tag" style="--c:var(--ok)">Nivel ${GAME[lvOf(pr.hcp)].name}</span></div><div class="hcpbox"><button data-a="hcp" data-v="-1" aria-label="Bajar">−</button><input type="number" inputmode="decimal" step="0.1" value="${pr.hcp}" data-f="hcp" aria-label="Hándicap"><button data-a="hcp" data-v="1" aria-label="Subir">+</button></div></div></div>`
+      : [[54, "Estoy empezando", "Aún me cuesta pegar a la bola con regularidad"], [40, "Juego de vez en cuando", "Acabo los hoyos, pero con muchos golpes"], [30, "Juego a menudo", "Rondas de 100 golpes o algo menos"], [20, "Juego bastante bien", "Entre 90 y 95 golpes"]].map(([h, t, d]) => `<button class="pick ${+pr.hcp === h ? "on" : ""}" data-a="ob-h" data-v="${h}"><div><div class="t">${t}</div><div class="s">${d}</div></div><span class="rad"></span></button>`).join("")}
+    ${levelCard(lvOf(pr.hcp), true).replace('<a class="link small" style="display:inline-block;margin-top:12px" href="#plan">Ver ejercicios de tu nivel →</a>', "")}
+    ${nav("ob-next")}</div>`;
+  if (o.step === 2) return `<div class="ob">${steps}<h2 class="sec-title">Tu bolsa</h2><p class="sec-sub">Elige la que más se parezca. Luego puedes añadir o quitar cualquier palo.</p>
+    ${Object.entries(BAG_SETS).map(([k, b]) => `<button class="pick ${o.set === k ? "on" : ""}" data-a="ob-bag" data-v="${k}"><div><div class="t">${b.name} · ${b.ids.length} palos</div><div class="s">${b.ids.map(clubShort).join(" · ")}</div></div><span class="rad"></span></button>`).join("")}
+    <div class="card" style="margin-top:6px"><div class="field" style="margin:0"><div class="lab"><span>¿Cuánto vuela tu hierro 7? (carry)</span></div><div class="stepper"><button data-a="ob-i7" data-v="-5">−5</button><button data-a="ob-i7" data-v="-1">−1</button><div class="val">${o.i7}<small>metros</small></div><button data-a="ob-i7" data-v="1">+1</button><button data-a="ob-i7" data-v="5">+5</button></div>
+    <p class="small muted" style="margin:8px 2px 0">Si no lo sabes, deja 125: lo corregirás en tu primera sesión con lo que marque Toptracer.</p></div></div>
+    ${nav("ob-next")}</div>`;
+  const L = lvOf(pr.hcp); const k = o.i7 / CAT["7i"].def;
+  return `<div class="ob">${steps}<section class="hero"><div class="ground"></div>${tracesSVG([])}<div class="eyebrow">Todo listo</div><h1>${pr.name ? esc(pr.name) + ", a" : "A"} entrenar.</h1><p>Nivel ${GAME[L].name} · ${BAG_SETS[o.set].ids.length} palos · hierro 7 a ${o.i7} m.</p></section>
+    <div class="card"><div class="eyebrow">Tu bolsa estimada</div><div class="chips" style="margin-top:10px">${BAG_SETS[o.set].ids.map(id => `<span class="chip" style="min-height:34px;font-size:13px">${clubShort(id)} <small>${Math.round(CAT[id].def * k)}</small></span>`).join("")}</div></div>
+    ${IN_PWA ? `<div class="notice" style="margin:0 0 14px"><span class="nic">${ico("lock", 16)}</span><div>Tus datos se guardan solo en este móvil. De vez en cuando, en Bolsa, <b>guarda una copia en Archivos</b>.</div></div>` : ""}
+    ${nav("ob-finish", "Crear mi primera sesión →")}</div>`;
+}
+const OB_ACT = {
+  "ob-next": () => { S.ui.ob.step++; render(); scrollTo(0, 0); },
+  "ob-prev": () => { S.ui.ob.step = Math.max(0, S.ui.ob.step - 1); render(); scrollTo(0, 0); },
+  "ob-set": a => { P()[a.dataset.k] = a.dataset.v; saveProfile(); render(); },
+  "ob-has": a => { S.ui.ob.hasH = a.dataset.v === "1"; render(); },
+  "ob-h": a => { setHcp(+a.dataset.v); render(); },
+  "ob-bag": a => { S.ui.ob.set = a.dataset.v; render(); },
+  "ob-i7": a => { S.ui.ob.i7 = clamp(S.ui.ob.i7 + +a.dataset.v, 60, 200); render(); },
+  "ob-skip": () => { P().onboarded = true; saveProfile(); S.ui.ob = null; render(); },
+  "ob-finish": () => { const o = S.ui.ob; P().bag = makeBag(o.set, o.i7 / CAT["7i"].def); if (o.i7 !== 125) { const c = P().bag.find(x => x.id === "7i"); if (c) c.est = false; } P().onboarded = true; S.ui.ob = null; P().plan = generatePlan(); saveProfile(); location.hash = "#plan"; render(); scrollTo(0, 0); }
+};
+// ----- bolsa: gráfico de distancias y editor -----
+function bagCard() {
+  const bag = bagOn(); const shots = allShots(S.sessions).filter(x => x.carry != null && !["Top", "Gruesa"].includes(x.contact));
+  const mx = Math.max(...bag.map(c => c.carry), 100) * 1.04; const n = bag.length; const est = bag.filter(c => c.est).length;
+  return `<div class="card bagcard"><div class="row between"><div><div class="eyebrow">Tu bolsa</div><div class="bagcount"><b>${n}</b> palo${n === 1 ? "" : "s"}${n > 14 ? ` <span class="warn small">· más de 14: no vale en competición</span>` : ""}</div></div>
+    <button class="btn sm lime" data-a="club-add">+ Añadir</button></div>
+  ${est ? `<div class="notice"><span class="nic">${ico("target", 16)}</span><div><b>${est} distancia${est === 1 ? "" : "s"} estimada${est === 1 ? "" : "s"}.</b> Toca un palo para poner la tuya, o ajústalas todas con tu hierro 7.</div></div>` : ""}
+  <div class="yard">${bag.map((c, i) => { const v = shots.filter(x => x.club === c.id).map(x => x.carry); const sug = v.length >= 6 ? Math.round(median(v)) : null; const nx = bag[i + 1]; const gap = nx ? c.carry - nx.carry : null; const bad = gap != null && (gap < 6 || gap > 22);
+    return `<button class="yrow" style="${aStyle(typeArea(c.type))}" data-a="club-open" data-id="${c.id}" aria-label="${esc(c.name)}, ${c.carry} metros">
+      <span class="ytag">${esc(clubShort(c.id))}</span>
+      <span class="ybar"><i style="width:${c.carry / mx * 100}%"></i><em>${esc(c.name)}${c.est ? " · estimado" : sug != null && Math.abs(sug - c.carry) >= 3 ? ` · tu mediana ${sug}` : ""}</em></span>
+      <span class="yval num">${c.carry}<small>m</small></span>
+    </button>${gap != null ? `<div class="ygap ${bad ? "bad" : ""}">${bad ? "⚠ " : ""}${gap} m${bad ? (gap < 6 ? " · dos palos casi iguales" : " · hueco grande") : ""}</div>` : ""}`; }).join("")}</div>
+  <div class="grid2" style="margin-top:14px"><button class="btn ghost sm" data-a="bag-scale">Ajustar con mi hierro 7</button><button class="btn ghost sm" data-a="bag-sets">Cargar una bolsa tipo</button></div></div>`;
+}
+function clubSheet(id) {
+  const c = club(id); if (!c) return; const v = allShots(S.sessions).filter(x => x.club === id && x.carry != null && !["Top", "Gruesa"].includes(x.contact)).map(x => x.carry); const sug = v.length >= 6 ? Math.round(median(v)) : null;
+  sheet(`<div class="row" style="gap:14px;margin-bottom:12px"><span class="ytag big" style="${aStyle(typeArea(c.type))}">${esc(clubShort(id))}</span><div><h3 style="font-family:var(--display);font-size:24px;margin:0;letter-spacing:-.03em">${esc(c.name)}</h3><div class="small muted">${{ wood: "Madera", hybrid: "Híbrido", iron: "Hierro", wedge: "Wedge" }[c.type]}${c.est ? " · distancia estimada" : ""}</div></div></div>
+  <div class="field"><div class="lab"><span>Carry de referencia</span></div><div class="stepper"><button data-a="club-c" data-id="${id}" data-v="-5">−5</button><button data-a="club-c" data-id="${id}" data-v="-1">−1</button><div class="val">${c.carry}<small>metros</small></div><button data-a="club-c" data-id="${id}" data-v="1">+1</button><button data-a="club-c" data-id="${id}" data-v="5">+5</button></div></div>
+  ${v.length ? `<div class="why" style="margin:0 0 14px">${v.length} bolas registradas · mediana <b>${Math.round(median(v))} m</b> · 80 % entre ${Math.round(quant(v, .1))} y ${Math.round(quant(v, .9))} m${sug != null && Math.abs(sug - c.carry) >= 3 ? `<br><button class="sugg" data-a="club-sug" data-id="${id}" data-v="${sug}">Usar ${sug} m como referencia</button>` : ""}</div>` : `<p class="small muted" style="margin:0 0 14px">Cuando registres 6 bolas o más con este palo te propondré tu mediana real.</p>`}
+  <div class="row"><button class="btn ghost" style="flex:1;color:var(--bad)" data-a="club-del" data-id="${id}">Quitar de la bolsa</button><button class="btn" style="flex:1" data-a="close-sheet">Listo</button></div>`);
+}
+function addSheet() {
+  const groups = [["wood", "Maderas"], ["hybrid", "Híbridos"], ["iron", "Hierros"], ["wedge", "Wedges"]]; const k = bagScale();
+  sheet(`<div class="row between"><h3 style="font-family:var(--display);font-size:24px;margin:0;letter-spacing:-.03em">Añadir palos</h3><span class="small muted">${bagOn().length} en la bolsa</span></div>
+  <p class="small muted" style="margin:6px 0 10px">La distancia se estima con las tuyas; luego la ajustas.</p>
+  ${groups.map(([t, nm]) => `<div class="eyebrow" style="margin:14px 0 8px">${nm}</div><div class="chips">${CATALOG.filter(c => c.type === t).map(c => { const inb = !!club(c.id); return `<button class="chip ${inb ? "on" : ""}" style="${aStyle(typeArea(t))}" data-a="${inb ? "club-open" : "club-pick"}" data-id="${c.id}">${inb ? "✓ " : "+ "}${esc(c.short)}<small>${inb ? club(c.id).carry : Math.round(c.def * k)}</small></button>`; }).join("")}</div>`).join("")}
+  <button class="btn block" style="margin-top:18px" data-a="close-sheet">Hecho</button>`);
+}
+function scaleSheet() {
+  if (!S.ui.i7) S.ui.i7 = (club("7i") && club("7i").carry) || Math.round(125 * bagScale());
+  sheet(`<h3 style="font-family:var(--display);font-size:24px;margin:0 0 6px;letter-spacing:-.03em">¿Cuánto vuela tu hierro 7?</h3><p class="small muted" style="margin:0 0 14px">Con ese dato calculo el resto de distancias estimadas. Las que ya pusiste a mano no se tocan.</p>
+  <div class="stepper"><button data-a="scale-step" data-v="-5">−5</button><button data-a="scale-step" data-v="-1">−1</button><div class="val">${S.ui.i7}<small>metros de carry</small></div><button data-a="scale-step" data-v="1">+1</button><button data-a="scale-step" data-v="5">+5</button></div>
+  <div class="row" style="margin-top:16px"><button class="btn ghost" style="flex:1" data-a="close-sheet">Cancelar</button><button class="btn lime" style="flex:2" data-a="scale-go">Ajustar distancias</button></div>`);
+}
+function setsSheet() {
+  sheet(`<h3 style="font-family:var(--display);font-size:24px;margin:0 0 6px;letter-spacing:-.03em">Bolsas tipo</h3><p class="small muted" style="margin:0 0 12px">Sustituye tu bolsa. Las distancias que ya pusiste a mano se conservan si el palo sigue.</p>
+  ${Object.entries(BAG_SETS).map(([k, b]) => `<button class="list-item" data-a="bag-set" data-v="${k}"><div class="sw" style="--g:var(--g-app)">${b.ids.length}</div><div><div class="t">${b.name}</div><div class="s">${b.desc}</div><div class="tiny muted" style="margin-top:3px">${b.ids.map(clubShort).join(" · ")}</div></div><span class="chev">›</span></button>`).join("")}
+  <button class="btn ghost block" style="margin-top:12px" data-a="close-sheet">Cancelar</button>`);
+}
 function vBolsa() {
   const pr = P(), L = LV(); const shots = allShots(S.sessions).filter(x => x.carry != null && !["Top", "Gruesa"].includes(x.contact));
   return `<h2 class="sec-title">Bolsa y perfil</h2>
+  ${bagCard()}
   <div class="card">
     <div class="field"><label for="nm"><span>Nombre</span></label><input id="nm" type="text" value="${esc(pr.name)}" data-f="name" autocomplete="off"></div>
     <div class="field"><div class="lab"><span>Hándicap oficial</span><span class="tag" style="--c:var(--ok)">Nivel ${GAME[L].name}</span></div>
@@ -1739,12 +1893,6 @@ function vBolsa() {
     <div class="field" style="margin:0"><div class="lab"><span>Tu forma natural</span>${L <= 1 ? '<span style="text-transform:none;letter-spacing:0">se usa desde HCP &lt; 30</span>' : ""}</div><div class="seg">${[["recta", "Recta"], ["draw", "Draw"], ["fade", "Fade"]].map(([k, n]) => `<button class="${pr.stock === k ? "on" : ""}" data-a="set" data-k="stock" data-v="${k}">${n}</button>`).join("")}</div></div>
   </div>
   ${levelCard(L, false)}
-  <div class="card"><div class="row between"><div class="eyebrow">Palos y carry de referencia</div><span class="small muted">toca el icono para quitar o añadir</span></div>
-  <p class="small muted" style="margin:6px 0 4px">Las distancias por defecto son <b>estimaciones</b>: pon las tuyas. Con 6 bolas o más de un palo te propongo tu mediana real.</p>
-  ${pr.bag.map((c, i) => { const v = shots.filter(x => x.club === c.id).map(x => x.carry); const sug = v.length >= 6 ? Math.round(median(v)) : null;
-    return `<div class="club ${c.on ? "" : "off"}" style="${aStyle(typeArea(c.type))}"><button class="ico" data-a="club-on" data-i="${i}" aria-label="${c.on ? "Quitar" : "Añadir"} ${esc(c.name)}">${esc(c.id)}</button>
-    <div class="nmw"><div style="font-weight:650">${esc(c.name)}${c.est ? '<span class="est">ESTIMADO</span>' : ""}</div>${sug != null && Math.abs(sug - c.carry) >= 3 ? `<button class="sugg" data-a="club-sug" data-i="${i}" data-v="${sug}">Tu mediana: ${sug} m (${v.length} bolas) · usar</button>` : `<div class="small muted">${v.length ? v.length + " bolas registradas" : "sin datos"}</div>`}</div>
-    <div class="mini-step"><button data-a="club-c" data-i="${i}" data-v="-5" aria-label="menos 5 metros">−</button><span>${c.carry} m</span><button data-a="club-c" data-i="${i}" data-v="5" aria-label="más 5 metros">+</button></div></div>`; }).join("")}</div>
   <div class="card"><div class="field" style="margin:0"><div class="lab"><span>Tema</span></div><div class="seg">${[["auto", "Automático"], ["light", "Claro"], ["dark", "Oscuro"]].map(([k, n]) => `<button class="${(pr.theme || "auto") === k ? "on" : ""}" data-a="theme" data-v="${k}">${n}</button>`).join("")}</div></div></div>
   <div class="card"><div class="eyebrow" style="margin-bottom:6px">Cómo funciona el coach</div>
   <p class="small" style="margin:0">Cada sesión sigue el orden calentar → calibrar → variar → explorar → presión → juego corto → primera bola. El reparto cambia con la semana del ciclo (Medir, Construir, Variar, Competir). El hándicap decide qué ejercicios entran, cómo de anchas son las ventanas y qué claves ves. El foco automático da más peso al área donde más fallas, y los ejercicios de las dos últimas sesiones casi no se repiten. Durante la sesión, si se repite un patrón (gruesas, slice, cortas…), el coach te da una indicación.</p>
@@ -1850,13 +1998,21 @@ const ACT = Object.assign({}, RD_ACT_REF(), {
     try { await navigator.clipboard.writeText(csv); toast(`Copiadas ${rows.length - 1} bolas`); }
     catch (e) { sheet(`<div class="eyebrow">Copia manual</div><textarea style="min-height:240px;font-family:var(--mono);font-size:11px" readonly>${esc(csv)}</textarea><button class="btn block" style="margin-top:10px" data-a="close-sheet">Cerrar</button>`); const ta = $("#layer textarea"); ta && ta.select(); }
   },
-  "club-on": a => { const c = P().bag[+a.dataset.i]; c.on = !c.on; saveProfile(); render(); },
-  "club-c": a => { const c = P().bag[+a.dataset.i]; c.carry = clamp(c.carry + +a.dataset.v, 10, 300); c.est = false; saveProfile(); render(); },
-  "club-sug": a => { const c = P().bag[+a.dataset.i]; c.carry = +a.dataset.v; c.est = false; saveProfile(); toast(`${c.name}: ${c.carry} m`); render(); },
+  "club-open": a => clubSheet(a.dataset.id),
+  "club-c": a => { const c = club(a.dataset.id); if (!c) return; c.carry = clamp(c.carry + +a.dataset.v, 10, 320); c.est = false; saveProfile(); render(); clubSheet(c.id); },
+  "club-sug": a => { const c = club(a.dataset.id); if (!c) return; c.carry = +a.dataset.v; c.est = false; saveProfile(); toast(`${c.name}: ${c.carry} m`); render(); if ($("#layer .sheet")) clubSheet(c.id); },
+  "club-del": a => { if (bagOn().length <= 3) { toast("Deja al menos 3 palos en la bolsa"); return; } P().bag = P().bag.filter(c => c.id !== a.dataset.id); saveProfile(); closeSheet(); toast(`${clubName(a.dataset.id)} fuera de la bolsa`); render(); },
+  "club-add": () => addSheet(),
+  "club-pick": a => { const id = a.dataset.id; if (club(id)) return; P().bag.push(makeClub(id, bagScale())); saveProfile(); render(); addSheet(); toast(`${CAT[id].name} añadido`); },
+  "bag-scale": () => scaleSheet(),
+  "scale-step": a => { S.ui.i7 = clamp((S.ui.i7 || 125) + +a.dataset.v, 60, 200); scaleSheet(); },
+  "scale-go": () => { const k = (S.ui.i7 || 125) / CAT["7i"].def; P().bag.forEach(c => { if (c.est && CAT[c.id]) c.carry = Math.round(CAT[c.id].def * k); }); saveProfile(); closeSheet(); toast("Distancias estimadas ajustadas"); render(); },
+  "bag-set": a => { const k = bagScale(); const keep = new Map(P().bag.filter(c => !c.est).map(c => [c.id, c])); P().bag = BAG_SETS[a.dataset.v].ids.map(id => keep.get(id) || makeClub(id, k)); saveProfile(); closeSheet(); toast(`Bolsa «${BAG_SETS[a.dataset.v].name}» cargada`); render(); },
+  "bag-sets": () => setsSheet(),
   "reset": () => confirmSheet("¿Borrar todo?", "Perfil, bolsa y todas las sesiones. No se puede deshacer.", "Borrar todo", "reset-yes"),
   "reset-yes": async () => { closeSheet(); const ids = S.sessions.map(s => s.id); const rids = S.rounds.map(r => r.id); S.sessions = []; S.rounds = []; invalidate(); for (const id of rids) if (DB) { try { await DB.doc(roundPath(id)).delete(); } catch (e) {} } S.profile = DEFAULT_PROFILE(); saveProfile(); saveLocal(); for (const id of ids) if (DB) { try { await DB.doc(sessPath(id)).delete(); } catch (e) {} } applyTheme(); toast("Todo borrado"); render(); }
 });
-function RD_ACT_REF() { return Object.assign({}, RD_ACT, BK_ACT); }
+function RD_ACT_REF() { return Object.assign({}, RD_ACT, BK_ACT, OB_ACT); }
 function saveShot(skip) {
   const s = liveSession(); const b = s.blocks[s.cur]; const step = b.steps[b.cursor]; if (!step) return;
   if (skip) { b.cursor++; S.ui.draft = null; S.ui.lastResult = { b: s.cur, ok: null, text: "Bola saltada.", skip: true }; saveSession(s); render(); return; }
