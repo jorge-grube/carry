@@ -1,10 +1,11 @@
 // CARRY · service worker: funciona sin conexión y se actualiza solo
-const CACHE = "carry-b0a85b56";
+const CACHE = "carry-88b56a60";
 const FILES = ["./", "./index.html", "./manifest.webmanifest", "./fonts/fonts.css", "./fonts/bricolage.woff2", "./fonts/geist.woff2", "./fonts/geist-mono.woff2", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/apple-touch-icon.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener("fetch", e => {
   const req = e.request; if (req.method !== "GET" || new URL(req.url).origin !== location.origin) return;
+  if (req.headers.has("range") || /\.(mp4|m4v|webm)$/i.test(new URL(req.url).pathname)) return; // vídeo: directo a la red (iOS pide rangos)
   if (req.mode === "navigate") { // red primero (para recibir actualizaciones), caché si no hay conexión
     e.respondWith(fetch(req).then(r => { const copy = r.clone(); caches.open(CACHE).then(c => c.put("./index.html", copy)); return r; }).catch(() => caches.match("./index.html")));
     return;

@@ -432,7 +432,7 @@ details.fix summary::before{content:"▸ ";} details.fix[open] summary::before{c
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:6px} .pair input{text-align:center;font-family:var(--mono)}
 .cdot{width:11px;height:11px;border-radius:50%;display:inline-block;box-shadow:inset 0 0 0 1px rgba(0,0,0,.25)}
 button.list-item.card{display:flex;width:100%}
-</style>
+.tutbtn{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:14px 16px;border-radius:20px;background:var(--surface);border:1.5px solid var(--line2);margin:0 0 12px}.tutbtn span{width:44px;height:44px;border-radius:50%;background:var(--lime);color:#0D1A13;display:flex;align-items:center;justify-content:center;font-size:16px;flex:0 0 auto;padding-left:3px}.tutbtn b{display:block;font-size:15.5px}.tutbtn small{display:block;font-size:12.5px;color:var(--mute);margin-top:2px}</style>
 </head>
 <body>
 <div class="wrap">
@@ -1785,6 +1785,7 @@ function vAjustes() {
   <p class="tiny muted" style="margin:10px 2px 12px">${pr.lastBackup ? `Última copia: ${fmtDate(pr.lastBackup)}. ` : "Aún no has hecho ninguna copia. "}${IN_PWA ? `En el iPhone se abre el menú de compartir: elige «Guardar en Archivos». ${STORAGE_OK === true ? "Almacenamiento protegido por el sistema: sí." : ""}` : ""} La copia incluye perfil, bolsa, campos, sesiones y rondas.</p>
   <button class="btn ghost block" data-a="reset">Borrar todo y empezar de cero</button></div>
   <div class="set-h">Acerca de</div>
+  <button class="tutbtn" data-a="tutorial" style="margin-bottom:12px"><span>▶</span><div><b>Ver el tutorial</b><small>2 minutos: instalar, plan, cancha y partidas. También para enviárselo a un amigo.</small></div></button>
   <div class="card"><p class="small" style="margin:0">Cada sesión sigue el orden calentar → calibrar → variar → explorar → presión → juego corto → primera bola. El reparto cambia con la semana del ciclo (Medir, Construir, Variar, Competir). El hándicap decide qué ejercicios entran, cómo de anchas son las ventanas y qué claves ves; tus rondas deciden el foco.</p>
   <p class="small muted" style="margin:10px 0 0">El HCP CARRY sigue el método del Sistema de Hándicap Mundial, pero no es oficial. Campos: tarjetas publicadas en GolfPass, revisadas en noviembre de 2026; los colores y las valoraciones pueden cambiar. Esta app no se conecta a Toptracer ni a la federación.</p></div>`;
 }
@@ -1860,7 +1861,15 @@ function ceInput(el) {
 }
 
 // ---------- acciones de partida ----------
+const TUTORIAL = "https://jorge-grube.github.io/carry/tutorial/carry-tutorial.mp4";
+function tutorialSheet() {
+  sheet(`<div class="eyebrow">Tutorial · 2 minutos</div><p class="small muted" style="margin:6px 0 12px">Cómo instalarla, planificar, apuntar bolas en la cancha y jugar una partida con amigos.</p>
+  <video src="${TUTORIAL}" poster="https://jorge-grube.github.io/carry/tutorial/poster.jpg" controls playsinline preload="metadata" style="display:block;width:100%;max-height:68vh;border-radius:18px;background:#06170F"></video>
+  <div class="row" style="margin-top:12px"><button class="btn ghost" style="flex:1" data-a="tut-share">Compartir</button><button class="btn" style="flex:1" data-a="close-sheet">Cerrar</button></div>`);
+}
 const GAME_ACT = {
+  "tutorial": () => tutorialSheet(),
+  "tut-share": () => { const d = { title: "Carry · tutorial", text: "Así funciona Carry, el coach de golf:", url: TUTORIAL }; if (navigator.share) navigator.share(d).catch(() => {}); else { navigator.clipboard && navigator.clipboard.writeText(TUTORIAL); toast("Enlace copiado"); } },
   "back": () => { if (history.length > 1) history.back(); else location.hash = "#hoy"; },
   "go-ajustes": () => { S.ui.ce = null; location.hash = "#ajustes"; },
   "cpick-open": () => coursePicker(),
@@ -2686,7 +2695,7 @@ function vOnboard() {
     <div class="card"><div class="field"><label for="obN"><span>¿Cómo te llamas?</span></label><input id="obN" type="text" value="${esc(pr.name)}" placeholder="Tu nombre" data-f="name" autocomplete="given-name"></div>
     <div class="grid2"><div class="field" style="margin:0"><div class="lab"><span>Juegas como</span></div><div class="seg">${[["R", "Diestro"], ["L", "Zurdo"]].map(([k, n]) => `<button class="${H() === k ? "on" : ""}" data-a="ob-set" data-k="hand" data-v="${k}">${n}</button>`).join("")}</div></div>
     <div class="field" style="margin:0"><div class="lab"><span>Barras de</span></div><div class="seg">${[["M", "Caballeros"], ["W", "Damas"]].map(([k, n]) => `<button class="${sexOf() === k ? "on" : ""}" data-a="ob-set" data-k="sex" data-v="${k}">${n}</button>`).join("")}</div></div></div></div>
-    ${nav("ob-next", "Empezar →")}<div class="row" style="justify-content:center;gap:18px;margin-top:14px"><button class="link small" data-a="import">Ya tengo una copia: importar</button><button class="link small" style="color:var(--mute)" data-a="ob-skip">Saltar</button></div></div>`;
+    <button class="tutbtn" data-a="tutorial"><span>▶</span><div><b>Ver el tutorial</b><small>2 minutos, con voz</small></div></button>${nav("ob-next", "Empezar →")}<div class="row" style="justify-content:center;gap:18px;margin-top:14px"><button class="link small" data-a="import">Ya tengo una copia: importar</button><button class="link small" style="color:var(--mute)" data-a="ob-skip">Saltar</button></div></div>`;
   if (o.step === 1) return `<div class="ob">${steps}<h2 class="sec-title">Tu hándicap</h2><p class="sec-sub">Decide qué ejercicios te tocan y lo exigentes que son. Después lo afinará tu HCP CARRY con tus rondas.</p>
     <div class="seg" style="margin-bottom:14px"><button class="${o.hasH ? "on" : ""}" data-a="ob-has" data-v="1">Tengo hándicap</button><button class="${!o.hasH ? "on" : ""}" data-a="ob-has" data-v="0">No tengo</button></div>
     ${o.hasH ? `<div class="card"><div class="field" style="margin:0"><div class="lab"><span>Hándicap actual</span><span class="tag" style="--c:var(--ok)">Nivel ${GAME[lvOf(pr.hcp)].name}</span></div><div class="hcpbox"><button data-a="hcp" data-v="-1" aria-label="Bajar">−</button><input type="number" inputmode="decimal" step="0.1" value="${pr.hcp}" data-f="hcp" aria-label="Hándicap"><button data-a="hcp" data-v="1" aria-label="Subir">+</button></div></div></div>`
