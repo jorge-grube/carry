@@ -62,7 +62,7 @@ input,select,textarea{font:inherit;color:inherit}
 /* top */
 .top{display:flex;align-items:center;justify-content:space-between;padding:6px 2px 14px}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.035em}
-.brand svg{width:32px;height:32px}
+.brand svg{width:32px;height:32px} .brand .logo{width:34px;height:34px;border-radius:10px;box-shadow:0 4px 12px -6px rgba(0,0,0,.5)}
 .sync{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--mute);background:var(--surface);border:1px solid var(--line);padding:5px 10px;border-radius:99px}
 .sync i{width:7px;height:7px;border-radius:50%;background:#A7ADA6;display:block}
 .sync.ok i{background:var(--ok)} .sync.loading i{background:var(--short);animation:pulse 1s infinite} .sync.error i,.sync.slow i{background:var(--bad)}
@@ -437,10 +437,7 @@ button.list-item.card{display:flex;width:100%}
 <body>
 <div class="wrap">
   <header class="top">
-    <div class="brand" aria-label="CARRY">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="#0D1A13"/><path d="M6 25 C 10 8, 20 4, 26 12" fill="none" stroke="#C8F53A" stroke-width="2.6" stroke-linecap="round"/><circle cx="26" cy="12" r="3.2" fill="#fff"/></svg>
-      CARRY
-    </div>
+    <div class="brand" aria-label="Carry"><img class="logo" src="data:image/png;base64,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" alt="">Carry</div>
     <div class="row" style="gap:8px"><div id="sync" class="sync" role="status"><i></i><span>Local</span></div><button id="avatar" class="avatar" data-a="go-ajustes" aria-label="Perfil y ajustes">TÚ</button></div>
   </header>
   <main id="view" aria-live="polite"></main>
@@ -660,6 +657,9 @@ function randTargets(min, max, n, step = 5) {
 // ---------- biblioteca de ejercicios ----------
 // lv: [nivel mínimo, nivel máximo] · 1 Base (≥30) · 2 Desarrollo (20–29,9) · 3 Consolidar (10–19,9) · 4 Competir (<10)
 // kind de cada bola: carry | fw | start | curve | shape | traj | contact | free · modo de bloque: shot | count | score
+const woodDeck = () => { const b = bagOn(); return (b.find(c => c.type === "wood" && c.id !== "D") || b.find(c => c.type === "hybrid") || b.find(c => c.type === "iron") || b[0] || {}).id; };
+const wedgesOn = () => bagOn().filter(c => c.type === "wedge");
+function playCourse() { const r = roundsSorted().filter(x => x.type === "real" && x.cid && courseOf(x.cid)).slice(-1)[0]; const c = r ? courseOf(r.cid) : courseOf("cng"); const ti = r ? Math.min(r.ti || 0, c.tees.length - 1) : defaultTee(c); return { c, ti, H: courseHoles(c, ti, sexOf(), c.holes, "out") }; }
 const DRILLS = [
   { id: "warm", area: "warm", phases: ["warm"], lv: [1, 4], min: 10, disc: 1, mode: "shot", tt: "Warm Up",
     name: "Calentamiento escalonado",
@@ -910,7 +910,420 @@ const DRILLS = [
     name: "Ojos al hoyo", n: () => 10, crit: () => "✓ si queda a menos de 1 m",
     why: "Mirando al hoyo en lugar de a la bola, el cuerpo calcula la velocidad solo. Raro al principio, muy útil para el putt largo.",
     how: ["Putts de 6 a 10 m.", "Mira al hoyo durante todo el golpe.", "✓ si queda a menos de 1 m."],
-    tips: ["Colócate normal, gira la cabeza al hoyo y pega sin volver a mirar la bola."] }
+    tips: ["Colócate normal, gira la cabeza al hoyo y pega sin volver a mirar la bola."] },
+
+  // ==== v7: ejercicios de profesionales, entrenadores y juegos de práctica ====
+
+  // ---- cierres ----
+  { id: "lasthole", area: "warm", phases: ["close"], lv: [1, 4], min: 5, disc: 3, mode: "shot", tt: "Virtual Golf",
+    name: "El último hoyo",
+    why: "Un par 4 de verdad para acabar: salida y golpe a green, una bola cada uno. Te vas a casa con la sensación del hoyo 18.",
+    how: L => [L <= 1 ? "Salida: que quede en juego." : "Salida: a calle.", "Golpe a green a la distancia que marca la app.", "Una sola bola por golpe."],
+    tips: ["Imagina que necesitas el par para tu mejor tarjeta.", "Rutina completa, sin prisa."],
+    gen: L => { const set = apSet(L); const t = r5((L <= 1 ? 80 : 100) + Math.random() * 40); return [{ label: "Hoyo 18 · salida", club: teeClub(), kind: "fw" }, { label: `Hoyo 18 · a green · ${t} m`, target: t, club: closestIn(set, t), kind: "carry" }]; } },
+
+  { id: "threeflags", area: "warm", phases: ["close"], lv: [1, 4], min: 5, disc: 2, mode: "shot", tt: "My Practice",
+    name: "Tres palos, tres banderas",
+    why: "Un wedge, un hierro medio y tu palo de salida, cada uno a su bandera. Acabar con tres golpes buenos y distintos es mejor que acabar con veinte drivers.",
+    how: ["Una bola con cada palo.", "Rutina completa.", "Si sale mal, se acepta: no se repite."],
+    tips: ["Tómate 20 segundos entre bola y bola.", "Termina siempre con una bola que te guste: si la última sale mal, coge el wedge para la despedida."],
+    gen: L => { const w = club(firstOn("W52", "PW", "W56")), m = club(firstOn("7i", "8i", "6i")); return [{ label: `${w.name} · ${w.carry} m`, target: w.carry, club: w.id, kind: "carry" }, { label: `${m.name} · ${m.carry} m`, target: m.carry, club: m.id, kind: "carry" }, { label: "Salida final", club: teeClub(), kind: "fw" }]; } },
+  // ---- calentamientos alternativos ----
+  { id: "warm2", area: "warm", phases: ["warm"], lv: [1, 4], min: 10, disc: 1, mode: "shot", tt: "Warm Up",
+    name: "Calentamiento de torneo",
+    why: "Wedge → hierros → madera → driver, y vuelta al wedge. Así calientan muchos profesionales antes de salir: acabar con un golpe corto deja el ritmo suave para el primer tee.",
+    how: ["Dos bolas por palo, del más corto al más largo.", "Las dos últimas, otra vez con el wedge.", "Registrar es opcional."],
+    tips: ["Cada bola a una bandera distinta: desde el calentamiento, nada de bolas al montón.", "Si el driver no sale, no lo arregles ahora: juega el plan B en el campo."],
+    gen: () => { const cs = bagOn().slice().reverse(); if (!cs.length) return []; const at = f => cs[Math.min(cs.length - 1, Math.round(f * (cs.length - 1)))].id; return [0, 0, .3, .3, .55, .55, .8, 1, 1, 0, 0].map((f, i) => ({ label: i >= 9 ? "Vuelta al wedge" : "Swing suave", club: at(f), kind: "free" })); } },
+
+  { id: "warm3", area: "warm", phases: ["warm"], lv: [1, 4], min: 10, disc: 1, mode: "shot", tt: "Warm Up",
+    name: "Calentamiento por ritmo",
+    why: "Ritmo 3:1: subir en tres tiempos y bajar en uno. Los profesionales tienen un tempo muy estable de bola a bola; el tuyo se entrena contando.",
+    how: ["Cuenta «uno, dos, tres» hasta arriba y «cuatro» en el impacto.", "Hierro 8 y luego hierro 6, swing al 70 %.", "Cuenta solo el contacto."],
+    tips: ["Si pierdes la cuenta, el swing iba demasiado rápido.", "El mismo ritmo para todos los palos: cambia el tamaño, no la velocidad."],
+    gen: () => { const a = firstOn("8i", "9i"), b = firstOn("6i", "7i", "5H"); return [a, a, a, a, a, b, b, b, b, b].map(id => ({ label: "Ritmo 3:1", call: "Pura", club: id, kind: "contact", accept: ["Pura", "Talón", "Punta"] })); } },
+
+  // ---- approach y hierros ----
+  { id: "nine", area: "app", phases: ["diff"], lv: [3, 4], min: 20, disc: 3, mode: "shot", tt: "Warm Up",
+    name: L => L === 3 ? "Las 6 ventanas" : "Las 9 ventanas (Tiger Woods)",
+    why: L => L === 3 ? "La versión de Consolidar del ejercicio de Tiger: tu forma y la contraria, cada una baja, media y alta. Aprendes qué ventana usar en cada golpe del campo." : "El ejercicio que Tiger Woods ha usado toda su carrera: alta, media y baja, cada una con draw, recta y fade. Nueve vuelos distintos con el mismo palo.",
+    how: L => ["Mismo palo todo el bloque (hierro 7).", `${L === 3 ? "6" : "9"} combinaciones de forma y altura, en orden aleatorio, dos veces.`, "Cuenta solo si salen la forma y la altura pedidas."],
+    tips: L => ["Altura: posición de bola y longitud del final. Forma: cara frente a trayectoria.", L === 3 ? "Empieza siempre por la combinación que menos te cuesta y alterna con la que más." : "Tiger insiste en que todas las bolas, curven hacia donde curven, se peguen con el centro de la cara."],
+    gen: L => { const id = firstOn("7i", "8i", "6i"); const own = stockOwn(), opp = own === "Draw" ? "Fade" : "Draw"; const forms = L === 3 ? [own, opp] : ["Draw", "Recta", "Fade"]; const out = []; for (let r = 0; r < 2; r++) for (const f of forms) for (const h of ["Baja", "Media", "Alta"]) { const d = f === "Recta" ? null : codeOf(f)[0]; out.push({ label: `${f} ${h.toLowerCase()}`, call: `${f} ${h.toLowerCase()}`, call2: h, club: id, kind: "combo", accept: f === "Recta" ? ["S"] : [d + "1", d + "2"] }); } return shuffle(out); } },
+
+  { id: "broadie", area: "app", phases: ["calib", "random", "test"], lv: [2, 4], min: 15, disc: 2, mode: "shot", tt: "Approach Challenge",
+    name: "Zona de 150 yardas",
+    why: "Mark Broadie, el creador de los strokes gained, encontró que entre el 40 y el 45 % de la diferencia entre un jugador de 80 y uno de 90 está en los golpes de aproximación, y recomienda practicar sobre todo los de unas 150 yardas (unos 137 m).",
+    how: ["Distancias entre 120 y 150 m, ajustadas a tu bolsa.", "Palo y bandera distintos en cada bola.", "Cuenta si el carry cae dentro de la ventana."],
+    tips: ["A esta distancia, centro del green casi siempre: la bandera, solo si está en el medio.", "Fíjate en tu fallo dominante (corto, largo, izquierda o derecha) y apunta para que siga en green."],
+    gen: L => { const set = apSet(L); const s = bagScale(); const lo = r5(120 * Math.min(1.1, s)), hi = r5(150 * Math.min(1.1, s)); return randTargets(lo, Math.min(hi, Math.max(...set.map(c => c.carry))), 14, 5).map(t => ({ label: `${t} m`, target: t, club: closestIn(set, t), kind: "carry" })); } },
+
+  { id: "pinseek", area: "app", phases: ["calib", "test"], lv: [1, 4], min: 10, disc: 2, mode: "shot", tt: "Closest to Pin",
+    name: "Pinseeker",
+    why: "Uno de los juegos de práctica favoritos de Golf Digest: una sola bandera, diez bolas, ¿cuántas acaban cerca? Con Toptracer ves el carry exacto de cada una.",
+    how: ["Elige una bandera a la distancia de un hierro corto o medio.", "10 bolas, rutina completa en cada una.", "Cuenta si el carry cae dentro de la ventana."],
+    tips: ["Entre bola y bola, aléjate de la alfombrilla y vuelve con la rutina.", "Si las tres primeras fallan, no cambies de palo: observa y ajusta el objetivo."],
+    gen: L => { const c = club(firstOn(L <= 1 ? "9i" : "8i", "9i", "7i", "PW")); return Array.from({ length: 10 }, (_, i) => ({ label: `${c.name} · ${c.carry} m`, target: c.carry, club: c.id, kind: "carry" })); } },
+
+  { id: "par3s", area: "app", phases: ["random", "test"], lv: [1, 4], min: 15, disc: 2, mode: "shot", tt: "Virtual Golf",
+    name: "Nueve par 3",
+    why: "Nueve hoyos cortos seguidos, cada uno con su distancia y su situación. En un campo de par 72 suele haber cuatro par 3: aquí juegas más del doble en un rato.",
+    how: L => ["Lee el hoyo que marca la app y elige objetivo.", L <= 1 ? "Apunta siempre al centro del green." : "Bandera solo si está accesible; si no, centro del green.", "Una bola por hoyo."],
+    tips: ["El tee se puede usar en todos los par 3: úsalo, con la bola baja para los hierros.", "Juega el palo que llega al centro del green, no a la bandera."],
+    gen: L => { const set = apSet(L); const mx = Math.max(...set.map(c => c.carry)); const lo = Math.max(70, r5(mx * .55)); const bf = ["bandera en el centro", "bandera atrás", "bandera delante", "agua delante", "bunker a la izquierda", "bunker a la derecha", "viento en contra", "viento a favor", "green elevado"]; return randTargets(lo, mx, 9, 5).map((t, i) => ({ label: `Hoyo ${i + 1} · ${t} m · ${bf[i % bf.length]}`, target: t, club: closestIn(set, t), kind: "carry" })); } },
+
+  { id: "range18", area: "app", phases: ["random", "test"], lv: [1, 4], min: 40, disc: 2, mode: "shot", tt: "Virtual Golf", long: true,
+    name: "Tu campo en la cancha",
+    why: () => { const { c } = playCourse(); return `Las distancias reales de ${c.short} hoyo a hoyo: salida, segundo golpe y golpe a green con tus palos. La forma más directa de llevar la práctica al campo que juegas.`; },
+    how: L => ["La app sigue los hoyos de tu último campo (o del Centro Nacional).", L <= 1 ? "Salida: cuenta en juego. A green: carry dentro de la ventana." : "Salida: cuenta calle. A green: carry dentro de la ventana.", "En los par 5 largos, el segundo golpe es para dejar unos 90 m."],
+    tips: ["Visualiza el hoyo de verdad antes de cada salida: árboles, fuera de límites, bunkers.", "Apunta en la nota los hoyos que más te cuestan: son tu próximo ejercicio."],
+    gen: L => { const { H } = playCourse(); const set = apSet(L); const mx = Math.max(...set.map(c => c.carry)); const drv = club(teeClub()); const dTot = Math.round((drv ? drv.carry : 180) * 1.08); const out = [];
+      H.forEach((h, i) => { const n = i + 1; const d = h.d || (h.p === 3 ? 140 : h.p === 4 ? 340 : 460);
+        if (h.p === 3) { const t = clamp(r5(d), 40, mx); out.push({ label: `H${n} · par 3 · ${t} m`, target: t, club: closestIn(set, t), kind: "carry" }); return; }
+        out.push({ label: `H${n} · par ${h.p} · ${d} m · salida`, club: teeClub(), kind: "fw" });
+        let rem = d - dTot;
+        if (rem > mx + 15) { const lay = clamp(r5(rem - 90), 60, mx); out.push({ label: `H${n} · 2º · deja unos 90 m`, target: lay, club: closestIn(set, lay), kind: "carry" }); rem = 90; }
+        const t = clamp(r5(rem), 30, mx); out.push({ label: `H${n} · a green · ${t} m`, target: t, club: closestIn(set.concat(wedgesOn()), t), kind: "carry" }); });
+      return out; } },
+
+  { id: "gaps", area: "app", phases: ["calib"], lv: [1, 4], min: 15, disc: 1, mode: "shot", tt: "My Practice",
+    name: "Huecos entre palos",
+    why: "Tres bolas con cada palo, sin objetivo: solo medir. Al acabar ves en Datos si hay dos palos que hacen lo mismo o un hueco grande entre dos.",
+    how: ["Del palo más corto al más largo, tres bolas cada uno.", "Swing normal, no el mejor posible.", "Registra el carry de todas."],
+    tips: ["Lo que buscas es tu distancia media, no la máxima: no fuerces.", "Si dos palos dan casi lo mismo, en el campo usa el que mejor contacto te da."],
+    gen: L => { const cs = apSet(L).filter(c => c.type !== "wood").slice().reverse(); const out = []; for (const c of cs) for (let i = 0; i < 3; i++) out.push({ label: `${c.name} · medir`, call: c.name, club: c.id, kind: "free" }); return out.slice(0, 30); } },
+
+  { id: "long", area: "app", phases: ["calib", "random"], lv: [2, 4], min: 15, disc: 2, mode: "shot", tt: "My Practice",
+    name: "Hierros largos e híbridos",
+    why: "Los golpes de más de 150 m son los que más se fallan. Aquí la ventana es algo más ancha: lo que cuenta es dejarla cerca del green, no clavarla.",
+    how: ["Distancias entre tu hierro medio y tu palo más largo (sin el driver).", "Una bola a cada distancia.", "Cuenta si el carry cae dentro de la ventana ampliada."],
+    tips: ["Con el híbrido, bola algo más adelantada que con el hierro 7 y swing barrido.", "Si un palo largo no te sale, es mejor quitarlo de la bolsa que sufrirlo."],
+    gen: L => { const set = bagOn().filter(c => c.id !== "D" && (c.type === "hybrid" || c.type === "wood" || (c.type === "iron" && c.carry >= 130))); if (!set.length) return []; const lo = Math.min(...set.map(c => c.carry)), hi = Math.max(...set.map(c => c.carry)); return randTargets(lo, hi, 12, 5).map(t => ({ label: `${t} m`, target: t, club: closestIn(set, t), kind: "carry", tol: Math.round(tolFor(t) * 1.4) })); } },
+
+  { id: "deck", area: "app", phases: ["diff", "calib"], lv: [1, 4], min: 10, disc: 2, mode: "shot", tt: "My Practice",
+    name: "Madera desde el suelo",
+    why: "La madera o el híbrido sin tee es el golpe que más tops y gruesas da a los amateurs. Aquí solo cuenta el contacto: que no salga ni top ni gruesa.",
+    how: ["Madera de calle o híbrido, sin tee.", "Bola un poco por delante del centro y swing barrido, sin buscar levantarla.", "Cuenta el contacto."],
+    tips: ["Piensa en barrer la hierba, no en golpear hacia abajo como con un hierro.", "Swing al 80 %: con este palo el contacto da más metros que la fuerza."],
+    gen: () => { const id = woodDeck(); return Array.from({ length: 10 }, () => ({ label: "Sin tee", call: "Limpio", club: id, kind: "contact", accept: ["Pura", "Talón", "Punta"] })); } },
+
+  { id: "wind", area: "app", phases: ["diff"], lv: [2, 4], min: 10, disc: 2, mode: "shot", tt: "My Practice",
+    name: "Viento en contra",
+    why: "En el campo el viento cambia todo. Aquí juegas cada distancia como si soplara en contra: un palo más, bola baja y swing suave.",
+    how: ["Distancia de la app y un palo más largo del que tocaría.", "Bola atrasada medio palmo y final corto.", "Cuenta si el carry cae dentro de la ventana."],
+    tips: ["«Cuando sopla, pega suave»: cuanto más fuerte pegas, más efecto y más sube la bola.", "Con viento a favor, al revés: un palo menos y bola alta."],
+    gen: L => { const ord = apSet(L).filter(c => c.type !== "wood").sort((x, y) => y.carry - x.carry); const out = []; for (let i = 0; i < 10; i++) { const k = 1 + Math.floor(Math.random() * Math.max(1, ord.length - 2)); const c = ord[k], up = ord[k - 1]; if (!c || !up) break; out.push({ label: `${c.carry} m · viento en contra`, target: c.carry, club: up.id, call: "Viento", kind: "carry" }); } return out; } },
+
+  { id: "finish", area: "app", phases: ["test"], lv: [1, 4], min: 10, disc: 3, mode: "shot", tt: "My Practice",
+    name: "Tres para ganar",
+    why: "Tres golpes distintos y hay que meter los tres. Si uno falla, vuelves a empezar. Así se siente el último hoyo de una ronda que va bien.",
+    how: ["Tres distancias distintas, en orden.", "Si fallas una, vuelves a la primera.", "Tienes 15 bolas."],
+    tips: ["Antes de la tercera: para, respira y haz la rutina más lenta de lo normal.", "Piensa en el objetivo, no en el resultado."],
+    gen: L => { const set = apSet(L); const ts = randTargets(L <= 1 ? 60 : 70, irRange(L)[1], 3, L <= 1 ? 10 : 5); return Array.from({ length: 15 }, (_, i) => { const t = ts[i % 3]; return { label: `${["1.ª", "2.ª", "3.ª"][i % 3]} · ${t} m`, target: t, club: closestIn(set, t), kind: "carry" }; }); } },
+
+  { id: "pause", area: "app", phases: ["calib", "diff"], lv: [1, 4], min: 10, disc: 2, mode: "shot", tt: "Warm Up",
+    name: "Pausa arriba (stop-start)",
+    why: "Una pausa de un segundo arriba del backswing antes de bajar. Es un ejercicio que se ha visto hacer a Tiger Woods con los hierros: obliga a que el cuerpo empiece la bajada antes que los brazos.",
+    how: ["Hierro 8, swing 3/4.", "Para un segundo arriba y baja sin prisa.", "Cuenta el contacto."],
+    tips: ["Desde la pausa, lo primero que se mueve es la cadera, no las manos.", "Al principio saldrá corta: es normal. Busca el contacto."],
+    gen: () => { const id = firstOn("8i", "9i", "7i"); return Array.from({ length: 10 }, () => ({ label: "Pausa arriba", call: "Pura", club: id, kind: "contact", accept: ["Pura"] })); } },
+
+  { id: "stepdr", area: "app", phases: ["diff", "calib"], lv: [1, 4], min: 10, disc: 2, mode: "shot", tt: "Warm Up",
+    name: "Step drill (paso adelante)",
+    why: "Empiezas con los pies juntos y das un paso hacia el objetivo al iniciar la bajada. Padraig Harrington y Nick Taylor lo usan para pasar el peso al pie de delante y no quedarse atrás en el impacto.",
+    how: ["Pies juntos, hierro 7.", "Al acabar el backswing, pie de delante hacia el objetivo y baja.", "Cuenta el contacto."],
+    tips: ["El paso marca el inicio de la bajada: si das el paso tarde, la bola sale gruesa.", "Termina con todo el peso en el pie de delante, 3 segundos."],
+    gen: () => { const id = firstOn("7i", "8i"); return Array.from({ length: 10 }, () => ({ label: "Paso y swing", call: "Pura", club: id, kind: "contact", accept: ["Pura", "Talón", "Punta"] })); } },
+
+  { id: "split", area: "app", phases: ["diff"], lv: [2, 4], min: 10, disc: 2, mode: "shot", tt: "Warm Up",
+    name: "Agarre separado (McIlroy)",
+    why: "Manos separadas un puño en el grip. Rory McIlroy lo usa en la cancha para notar cómo trabajan brazos y manos en la bajada. Exagerar en la práctica ayuda a notar el movimiento correcto.",
+    how: ["Cuatro ensayos con las manos separadas.", "Una bola con el agarre normal, buscando la misma sensación.", "Repite el ciclo: cuenta solo las bolas con agarre normal."],
+    tips: ["Los ensayos con agarre separado van lentos: son para sentir, no para pegar.", "Si no notas la diferencia, este ejercicio no es para ti hoy: pasa al siguiente."],
+    gen: () => { const id = firstOn("9i", "8i"); return Array.from({ length: 10 }, (_, i) => ({ label: `Ciclo ${i + 1}: 4 ensayos + bola`, call: "Pura", club: id, kind: "contact", accept: ["Pura"] })); } },
+
+  { id: "line", area: "app", phases: ["calib", "diff"], lv: [1, 3], min: 10, disc: 1, mode: "shot", tt: "Warm Up",
+    name: "Línea en el suelo",
+    why: "Una línea (tiza, spray o un palo) a la altura de la bola: la marca del palo tiene que empezar en la línea o por delante. Es la forma más simple de ver dónde toca el suelo tu swing.",
+    how: ["Si estás en alfombrilla, usa una toalla fina; en hierba, una línea de spray o arena.", "Cinco ensayos sin bola y cinco con bola, alternando.", "Cuenta las bolas sin contacto grueso."],
+    tips: ["Peso un poco más en el pie de delante desde el principio.", "Mira la parte delantera de la bola, no la de atrás."],
+    gen: () => { const id = firstOn("8i", "9i", "7i"); return Array.from({ length: 12 }, () => ({ label: "Delante de la línea", call: "Limpio", club: id, kind: "contact", accept: ["Pura", "Talón", "Punta", "Fina"] })); } },
+
+  { id: "sticks", area: "app", phases: ["calib"], lv: [1, 4], min: 10, disc: 1, mode: "shot", tt: "Warm Up",
+    name: "Dos palos de alineación",
+    why: "Un palo en el suelo a los pies y otro paralelo, en la línea de la bola. Joe Durant, uno de los jugadores más precisos del PGA Tour, practica siempre con dos varillas así.",
+    how: ["Varilla a los pies apuntando paralela al objetivo y otra en la línea de bola.", "Colócate siempre igual antes de cada bola.", "Marca hacia dónde sale."],
+    tips: ["La cara del palo se apunta primero; los pies, después.", "Cada 5 bolas, quita las varillas y comprueba si te colocas igual sin ellas."],
+    gen: L => { const id = firstOn("7i", "6i", "8i"); return Array.from({ length: 12 }, (_, i) => ({ label: i % 4 === 3 ? "Sin varillas" : "Con varillas", club: id, kind: "start" })); } },
+
+  // ---- wedges ----
+  { id: "wup", area: "wedge", phases: ["calib", "random"], lv: [1, 4], min: 15, disc: 2, mode: "shot", tt: "My Practice",
+    name: "Corto, medio, largo",
+    why: "Tres distancias de wedge en orden, ida y vuelta. Es el juego «Short, Middle, Long» de Golf Digest llevado a los wedges de la cancha.",
+    how: L => [L <= 1 ? "40, 55 y 70 m." : "35, 55 y 75 m.", "Ida y vuelta: corto, medio, largo, medio, corto…", "Cuenta si el carry cae dentro de la ventana."],
+    tips: ["Mismo ritmo para las tres: cambia el largo del backswing.", "Si la media te sale larga, agarra un dedo más abajo antes de frenar el swing."],
+    gen: L => { const ts = L <= 1 ? [40, 55, 70] : [35, 55, 75]; const seq = [0, 1, 2, 1, 0, 1, 2, 1, 0, 2, 0, 2]; const ws = wedgesOn(); return seq.map(k => ({ label: `${ts[k]} m · ${["corto", "medio", "largo"][k]}`, target: ts[k], club: closestIn(ws.length ? ws : apSet(L), ts[k]), kind: "carry" })); } },
+
+  { id: "w100", area: "wedge", phases: ["random", "test"], lv: [2, 4], min: 15, disc: 2, mode: "shot", tt: "My Practice",
+    name: "De 100 m para dentro",
+    why: "Luke Donald divide su práctica en cuatro partes iguales, una de ellas los wedges desde unas 125 yardas para dentro. Aquí, distancias sueltas de 35 a 100 m.",
+    how: ["Distancia distinta en cada bola.", "Tú decides el wedge y el largo del swing.", "Cuenta si el carry cae dentro de la ventana."],
+    tips: ["Luke Donald no repite el mismo golpe más de dos o tres veces seguidas: así se entrena para el campo.", "Mira tu matriz de wedges en Datos antes de empezar."],
+    gen: L => randTargets(35, 100, 15, 5).map(t => ({ label: `${t} m`, target: t, club: null, kind: "carry" })) },
+
+  { id: "w3", area: "wedge", phases: ["diff"], lv: [2, 4], min: 10, disc: 3, mode: "shot", tt: "My Practice",
+    name: "Tres wedges, una bandera",
+    why: "La misma distancia con tres wedges: con el de menos loft, swing corto; con el de más, swing largo. Ver tres vuelos distintos a la misma bandera te da opciones en el campo.",
+    how: ["Una distancia entre 45 y 65 m.", "Alterna los tres wedges en cada bola.", "Cuenta si el carry cae dentro de la ventana."],
+    tips: ["Con el wedge de menos loft la bola rueda más: apunta a botarla antes.", "Con viento, la opción baja casi siempre es la buena."],
+    gen: L => { const ws = wedgesOn().slice(0, 4); if (ws.length < 2) return []; const out = []; for (let r = 0; r < 4; r++) { const t = r5(45 + Math.random() * 20); for (const w of ws.slice(0, 3)) out.push({ label: `${t} m · ${w.name}`, target: t, club: w.id, kind: "carry" }); } return out; } },
+
+  { id: "wlow", area: "wedge", phases: ["diff"], lv: [3, 4], min: 10, disc: 3, mode: "shot", tt: "My Practice",
+    name: "Wedge bajo y wedge alto",
+    why: "El wedge bajo con efecto (knockdown) y el alto que para en seco. Es lo que separa a un buen jugador de wedges de uno muy bueno.",
+    how: ["Distancia entre 50 y 80 m.", "Bajo: bola atrasada, manos adelantadas, final corto. Alto: bola adelantada y final completo.", "Cuenta la altura pedida."],
+    tips: ["En el bajo, pierdes unos metros: coge más loft o swing algo más largo.", "En el alto, deja que el palo pase por debajo de la bola; no la levantes con las manos."],
+    gen: () => { const ws = wedgesOn(); const id = (ws[1] || ws[0] || {}).id || firstOn("PW"); return shuffle(["Baja", "Alta", "Baja", "Alta", "Baja", "Alta", "Baja", "Alta", "Media", "Media"]).map(c => ({ label: `Wedge ${c.toLowerCase()}`, call: c, club: id, kind: "traj" })); } },
+
+  { id: "wcall", area: "wedge", phases: ["random", "test"], lv: [1, 4], min: 15, disc: 3, mode: "shot", tt: "My Practice",
+    name: "Wedge a ciegas",
+    why: "Tú eliges wedge y swing para cada distancia, sin ayuda. Es la decisión que tomas de verdad en el campo a 60 m del green.",
+    how: L => [L <= 1 ? "Distancias de 40 a 80 m." : "Distancias de 30 a 90 m.", "Elige wedge y swing antes de colocarte.", "Cuenta si el carry cae dentro de la ventana."],
+    tips: ["Una vez decidido, no dudes: el swing a medias es el que más falla.", "Lleva tu tabla de wedges al campo: se pueden consultar notas propias."],
+    gen: L => randTargets(L <= 1 ? 40 : 30, L <= 1 ? 80 : 90, 12, L <= 1 ? 10 : 5).map(t => ({ label: `${t} m`, target: t, club: null, kind: "carry" })) },
+
+  // ---- salida ----
+  { id: "fairfind", area: "tee", phases: ["calib", "test"], lv: [1, 4], min: 10, disc: 2, mode: "shot", tt: "Driving Challenge",
+    name: "Salida segura",
+    why: "El palo de salida de los hoyos estrechos: madera de calle o híbrido. Tener una salida fiable sin driver ahorra más golpes que ganar 20 metros.",
+    how: ["Madera de calle o híbrido desde el tee.", "Misma calle que con el driver.", "Cuenta calle (o en juego en el nivel Base)."],
+    tips: ["Tee bajo: que la bola apenas asome por encima de la cara.", "Usa este palo en el campo en los hoyos con fuera de límites cerca."],
+    gen: L => { const id = woodDeck(); return Array.from({ length: 10 }, (_, i) => ({ label: `Salida segura ${i + 1}`, club: id, kind: "fw" })); } },
+
+  { id: "fir10", area: "tee", phases: ["test"], lv: [1, 4], min: 10, disc: 2, mode: "shot", tt: "Driving Challenge",
+    name: "Calles en regulación",
+    why: "Diez salidas a una calle marcada y el porcentaje de calles, como en el juego «Fairways in Regulation» de Golf Digest. Apunta tu porcentaje para compararlo en el campo.",
+    how: ["Marca la calle con dos referencias de la cancha.", "10 salidas, una cada vez, con rutina completa.", "Cuenta calle (o en juego en el nivel Base)."],
+    tips: ["Cambia de referencia cada dos bolas: en el campo cada calle apunta a un sitio.", "Si fallas dos seguidas al mismo lado, cambia el punto de apunte, no el swing."],
+    gen: () => Array.from({ length: 10 }, (_, i) => ({ label: `Salida ${i + 1} de 10`, club: teeClub(), kind: "fw" })) },
+
+  { id: "tee18", area: "tee", phases: ["test", "random"], lv: [1, 4], min: 15, disc: 2, mode: "shot", tt: "Driving Challenge",
+    name: "Las salidas de tu campo",
+    why: () => { const { c } = playCourse(); return `Las salidas de los par 4 y par 5 de ${c.short}, una a una y con su longitud. Pensar el hoyo antes de cada salida es la mitad del trabajo.`; },
+    how: ["Lee el hoyo y decide palo: no siempre es el driver.", "Una bola por hoyo, sin repetir.", "Cuenta calle (o en juego en el nivel Base)."],
+    tips: ["En los par 4 cortos, una madera o un híbrido en calle suele dejar mejor golpe que el driver en el rough.", "Recuerda dónde está el peligro y apunta al lado contrario de la calle."],
+    gen: () => { const { H } = playCourse(); const out = []; H.forEach((h, i) => { if (h.p >= 4) out.push({ label: `H${i + 1} · par ${h.p}${h.d ? " · " + h.d + " m" : ""}`, club: h.p === 4 && h.d && h.d < 300 ? woodDeck() : teeClub(), kind: "fw" }); }); return out; } },
+
+  { id: "drvgate", area: "tee", phases: ["calib", "diff"], lv: [2, 4], min: 10, disc: 2, mode: "shot", tt: "Warm Up",
+    name: "Puerta del driver",
+    why: "Con el driver, la dirección de salida decide casi todo. Dos referencias delante forman una puerta: la bola tiene que salir por ella.",
+    how: ["Elige dos referencias en la cancha a unos 20 m que formen una puerta de 4–5 m.", "Driver al 85 %.", "Marca hacia dónde sale."],
+    tips: ["Si sale recta y luego curva mucho, el problema es la trayectoria del swing; si sale torcida, la cara.", "Tee alto y bola frente al talón del pie de delante."],
+    gen: () => Array.from({ length: 12 }, (_, i) => ({ label: `Por la puerta ${i + 1}`, club: teeClub(), kind: "start" })) },
+
+  { id: "drvshape", area: "tee", phases: ["diff"], lv: [3, 4], min: 10, disc: 3, mode: "shot", tt: "Warm Up",
+    name: L => L === 3 ? "Tu salida y la recta" : "Tres salidas, tres formas",
+    why: L => L === 3 ? "Con el driver, tu forma natural y una casi recta. En el campo eliges según dónde está el peligro." : "Draw, recta y fade con el driver. Los profesionales eligen la forma de la salida según el hoyo.",
+    how: L => ["Driver al 85 %.", L === 3 ? "Alterna tu forma y la recta." : "La app pide la forma en cada bola.", "Cuenta si sale la forma pedida."],
+    tips: ["Cambia la alineación, no el swing.", "La forma que menos te cuesta es la que jugarás en el campo bajo presión."],
+    gen: L => { const id = teeClub(); const own = stockOwn(); const list = L === 3 ? Array.from({ length: 10 }, (_, i) => i % 2 ? own : "Recta") : shuffle(["Draw", "Recta", "Fade", "Draw", "Recta", "Fade", "Draw", "Recta", "Fade", "Recta"]); return list.map(f => ({ label: f === "Recta" ? "Salida recta" : `Salida con ${f.toLowerCase()}`, call: f, club: id, kind: "shape", accept: f === "Recta" ? ["S", "L1", "R1"].filter(x => L === 3 || x === "S") : [codeOf(f)[0] + "1", codeOf(f)[0] + "2"] })); } },
+
+  { id: "drvlow", area: "tee", phases: ["diff"], lv: [3, 4], min: 10, disc: 3, mode: "shot", tt: "Warm Up",
+    name: "Driver bajo para el viento",
+    why: "Una salida baja que rueda: la que necesitas con viento fuerte y en calles duras. Tee más bajo, bola algo más atrás y final corto.",
+    how: ["Alterna salida normal y salida baja.", "Baja: tee a la mitad de lo normal, bola dos dedos más atrás.", "Cuenta la altura pedida."],
+    tips: ["No golpees hacia abajo: el palo sigue barriendo, solo cambia la posición.", "En el campo, juega la baja también cuando el hoyo pide más precisión que distancia."],
+    gen: () => { const id = teeClub(); return shuffle(["Baja", "Media", "Baja", "Media", "Baja", "Media", "Baja", "Media", "Baja", "Baja"]).map(c => ({ label: c === "Baja" ? "Salida baja" : "Salida normal", call: c, club: id, kind: "traj" })); } },
+
+  // ---- tests de Toptracer con resultado ----
+  { id: "ptsgame", area: "app", phases: ["test"], lv: [1, 4], min: 15, disc: 2, mode: "score", label: "Puntos", lower: false, tt: "Points Game",
+    name: "Points Game",
+    why: "El juego de puntos de Toptracer: cuanto más cerca de la diana, más puntos. Comparable de una sesión a otra si siempre eliges la misma configuración.",
+    how: ["Modo Points Game en la pantalla.", "Siempre la misma configuración (dianas y número de bolas).", "Apunta los puntos."],
+    tips: ["Elige el palo antes de mirar la diana grande: pocas bolas fáciles suman más que muchas arriesgadas."] },
+
+  { id: "longdr", area: "tee", phases: ["diff", "test"], lv: [1, 4], min: 10, disc: 2, mode: "score", label: "Mejor carry en calle (m)", lower: false, tt: "Long Drive",
+    name: "Long Drive con calle",
+    why: "Distancia, pero solo vale si cae en la calle de 60 yardas del modo Long Drive. Entrenar la velocidad de vez en cuando hace que tu swing normal sea más fácil.",
+    how: ["Modo Long Drive.", "Swing al máximo, pero solo cuentan las bolas en la calle.", "Apunta el mejor carry dentro de la calle."],
+    tips: ["Calienta bien antes: es un bloque de esfuerzo.", "Tras este bloque, vuelve a tu swing al 80 % para el resto de la sesión."] },
+
+  { id: "drvchal", area: "tee", phases: ["test"], lv: [2, 4], min: 15, disc: 2, mode: "score", label: "Puntos de Driving Challenge", lower: false, tt: "Driving Challenge",
+    name: "Driving Challenge",
+    why: "El modo de Toptracer que puntúa cada salida por distancia y posición en la calle, con penalización si te quedas tapado. Mide la salida como en el campo.",
+    how: ["Modo Driving Challenge.", "Mira el vuelo del hoyo y el mapa de calor antes de cada salida.", "Apunta los puntos."],
+    tips: ["El mapa de calor te dice dónde dejarla: juega a esa zona, no a la máxima distancia."] },
+
+  { id: "vg9", area: "app", phases: ["test"], lv: [1, 4], min: 35, disc: 2, mode: "score", label: "Golpes en 9 hoyos de Virtual Golf", lower: true, tt: "Virtual Golf", long: true,
+    name: "9 hoyos de Virtual Golf",
+    why: "Nueve hoyos de un campo de verdad en la pantalla. Si los apuntas también como ronda virtual en Rondas, cuentan para tu HCP CARRY.",
+    how: ["Modo Virtual Golf, 9 hoyos, siempre el mismo campo si quieres comparar.", "Sin mulligans.", "Apunta los golpes."],
+    tips: ["Juega cada golpe con rutina completa: es lo más parecido a una ronda.", "Al acabar, apúntala también en Rondas como ronda virtual."] },
+
+  // ---- juego corto ----
+  { id: "par18", area: "short", phases: ["short"], lv: [1, 4], min: 20, disc: 3, mode: "score", label: "Golpes en 9 hoyos (par 18)", lower: true,
+    name: "Par 18",
+    why: "Nueve sitios alrededor del green, una bola en cada uno hasta embocar. Cada hoyo es par 2: chip y putt. Es uno de los juegos de práctica que más usan los profesionales.",
+    how: ["Elige 9 sitios: tres fáciles, tres medios y tres difíciles.", "Una sola bola, sin repetir, hasta embocar.", "Apunta el total (par 18)."],
+    tips: ["Cada golpe con rutina: es una tarjeta, no una práctica.", "Elige primero el golpe y después el palo, como hacía Seve."] },
+
+  { id: "ud18", area: "short", phases: ["short"], lv: [2, 4], min: 30, disc: 3, mode: "score", label: "Golpes en 18 hoyos (par 36)", lower: true,
+    name: "18 hoyos de up & down",
+    why: "Dieciocho situaciones alrededor del green, cada una hasta embocar. Chip in es birdie, up & down es par. Con esto aprendes a hacer buenos resultados con un juego largo mediocre.",
+    how: ["18 sitios distintos: rough, calle, cuesta arriba, cuesta abajo.", "Una bola hasta embocar.", "Apunta el total (par 36)."],
+    tips: ["Si el lie es malo, el objetivo es el green, no el hoyo.", "Lleva la cuenta de cuántos pars haces: es tu porcentaje de up & down."] },
+
+  { id: "chip15", area: "short", phases: ["short"], lv: [1, 4], min: 15, disc: 2, mode: "count",
+    name: "15 chips", n: () => 15, crit: L => `✓ si queda a menos de ${L <= 2 ? "dos palos" : "un palo"} del hoyo`,
+    why: "Un chip fácil, uno medio y uno difícil, cinco bolas de cada. Es el juego «15 Chips» de Golf Digest: el resultado sobre 15 se compara sesión a sesión.",
+    how: ["Fácil: green por delante. Medio: algo de rough. Difícil: poco green o cuesta abajo.", "Cinco bolas desde cada sitio.", "Marca ✓ según el criterio."],
+    tips: ["Mide con el palo del putt, no a ojo.", "En el difícil, a veces lo correcto es dejarla a 3 m en el lado bueno."] },
+
+  { id: "sml", area: "short", phases: ["short"], lv: [1, 4], min: 10, disc: 2, mode: "count",
+    name: "Corto, medio, largo (chip)", n: () => 9, crit: L => `✓ si queda a menos de ${L <= 2 ? "1,5 m" : "1 m"} del objetivo`,
+    why: "Tres objetivos en el green (cerca, en medio y al fondo) con un solo palo. Controlas la distancia con el largo del swing, no cambiando de palo.",
+    how: ["Tres marcas o hoyos a distinta distancia.", "Un chip a cada uno, de cerca a lejos y vuelta.", "Marca ✓ según el criterio."],
+    tips: ["El bote es lo que decides; el rodar lo pone el palo.", "Mismo ritmo, distinto largo de swing."] },
+
+  { id: "oneclub", area: "short", phases: ["short"], lv: [2, 4], min: 15, disc: 3, mode: "count",
+    name: "Un solo palo (Seve)", n: () => 12, crit: () => "✓ si queda a menos de 2 m",
+    why: "Seve Ballesteros aprendió a jugar en la playa con un solo hierro 3. Aquí, todos los golpes alrededor del green con un único palo: abre la cara, cierra, agarra más corto. Creatividad pura.",
+    how: ["Elige un palo (hierro 7, PW o wedge) y no lo cambies.", "Chips, pitches y golpes desde el rough, todos distintos.", "Marca ✓ si queda a menos de 2 m."],
+    tips: ["Antes de cada golpe, imagina el vuelo y el bote; después adapta el palo.", "Agarra más corto para tener más control en los golpes pequeños."] },
+
+  { id: "landspot", area: "short", phases: ["short"], lv: [2, 4], min: 10, disc: 2, mode: "count",
+    name: "Mismo bote, distintos palos", n: () => 12, crit: () => "✓ si bota en la toalla",
+    why: "Una toalla en el green y el mismo punto de bote con cuatro palos (wedge, PW, 9 y 7). Ves cuánto rueda cada uno: así eliges palo en el campo sin dudar.",
+    how: ["Toalla a 3 pasos dentro del green.", "Tres bolas con cada palo, botando en la toalla.", "Fíjate en cuánto rueda cada palo."],
+    tips: ["Con el hierro 7 la bola rueda unas tres veces lo que vuela; con el wedge, casi nada.", "Apunta lo que rueda cada uno en la nota de la sesión."] },
+
+  { id: "pitch", area: "short", phases: ["short"], lv: [1, 4], min: 15, disc: 2, mode: "count",
+    name: "Pitch de 20 a 40 m", n: () => 12, crit: L => `✓ si queda a menos de ${({ 1: "4 m", 2: "3 m", 3: "2,5 m", 4: "2 m" })[L]}`,
+    why: "Entre el chip y el wedge completo está el golpe más incómodo del golf. Swing de 8 a 4, con el cuerpo girando.",
+    how: ["Distancias de 20, 30 y 40 m, desordenadas.", "Mismo wedge, cambia el largo del swing.", "Marca ✓ según el criterio."],
+    tips: ["El pecho mira al objetivo al terminar: si el cuerpo se para, las manos hacen el golpe y falla la distancia.", "Brazos sueltos: la tensión mata la distancia."] },
+
+  { id: "rough", area: "short", phases: ["short"], lv: [1, 4], min: 10, disc: 2, mode: "count",
+    name: "Desde el rough", n: () => 10, crit: L => L <= 2 ? "✓ si queda en green" : "✓ si queda a menos de 2 m",
+    why: "Desde la hierba alta la bola sale sin efecto y rueda más. Aquí practicas el lie que más encuentras cuando fallas un green.",
+    how: ["Bola en el rough alrededor del green, cada vez en un sitio.", "Wedge con algo más de loft y swing algo más largo.", "Marca ✓ según el criterio."],
+    tips: ["Más inclinado el palo en la bajada para que la hierba no lo frene.", "Calcula más rodada que desde la calle."] },
+
+  { id: "flop", area: "short", phases: ["short"], lv: [3, 4], min: 10, disc: 3, mode: "count",
+    name: "Globo sobre el bunker", n: () => 10, crit: () => "✓ si pasa el obstáculo y queda a menos de 3 m",
+    why: "La bola alta y suave para cuando hay poco green. Seve explicaba que abrir la cara, adelantar la bola y dejar más peso atrás da el loft extra.",
+    how: ["Busca un bunker o una toalla como obstáculo con poco green detrás.", "Cara abierta antes de agarrar, bola adelantada.", "Marca ✓ según el criterio."],
+    tips: ["Acelera hasta el final: el globo se falla por frenar.", "Solo en el campo cuando no hay otro golpe: el chip rodado es casi siempre más seguro."] },
+
+  { id: "slam", area: "short", phases: ["short"], lv: [2, 4], min: 10, disc: 2, mode: "count",
+    name: "Al hoyo de volea", n: () => 10, crit: () => "✓ si bota a menos de 1 m del hoyo o entra",
+    why: "El juego «Slam Dunk»: intentar meterla sin que bote antes. Obliga a controlar exactamente cuánto vuela la bola.",
+    how: ["Chip corto a un hoyo a 5–10 m.", "Apunta a que la bola caiga en el hoyo o justo antes.", "Marca ✓ según el criterio."],
+    tips: ["Mira el hoyo, no la bola, en el ensayo.", "Aprenderás cuánto vuela cada largo de swing."] },
+
+  { id: "chipy", area: "short", phases: ["short"], lv: [1, 2], min: 10, disc: 1, mode: "count",
+    name: "Chip en Y", n: () => 12, crit: () => "✓ si el contacto es limpio y queda a menos de 2 m",
+    why: "Brazos y palo forman una «Y» que no se rompe durante el chip. Es el ejercicio de chip más recomendado para quien da golpes gruesos o finos.",
+    how: ["Peso en el pie de delante y manos un poco adelantadas.", "Movimiento de hombros, como un putt; las muñecas no se doblan.", "Marca ✓ según el criterio."],
+    tips: ["Una varilla junto al grip te avisa si las muñecas se doblan: no debería tocarte el costado.", "Bola atrasada en la postura."] },
+
+  { id: "bkline", area: "short", phases: ["short"], lv: [1, 4], min: 10, disc: 1, mode: "count",
+    name: "Línea en la arena", n: () => 15, crit: () => "✓ si el palo entra en la arena en la línea o justo detrás",
+    why: "El ejercicio de bunker más enseñado: una línea en la arena y el palo tiene que entrar siempre en el mismo sitio. Primero sin bola, luego con bola delante de la línea.",
+    how: ["Dibuja una línea perpendicular al objetivo.", "Cinco swings sin bola golpeando la línea; luego diez con la bola 3–5 cm delante.", "Marca ✓ si entras en el punto correcto."],
+    tips: ["Peso en el pie de delante todo el golpe.", "Termina el swing: el que frena en la arena se queda dentro."] },
+
+  { id: "bkbill", area: "short", phases: ["short"], lv: [1, 3], min: 10, disc: 1, mode: "count",
+    name: "El billete en la arena", n: () => 10, crit: () => "✓ si sacas toda la «loncha» de arena hacia el green",
+    why: "Imagina un billete en la arena con la bola en el centro: el palo tiene que sacar toda esa loncha. Es el ejercicio de Brech Spradley, Top 100 de GOLF, para aprender a usar el rebote del wedge.",
+    how: ["Marca un rectángulo de unos 15 cm con la bola en medio.", "Saca toda la arena del rectángulo hacia el green.", "Marca ✓ si la arena (y la bola) salen."],
+    tips: ["Cara abierta: el rebote de la suela es tu amigo.", "Ni demasiado profundo ni demasiado fino: la loncha debe ser poco gruesa."] },
+
+  { id: "bkdist", area: "short", phases: ["short"], lv: [2, 4], min: 10, disc: 2, mode: "count",
+    name: "Bunker a tres distancias", n: () => 9, crit: L => L <= 2 ? "✓ si queda en green" : "✓ si queda a menos de 3 m",
+    why: "Salir del bunker es el primer paso; controlar la distancia, el segundo. Banderas a 10, 20 y 30 m del bunker.",
+    how: ["Tres bolas a cada distancia.", "Misma cantidad de arena, cambia el largo del swing.", "Marca ✓ según el criterio."],
+    tips: ["Para la más larga, cara menos abierta y menos arena.", "La velocidad del swing no baja nunca: lo que cambia es el largo."] },
+
+  { id: "bkfw", area: "short", phases: ["short"], lv: [2, 4], min: 10, disc: 3, mode: "count",
+    name: "Bunker de calle (Seve)", n: () => 10, crit: () => "✓ si contacto limpio y llega al green",
+    why: "Antes del Masters, Seve dedicaba gran parte de su práctica a los bunkers de calle. Primero la bola, después la arena: con contacto limpio es un golpe normal.",
+    how: ["Si tu cancha tiene bunker de práctica largo, úsalo; si no, el más grande del juego corto.", "Un palo más de lo normal, agarrado más corto, pies firmes.", "Marca ✓ según el criterio."],
+    tips: ["Mira la parte delantera de la bola.", "Swing de brazos, piernas tranquilas: si te hundes, la gruesa está asegurada."] },
+
+  { id: "bkegg", area: "short", phases: ["short"], lv: [3, 4], min: 10, disc: 3, mode: "count",
+    name: "Bola enterrada", n: () => 8, crit: () => "✓ si sale y queda en green",
+    why: "El «huevo frito»: bola medio enterrada. Cara cuadrada o algo cerrada, golpe hacia abajo y sin terminar. Saber salir te quita el miedo.",
+    how: ["Pisa la bola para enterrarla un poco.", "Cara cuadrada, palo entra justo detrás.", "Marca ✓ según el criterio."],
+    tips: ["Saldrá sin efecto y rodando: apunta corto.", "El objetivo es salir; acercarla es un regalo."] },
+
+  // ---- putt ----
+  { id: "mickel", area: "putt", phases: ["short"], lv: [1, 4], min: 15, disc: 3, mode: "score", label: "Máximo de putts seguidos", lower: false,
+    name: "El círculo de Mickelson",
+    why: "Diez bolas en círculo a un metro del hoyo. Phil Mickelson aprendió de Jackie Burke a meter 100 seguidas antes de irse del green, y lo hacía tres o cuatro veces por semana. Si fallas, a cero.",
+    how: L => [`10 bolas en círculo a ${L <= 2 ? "75 cm" : "90 cm"} del hoyo.`, "Vuelta tras vuelta; si fallas, vuelves a cero.", `Apunta tu mejor racha (objetivo: ${({ 1: 20, 2: 30, 3: 50, 4: 100 })[L]}).`],
+    tips: ["Busca un hoyo con caída: así practicas todas las roturas a la vez.", "Golpe firme al fondo del hoyo: a esta distancia, apenas hay que leer la caída."] },
+
+  { id: "donald", area: "putt", phases: ["short"], lv: [2, 4], min: 15, disc: 2, mode: "count",
+    name: "De 1,2 a 2,4 m (Luke Donald)", n: () => 20, crit: () => "✓ si entra",
+    why: "Luke Donald, uno de los mejores en el green de su época, practicaba los putts de 4 a 8 pies (1,2 a 2,4 m): 20 putts alrededor de cuatro hoyos. Según él, meter la mitad ya es un buen nivel amateur.",
+    how: ["Cuatro hoyos distintos, cinco bolas a cada uno.", "Distancias de 1,2 a 2,4 m, todas distintas.", "✓ si entra."],
+    tips: ["Desde estas distancias se juegan muchos pares: rutina completa en cada uno.", "Lee la caída desde detrás del hoyo también."] },
+
+  { id: "p369", area: "putt", phases: ["short"], lv: [1, 4], min: 10, disc: 2, mode: "count",
+    name: "3-6-9", n: () => 9, crit: () => "✓ si entra",
+    why: "El juego del entrenador Brady Riggs (Top 100 de GOLF): una bola a 3, 6 y 9 pies (unos 0,9, 1,8 y 2,7 m) y se anota cuántas metes. Tres rondas.",
+    how: ["Tres bolas en línea a 0,9, 1,8 y 2,7 m.", "De la más corta a la más larga.", "Tres rondas, cada una desde un lado del hoyo."],
+    tips: ["Mismo ritmo en los tres: cambia el largo del movimiento.", "La de 2,7 m: la velocidad para que, si no entra, pase 30–40 cm."] },
+
+  { id: "pspeed", area: "putt", phases: ["short"], lv: [1, 4], min: 10, disc: 2, mode: "count",
+    name: "Escalera de velocidad", n: () => 10, crit: () => "✓ si pasa el hoyo y no llega a la marca de 60 cm",
+    why: "Una marca 60 cm detrás del hoyo: el putt tiene que pasar el hoyo (o entrar) y no llegar a la marca. Es el juego de control de velocidad de Golf Digest y lo usan muchos profesionales.",
+    how: ["Marca (un palo o un tee) 60 cm detrás del hoyo.", "Bolas a 3, 6, 9 y 12 m, de cerca a lejos.", "✓ si cumple; si se queda corta, vuelve a la primera."],
+    tips: ["Corta no vale nunca: la bola que no llega nunca entra.", "En los largos, piensa en el último metro de rodada, no en el golpe."] },
+
+  { id: "compass", area: "putt", phases: ["short"], lv: [2, 4], min: 10, disc: 2, mode: "count",
+    name: "La brújula", n: () => 12, crit: () => "✓ si entra",
+    why: "Un hoyo en pendiente y cuatro posiciones (norte, sur, este y oeste) a 1–1,5 m: subida, bajada y las dos caídas. Tres seguidas de cada punto.",
+    how: ["Hoyo en una zona con pendiente.", "Tres putts desde cada punto cardinal.", "✓ si entra."],
+    tips: ["El putt cuesta abajo, más suave y con más caída de la que parece.", "Los amateurs suelen leer poca caída: juega un poco más alto de lo que ves."] },
+
+  { id: "p2putt", area: "putt", phases: ["short"], lv: [1, 4], min: 15, disc: 2, mode: "count",
+    name: "Dos putts desde lejos", n: () => 10, crit: () => "✓ si embocas en 2 putts o menos",
+    why: "Diez putts largos, cada uno hasta embocar. Lo que cuenta es no hacer tres putts.",
+    how: ["Distancias de 10 a 20 m, distintas en cada bola.", "Embocar siempre.", "✓ si lo haces en dos o menos."],
+    tips: ["El primer putt: piensa en dejarla dentro de un círculo de un metro, no en meterla.", "Lee la pendiente principal caminando hasta el hoyo."] },
+
+  { id: "tgate", area: "putt", phases: ["short"], lv: [2, 4], min: 10, disc: 2, mode: "count",
+    name: "La puerta de Tiger", n: () => 15, crit: () => "✓ si el putter pasa entre los tees y entra",
+    why: "Un tee junto a la punta y otro junto al talón del putter. Tiger Woods lo practica empezando con la mano de atrás sola, luego con las dos y alternando.",
+    how: ["Tees a cada lado de la cabeza del putter, putt recto de 1,5 m.", "Cinco con la mano de atrás, cinco con las dos y cinco alternando.", "✓ si el putter pasa limpio y la bola entra."],
+    tips: ["Si tocas el tee de la punta, sueles cerrar la cara: fíjate en la salida.", "Añade otra puerta para la bola a 30 cm: así controlas también la salida."] },
+
+  { id: "pline", area: "putt", phases: ["short"], lv: [2, 4], min: 10, disc: 2, mode: "count",
+    name: "Línea de tiza", n: () => 12, crit: () => "✓ si la bola sigue la línea y entra",
+    why: "Una línea recta en el suelo hasta el hoyo (tiza o una cuerda). Muchos profesionales la usan para ver si la bola sale en su línea; Jordan Spieth empieza sus sesiones con 20 putts de 2 a 2,5 m con raíl.",
+    how: ["Putt recto de 2 a 2,5 m con una línea o cuerda.", "Bola con la línea dibujada alineada con la del suelo.", "✓ si sigue la línea y entra."],
+    tips: ["Si la línea de la bola rueda «temblando», el golpe no es centrado.", "Spieth dice que si la bola sale en línea los primeros 15 cm, el resto viene solo."] },
+
+  { id: "coin", area: "putt", phases: ["short"], lv: [1, 4], min: 10, disc: 1, mode: "count",
+    name: "La moneda", n: () => 10, crit: () => "✓ si la bola pasa por encima de la moneda",
+    why: "Una moneda en la línea, a unos 30 cm de la bola. Apuntar a algo pequeño y cercano es mucho más fácil que apuntar a un hoyo a 4 m.",
+    how: ["Lee el putt y pon una moneda en la línea de salida a 30 cm.", "Putts de 3 a 5 m.", "✓ si la bola pasa por encima."],
+    tips: ["Una vez colocada la moneda, olvida el hoyo: solo la moneda.", "En el campo, busca una marca en el green que haga de moneda."] },
+
+  { id: "pread", area: "putt", phases: ["short"], lv: [2, 4], min: 10, disc: 2, mode: "count",
+    name: "Lado alto", n: () => 10, crit: () => "✓ si entra o se queda por el lado alto del hoyo",
+    why: "Luke Donald dice que los amateurs leen poca caída. Aquí solo cuentan los putts que entran o que fallan por arriba: entrenas a ver la caída entera.",
+    how: ["Putts de 3 a 6 m con caída clara.", "Lee, elige un punto de apunte y pega.", "✓ si entra o falla por el lado alto."],
+    tips: ["Imagina el hoyo como el centro de un reloj: ¿por qué hora entra la bola?", "Más velocidad, menos caída: decide antes la velocidad."] },
+
+  { id: "plagm", area: "putt", phases: ["short"], lv: [3, 4], min: 10, disc: 2, mode: "count",
+    name: "Lag de Mickelson", n: () => 9, crit: () => "✓ si queda a menos de 90 cm",
+    why: "Phil Mickelson clava tees a 30, 40 y 50 pies (unos 9, 12 y 15 m) de un hoyo para afinar la velocidad de los putts largos.",
+    how: ["Tees a 9, 12 y 15 m.", "Tres bolas desde cada uno, en orden aleatorio.", "✓ si queda a menos de 90 cm."],
+    tips: ["Ensaya mirando al hoyo y pega sin pensar en la técnica.", "Si dejas dos cortas seguidas, en la siguiente apunta 50 cm pasado el hoyo."] },
+
 ];
 const D = id => DRILLS.find(d => d.id === id);
 
@@ -1034,13 +1447,13 @@ function generatePlan() {
   };
   const blocks = [];
   const add = (d, ph, m) => { if (d) blocks.push(makeBlock(d, ph, m, L)); };
-  add(D("warm"), "warm", 10);
+  add(choose("warm", 10) || D("warm"), "warm", 10);
   const R = T0 - 15;
   const shortMin = pr.shortGame && T0 >= 90 ? Math.round(R * .3 / 5) * 5 : 0;
   const longMin = R - shortMin;
   for (const ph of ["calib", "random", "diff", "test"]) { let m = Math.max(10, Math.round(longMin * cyc.mix[ph] / 5) * 5); let g = 0; while (m >= 10 && g++ < 5) { const d = choose(ph, m); if (!d) break; const dm = m - d.min < 10 ? m : d.min; add(d, ph, dm); m -= dm; } }
   if (shortMin) { let m = shortMin, g = 0; while (m >= 10 && g++ < 6) { const d = choose("short", m); if (!d) break; const dm = m - d.min < 10 ? m : d.min; add(d, "short", dm); m -= dm; } }
-  add(D("first"), "close", 5);
+  add(choose("close", 5) || D("first"), "close", 5);
   let diff = blocks.reduce((a, b) => a + b.min, 0) - T0;
   for (const b of blocks.slice().sort((x, y) => y.min - x.min)) { if (!diff) break; if (["warm", "close"].includes(b.phase)) continue; const cut = clamp(diff, -30, b.min - 5); b.min -= cut; diff -= cut; }
   return { id: nid(), created: Date.now(), stage: st, lv: L, hcp: hcpUsed(), minutes: T0, focus: pr.focus, weak: w ? w.area : null, rfocus: rf, wild: pick(WILD), blocks };
@@ -1057,7 +1470,8 @@ function planBalls(plan) { let n = 0; for (const b of plan.blocks) { const d = D
 function judge(step, sh) {
   const L = LV();
   switch (step.kind) {
-    case "carry": return sh.carry == null ? null : Math.abs(sh.carry - step.target) <= tolFor(step.target);
+    case "carry": return sh.carry == null ? null : Math.abs(sh.carry - step.target) <= tolOf(step);
+    case "combo": return sh.curve && sh.traj ? accOf(step).includes(sh.curve) && sh.traj === step.call2 : null;
     case "fw": { const z = sh.zone || zoneOf(sh.lat); if (!z) return null; return L <= 1 ? ["RI", "C", "RD"].includes(z) : z === "C"; }
     case "start": return sh.start ? sh.start === "Recta" : null;
     case "curve": if (!sh.curve) return null; if (step.rule === "ctl") return ["L1", "S", "R1"].includes(sh.curve); { const g = stockGentle(); return sh.curve === "S" || (g ? sh.curve === g : ["L1", "R1"].includes(sh.curve)); }
@@ -1067,8 +1481,9 @@ function judge(step, sh) {
     default: return null;
   }
 }
+const tolOf = step => step.tol ?? tolFor(step.target);
 const accOf = step => step.accept || (step.kind === "shape" ? [codeOf(step.call)] : [step.call === "Centro" ? "Pura" : step.call]);
-const NEEDS = { carry: "carry", fw: "zone", start: "start", curve: "curve", shape: "curve", traj: "traj", contact: "contact" };
+const NEEDS = { combo: "curve", carry: "carry", fw: "zone", start: "start", curve: "curve", shape: "curve", traj: "traj", contact: "contact" };
 const NEED_TXT = { carry: "el carry", zone: "la zona donde acaba", start: "hacia dónde sale", curve: "la curva", traj: "la altura", contact: "el contacto" };
 
 // ---------- coach en directo (patrones de las últimas bolas) ----------
@@ -2076,7 +2491,7 @@ function newDraft(s, b, step) {
   return { sid: s.id, b: s.cur, c: b.cursor, club: cid, carry: null, total: null, lat: null, zone: null, contact: null, start: null, curve: null, traj: null, speed: null };
 }
 function winBar(step, carry) {
-  const tol = tolFor(step.target), lo = step.target - tol * 2.4, hi = step.target + tol * 2.4, X = v => clamp((v - lo) / (hi - lo) * 100, 0, 100);
+  const tol = tolOf(step), lo = step.target - tol * 2.4, hi = step.target + tol * 2.4, X = v => clamp((v - lo) / (hi - lo) * 100, 0, 100);
   const inW = carry != null && Math.abs(carry - step.target) <= tol;
   return `<div class="winbar" aria-hidden="true"><div class="trk"></div><div class="band" style="left:${X(step.target - tol)}%;width:${X(step.target + tol) - X(step.target - tol)}%"></div><div class="tgt" style="left:${X(step.target)}%"></div>
   <span class="lab" style="left:${X(step.target - tol)}%">${step.target - tol}</span><span class="lab" style="left:${X(step.target + tol)}%">${step.target + tol}</span>
@@ -2096,13 +2511,13 @@ function shotLogger(s, b, d) {
   }
   const need = NEEDS[step.kind];
   const progress = `${b.cursor + 1}/${b.steps.length}`;
-  const sub = step.kind === "carry" ? `ventana ±${tolFor(step.target)} m` : step.kind === "fw" ? (L <= 1 ? `cuenta: en juego (${playWidth()} m) · calle ${fwWidth()} m` : `cuenta: calle (${fwWidth()} m)`) : step.kind === "start" ? "cuenta: que salga recta" : step.kind === "curve" ? (step.rule === "ctl" ? "cuenta: recta o curva suave" : `cuenta: recta o tu ${stockLabel()} suave`) : step.kind === "shape" ? "cuenta: que curve hacia el lado pedido" : step.kind === "traj" ? "cuenta: la altura pedida" : step.kind === "contact" ? (accOf(step).length > 1 ? "cuenta: sin tocar el suelo antes" : "cuenta: el punto de impacto") : "sin puntuar";
+  const sub = step.kind === "combo" ? "cuenta: forma y altura pedidas" : step.kind === "carry" ? `ventana ±${tolOf(step)} m` : step.kind === "fw" ? (L <= 1 ? `cuenta: en juego (${playWidth()} m) · calle ${fwWidth()} m` : `cuenta: calle (${fwWidth()} m)`) : step.kind === "start" ? "cuenta: que salga recta" : step.kind === "curve" ? (step.rule === "ctl" ? "cuenta: recta o curva suave" : `cuenta: recta o tu ${stockLabel()} suave`) : step.kind === "shape" ? "cuenta: que curve hacia el lado pedido" : step.kind === "traj" ? "cuenta: la altura pedida" : step.kind === "contact" ? (accOf(step).length > 1 ? "cuenta: sin tocar el suelo antes" : "cuenta: el punto de impacto") : "sin puntuar";
   const target = `<div class="target"><div class="row between" style="align-items:flex-start"><div style="min-width:0"><div class="lbl">Bola ${progress}${step.club ? " · " + esc(clubName(step.club)) : " · tú eliges palo"}</div><div class="big">${esc(step.label)}</div><div class="sub">${sub}</div></div>
     <div class="streak">${d.id === "double" ? `<b>${b.pts}</b>puntos` : `<b>${b.streak}</b>racha`}<div style="font-size:11px;opacity:.75;margin-top:4px">${b.judged ? `${b.okN}/${b.judged}` : ""}</div></div></div>
     ${step.kind === "carry" ? winBar(step, dr.carry) : ""}</div>`;
-  const cnt = k => k === need ? '<span class="counts">CUENTA</span>' : "";
+  const cnt = k => k === need || (step.kind === "combo" && k === "traj") ? '<span class="counts">CUENTA</span>' : "";
   const clubChips = `<div class="chips scroll">${bagOn().map(c => `<button class="chip ${dr.club === c.id ? "on" : ""}" style="${aStyle(typeArea(c.type))}" data-a="d-club" data-v="${c.id}">${esc(c.name)} <small>${c.carry}</small></button>`).join("")}</div>`;
-  const stepper = (key, label, unit) => { let cls = dr[key] == null ? "empty" : ""; let hint = unit; if (key === "carry" && step.kind === "carry" && dr.carry != null) { const df = dr.carry - step.target; cls = Math.abs(df) <= tolFor(step.target) ? "in" : "out"; hint = (df > 0 ? "+" : "") + df + " m"; } if (dr[key] == null) hint = "toca o usa ±"; const v = dr[key] == null ? "—" : key === "lat" ? (dr.lat < 0 ? "I " : dr.lat > 0 ? "D " : "") + Math.abs(dr.lat) : dr[key];
+  const stepper = (key, label, unit) => { let cls = dr[key] == null ? "empty" : ""; let hint = unit; if (key === "carry" && step.kind === "carry" && dr.carry != null) { const df = dr.carry - step.target; cls = Math.abs(df) <= tolOf(step) ? "in" : "out"; hint = (df > 0 ? "+" : "") + df + " m"; } if (dr[key] == null) hint = "toca o usa ±"; const v = dr[key] == null ? "—" : key === "lat" ? (dr.lat < 0 ? "I " : dr.lat > 0 ? "D " : "") + Math.abs(dr.lat) : dr[key];
     return `<div class="field"><div class="lab"><span>${label}</span>${cnt(key)}</div><div class="stepper"><button data-a="d-step" data-k="${key}" data-v="-5" aria-label="menos 5">−5</button><button data-a="d-step" data-k="${key}" data-v="-1" aria-label="menos 1">−1</button><button class="val ${cls}" data-a="pad" data-k="${key}" aria-label="${label}: escribir valor">${v}<small>${hint}</small></button><button data-a="d-step" data-k="${key}" data-v="1" aria-label="más 1">+1</button><button data-a="d-step" data-k="${key}" data-v="5" aria-label="más 5">+5</button></div></div>`; };
   const contactRow = () => `<div class="field"><div class="lab"><span>Contacto</span>${cnt("contact")}</div><div class="chips">${CONTACTS.map(o => `<button class="chip ${dr.contact === o ? "on" : ""}" style="--c:${o === "Pura" ? "var(--ok)" : ["Talón", "Punta"].includes(o) ? "var(--short)" : "var(--bad)"};--onc:${["Talón", "Punta"].includes(o) ? "#1F1405" : "#fff"}" data-a="d-set" data-k="contact" data-v="${o}">${o}</button>`).join("")}</div></div>`;
   const startRow = () => `<div class="field"><div class="lab"><span>Sale hacia</span>${cnt("start")}</div><div class="chiprow">${STARTS.map(o => `<button class="chip ic ${dr.start === o ? "on" : ""}" data-a="d-set" data-k="start" data-v="${o}" aria-label="Sale ${o === "Recta" ? "recta" : "hacia la " + (o === "Izq" ? "izquierda" : "derecha")}">${startIco(o)}${o === "Izq" ? "Izquierda" : o === "Der" ? "Derecha" : "Recta"}</button>`).join("")}</div></div>`;
@@ -2112,7 +2527,7 @@ function shotLogger(s, b, d) {
     <div class="zones-lbl"><span style="visibility:hidden">.</span>${L <= 1 ? '<span style="grid-column:2/5">en juego ✓</span>' : '<span style="visibility:hidden">.</span><span>cuenta ✓</span>'}</div>
     <div class="zones">${ZONES.map(([k, nm, cl]) => `<button class="${cl} ${dr.zone === k ? "on" : ""}" data-a="d-zone" data-v="${k}" aria-label="${ZONE_TXT[k]}">${k.endsWith("I") ? "← " : ""}${nm}${k.endsWith("D") ? " →" : ""}</button>`).join("")}</div></div>`;
   // el dato que puntúa va primero
-  const order = { carry: ["carry", "contact", "start", "curve"], fw: ["zone", "carry", "contact", "start", "curve"], start: ["start", "contact", "carry", "curve"], curve: ["curve", "start", "contact", "carry"], shape: ["curve", "start", "contact", "carry"], traj: ["traj", "contact", "carry", "start", "curve"], contact: ["contact", "carry", "start", "curve"], free: ["carry", "contact", "start", "curve"] }[step.kind];
+  const order = { carry: ["carry", "contact", "start", "curve"], fw: ["zone", "carry", "contact", "start", "curve"], start: ["start", "contact", "carry", "curve"], curve: ["curve", "start", "contact", "carry"], shape: ["curve", "start", "contact", "carry"], traj: ["traj", "contact", "carry", "start", "curve"], combo: ["curve", "traj", "contact", "carry", "start"], contact: ["contact", "carry", "start", "curve"], free: ["carry", "contact", "start", "curve"] }[step.kind];
   const R = { carry: () => stepper("carry", "Carry", "m"), contact: contactRow, start: startRow, curve: curveRow, traj: trajRow, zone: zoneRow };
   let fields = order.map(k => R[k]()).join("");
   if (f.lat) fields += stepper("lat", "Lateral (izq − / dcha +)", "m");
@@ -2266,7 +2681,7 @@ function vOnboard() {
   const o = S.ui.ob || (S.ui.ob = { step: 0, hasH: true, set: "estandar", i7: 125 }); const pr = P();
   const steps = `<div class="ob-steps">${[0, 1, 2, 3].map(i => `<i class="${i <= o.step ? "on" : ""}"></i>`).join("")}</div>`;
   const nav = (next, label = "Siguiente →") => `<div class="row" style="margin-top:auto;padding-top:14px">${o.step ? `<button class="btn ghost" style="flex:1" data-a="ob-prev">←</button>` : ""}<button class="btn lime big" style="flex:3" data-a="${next}">${label}</button></div>`;
-  if (o.step === 0) return `<div class="ob">${steps}<section class="hero"><div class="ground"></div>${tracesSVG([])}<div class="eyebrow">Bienvenido a CARRY</div><h1>Tu coach de prácticas.</h1><p>Sesiones que cambian cada semana, registro de cada bola y tu hándicap de juego.</p></section>
+  if (o.step === 0) return `<div class="ob">${steps}<section class="hero"><div class="ground"></div>${tracesSVG([])}<div class="row" style="gap:10px;align-items:center;margin-bottom:6px"><img src="data:image/png;base64,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" alt="" style="width:44px;height:44px;border-radius:12px"><div class="eyebrow">Bienvenido a Carry</div></div><h1>Tu coach de prácticas.</h1><p>Sesiones que cambian cada semana, registro de cada bola y tu hándicap de juego.</p></section>
     <div class="card">${[["app", "Plan para tu nivel", "Ejercicios y ventanas según tu hándicap, nunca los mismos."], ["wedge", "Cada bola cuenta", "Carry, contacto y vuelo en dos toques, con consejos al momento."], ["putt", "Tu hándicap de juego", "Con rondas reales y de Toptracer, sin esperar a torneos."]].map(([a, t, d]) => `<div class="ob-feat"><span style="${aStyle(a)}">${ico(a, 20)}</span><div><b>${t}</b><div class="small muted">${d}</div></div></div>`).join("")}</div>
     <div class="card"><div class="field"><label for="obN"><span>¿Cómo te llamas?</span></label><input id="obN" type="text" value="${esc(pr.name)}" placeholder="Tu nombre" data-f="name" autocomplete="given-name"></div>
     <div class="grid2"><div class="field" style="margin:0"><div class="lab"><span>Juegas como</span></div><div class="seg">${[["R", "Diestro"], ["L", "Zurdo"]].map(([k, n]) => `<button class="${H() === k ? "on" : ""}" data-a="ob-set" data-k="hand" data-v="${k}">${n}</button>`).join("")}</div></div>
@@ -2461,8 +2876,9 @@ function saveShot(skip) {
   if (skip) { b.cursor++; S.ui.draft = null; S.ui.lastResult = { b: s.cur, ok: null, text: "Bola saltada.", skip: true }; saveSession(s); render(); return; }
   const dr = S.ui.draft; const need = NEEDS[step.kind];
   if (need && dr[need] == null && !(need === "zone" && dr.lat != null)) { toast(`Falta ${NEED_TXT[need]}: es lo que puntúa en este ejercicio`); return; }
+  if (step.kind === "combo" && dr.traj == null) { toast("Falta la altura: en este ejercicio cuentan forma y altura"); return; }
   if (s.shots.length >= 600) { toast("Máximo de bolas por sesión"); return; }
-  const sh = { id: nid(), ts: Date.now(), b: s.cur, i: b.cursor, club: dr.club, carry: dr.carry, total: dr.total, lat: dr.lat, zone: dr.zone || zoneOf(dr.lat), start: dr.start, curve: dr.curve, contact: dr.contact, traj: dr.traj, speed: dr.speed, call: step.call || null, target: step.target || null, kind: step.kind, tol: step.kind === "carry" ? tolFor(step.target) : null };
+  const sh = { id: nid(), ts: Date.now(), b: s.cur, i: b.cursor, club: dr.club, carry: dr.carry, total: dr.total, lat: dr.lat, zone: dr.zone || zoneOf(dr.lat), start: dr.start, curve: dr.curve, contact: dr.contact, traj: dr.traj, speed: dr.speed, call: step.call || null, target: step.target || null, kind: step.kind, tol: step.kind === "carry" ? tolOf(step) : null };
   for (const k of Object.keys(sh)) if (sh[k] == null) delete sh[k];
   const ok = judge(step, sh); if (ok != null) sh.ok = ok;
   s.shots.push(sh); b.cursor++;
@@ -2475,6 +2891,7 @@ function saveShot(skip) {
     else if (step.kind === "start") text = ok ? "Sale a la línea" : `Sale hacia la ${sh.start === "Izq" ? "izquierda" : "derecha"}`;
     else if (step.kind === "curve") text = ok ? (sh.curve === "S" ? "Recta" : `Curva controlada (${curvePlain(sh.curve)})`) : `Curva ${curvePlain(sh.curve)}`;
     else if (step.kind === "shape") text = ok ? `Conseguido: ${step.call.toLowerCase()}` : `Pedido ${step.call.toLowerCase()}, salió ${sh.curve === "S" ? "recta" : curveName(sh.curve).toLowerCase()}`;
+    else if (step.kind === "combo") text = ok ? `Conseguido: ${step.call.toLowerCase()}` : `Pedido ${step.call.toLowerCase()}; salió ${sh.curve === "S" ? "recta" : curveName(sh.curve).toLowerCase()} ${sh.traj.toLowerCase()}`;
     else if (step.kind === "traj") text = ok ? `Altura ${step.call.toLowerCase()}: conseguido` : `Pedida ${step.call.toLowerCase()}, salió ${sh.traj.toLowerCase()}`;
     else text = ok ? `Contacto bueno (${sh.contact.toLowerCase()})` : `Contacto: ${sh.contact.toLowerCase()}`;
     if (ok && b.streak >= 3) text += ` · racha ${b.streak}`;
